@@ -50,18 +50,33 @@ export default function Support({ onLogout }) {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <Globe className="w-5 h-5 text-blue-300 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-white font-medium text-left">Volunteer Intranet</p>
-                  <p className="text-blue-200 text-sm mb-2">Access detailed guides, documents, and training materials</p>
-                  <a
-                    href="https://sites.google.com/voteriders.org/volunteerintranet/home"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-blue-300 hover:text-white transition-colors text-sm text-left"
-                  >
-                    Visit Volunteer Intranet
-                    <ExternalLink className="w-4 h-4 ml-2 inline" />
-                  </a>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-white font-medium text-left">VoteRiders Website</p>
+                    <p className="text-blue-200 text-sm mr-32 mb-2">Determine the ID requirements by state</p> 
+                     <a
+                      href="https://www.voteriders.org/staterules/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-blue-300 hover:text-white transition-colors text-sm text-left"
+                    >
+                      Visit VoteRiders Website
+                      <ExternalLink className="w-4 h-4 ml-2 inline" />
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium text-left">Volunteer Intranet</p>
+                    <p className="text-blue-200 text-sm mb-2">Access detailed guides, documents, and training materials</p>
+                    <a
+                      href="https://sites.google.com/voteriders.org/volunteerintranet/home"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-blue-300 hover:text-white transition-colors text-sm text-left"
+                    >
+                      Visit Volunteer Intranet
+                      <ExternalLink className="w-4 h-4 ml-2 inline" />
+                    </a>
+                  </div>
                 </div>
               </div>
 

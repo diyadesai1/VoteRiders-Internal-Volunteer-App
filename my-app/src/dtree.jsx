@@ -11,6 +11,7 @@ export default function DTree({ onLogout }) {
   const [currentNode, setCurrentNode] = useState("");
   const [history, setHistory] = useState([]);
   const [isStarted, setIsStarted] = useState(false);
+  const [navError, setNavError] = useState("");
 
   const focusStateContacts = useMemo(() => ({
     Arizona: { code: "K1", person: "Valerie El Ghouti" },
@@ -173,6 +174,11 @@ export default function DTree({ onLogout }) {
     return s;
   }, [focusStateContacts, selectedState]);
 
+  const isSolutionCurrent = useMemo(() => {
+    const node = steps[currentNode];
+    return !!(node && node.isSolution);
+  }, [steps, currentNode]);
+
   const begin = () => {
     if (!selectedState) {
       alert("Please select a state first.");
@@ -226,6 +232,15 @@ export default function DTree({ onLogout }) {
     setCurrentNode("");
     setHistory([]);
     setIsStarted(false);
+  };
+
+  const handleNextClick = () => {
+    if (!isSolutionCurrent) {
+      setNavError("Decision Tree must be completed before moving on to next step");
+      setTimeout(() => setNavError(""), 3000);
+      return;
+    }
+    navigate("/agree", { state: { from: isFromChat ? 'chat' : 'helpline' } });
   };
 
   const getSolutionIcon = (type) => {
@@ -419,25 +434,33 @@ export default function DTree({ onLogout }) {
           )}
 
           {/* Navigation */}
-          <div className="flex justify-between items-center">
-            <button
-              onClick={goBack}
-              className="px-4 py-2 rounded-md border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm hover:border-white/50 transition-all duration-300 inline-flex items-center"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
-            </button>
+          <div className="flex flex-col gap-2">
+            <div className="flex justify-between items-center">
+              <button
+                onClick={goBack}
+                className="px-4 py-2 rounded-md border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm hover:border-white/50 transition-all duration-300 inline-flex items-center"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back
+              </button>
 
-            <div className="text-center">
-              <p className="text-blue-200 text-sm">Step {history.length} - {selectedState}</p>
+              <div className="text-center">
+                <p className="text-blue-200 text-sm">Step {history.length} - {selectedState}</p>
+              </div>
+
+              <button
+                onClick={handleNextClick}
+                aria-disabled={!isSolutionCurrent}
+                className={`px-4 py-2 rounded-md border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm hover:border-white/50 transition-all duration-300 inline-flex items-center ${!isSolutionCurrent ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                Next Step
+              </button>
             </div>
-
-            <button
-              onClick={() => navigate("/agree", { state: { from: isFromChat ? 'chat' : 'helpline' } })}
-              className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-md font-semibold shadow-lg transition-colors duration-200"
-            >
-              Next Step
-            </button>
+            {navError && (
+              <div role="alert" aria-live="polite" className="text-red-300 text-sm text-center">
+                {navError}
+              </div>
+            )}
           </div>
         </div>
       )}

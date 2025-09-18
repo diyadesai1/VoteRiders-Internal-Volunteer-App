@@ -10,12 +10,18 @@ export default function GlobalLayout({ children, onLogout }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <a
+              href="https://www.voteriders.org/staterules/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3"
+              aria-label="Go to Voteriders State Rules"
+            >
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-r from-red-500 to-blue-500 text-white font-extrabold text-lg">
                 V
               </div>
               <div className="font-bold text-white text-xl tracking-tight">VOTERIDERS</div>
-            </div>
+            </a>
 
             {/* Navigation Menu */}
             <nav className="hidden md:flex items-center space-x-8 ml-auto">

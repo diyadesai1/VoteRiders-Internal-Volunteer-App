@@ -111,26 +111,20 @@ Can you confirm that you are at least 16 years of age, a current US citizen, and
                 ) : (
                   <>
                     <MessageSquare className="w-5 h-5 text-green-300" />
-                    <h3 className="text-white font-medium">Text Message Script</h3>
+                    <h3 className="text-white font-medium">Text Message Attachment</h3>
                   </>
                 )}
               </div>
 
               {scriptMode === 'text' && (
-                <button
-                  onClick={copyToClipboard}
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-3 py-2 border border-white/30 text-white hover:bg-white/10 rounded-md inline-flex items-center"
                 >
-                  {copied ? (
-                    <>
-                      <CheckCircle className="w-4 h-4 mr-2" /> Copied!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4 mr-2" /> Copy Text
-                    </>
-                  )}
-                </button>
+                  <FileText className="w-4 h-4 mr-2" /> Download File
+                </a>
               )}
             </div>
 
@@ -160,20 +154,26 @@ Can you confirm that you are at least 16 years of age, a current US citizen, and
                 <div>
                   <div className="mb-4">
                     <span className="inline-block px-2 py-1 rounded border bg-green-500/20 text-green-200 border-green-400/30 mb-3 text-xs font-medium">
-                      COPY AND PASTE TO TEXT THE VOTER
+                      DOWNLOAD AND ATTACH TO TEXT MESSAGE
                     </span>
                   </div>
-                  <ul className="list-disc pl-6 space-y-2 text-white font-mono text-sm">
-                    {textScript
-                      .split('\n')
-                      .filter((line) => line.trim().length > 0)
-                      .map((line, idx) => (
-                        <li key={idx}>{line}</li>
-                      ))}
-                  </ul>
+
+                  <p className="text-white text-sm mb-3 text-left">
+                    Download the agreement file below and attach it to your text message to the voter.
+                  </p>
+
+                  <a
+                    href="https://drive.google.com/uc?export=download&id=1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-3 py-2 rounded-md bg-green-600 hover:bg-green-700 text-white text-sm"
+                  >
+                    <FileText className="w-4 h-4 mr-2" /> Download Agreement
+                  </a>
+
                   <div className="mt-6 p-4 bg-green-500/10 border border-green-400/20 rounded">
                     <p className="text-green-200 text-sm text-left">
-                      <strong>Instructions:</strong> Copy this message and text it to the voter, then record their agreement in the checkbox on the ID form or the Internal Notes Section of the Zendesk ticket.
+                      <strong>Instructions:</strong> After downloading, attach the file to your text message, then record the voter's agreement in the checkbox on the ID form or the Internal Notes Section of the Zendesk ticket.
                     </p>
                   </div>
                 </div>
