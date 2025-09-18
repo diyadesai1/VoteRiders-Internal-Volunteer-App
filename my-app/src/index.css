@@ -21,13 +21,13 @@
 body > * { position: relative; z-index: 1; }
 
 /* Existing link/button/typography styles */
-a { font-weight: 500; color: #8EC5FF; text-decoration-line: underline; }
-a:hover { color: #ffffff; }
+/* a { font-weight: 500; color: #8EC5FF; text-decoration-line: underline; }
+a:hover { color: #ffffff; } */
 
 
-
+/* 
 @media (prefers-color-scheme: light) {
   :root { color: #213547; }
   a:hover { color: #747bff; }
   button { background-color: #f9f9f9; }
-}
+} */

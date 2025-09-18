@@ -7,15 +7,23 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+dist-ssr/
+.next/
+.out/
+
+# Vite/local
 *.local
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
@@ -33,12 +41,10 @@ dist-ssr
 coverage/
 .nyc_output/
 
-# Editor and linter caches
+# Caches
 .eslintcache
 .stylelintcache
 .history/
-
-# Tooling caches
 .cache/
 .parcel-cache/
 
@@ -51,3 +57,10 @@ coverage/
 
 # OS-specific
 Thumbs.db
+
+# Storybook
+storybook-static/
+
+# Temp
+tmp/
+temp/
