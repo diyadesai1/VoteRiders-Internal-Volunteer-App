@@ -1,0 +1,80 @@
+import React, { useState, useEffect } from "react";
+import GlobalLayout from "../core/global";
+import { HelpCircle, CreditCard, Check, AlertCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Faq from "../components/faq";
+import FlowButton from "../components/ui/FlowButton";
+import ProgressBar from "../components/ui/ProgressBar";
+import BackButton from "../components/ui/BackButton";
+
+export default function Helpline({ onBack }) {
+  const [step, setStep] = useState(1);
+  const navigate = useNavigate();
+
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [step]);
+
+  const TOTAL_STEPS = 4;
+
+  const goBack = () => {
+    if (step === 1) {
+      if (onBack) return onBack();
+      return navigate(-1);
+    }
+    setStep(step - 1);
+  };
+
+  const topPadding = step === 1 ? 'pt-24 lg:pt-32' : 'pt-16 lg:pt-16';
+
+  return (
+    <GlobalLayout>
+      <main className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${topPadding} py-4`}>
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-white mb-8">HELPLINE FLOW</h1>
+
+          {step === 1 && (
+            <>
+              <p className="text-2xl text-white mb-8 max-w-3xl mx-auto leading-snug">Does the voter have an easy-to-answer question, or do they need<br />ID assistance?</p>
+              <ProgressBar step={step} total={TOTAL_STEPS} />
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+                <FlowButton color="blue" icon={HelpCircle} onClick={() => setStep(2)}>Easy to Answer</FlowButton>
+                <FlowButton color="red" icon={CreditCard} onClick={() => navigate('/dtree')}>ID Assistance</FlowButton>
+              </div>
+              <BackButton onClick={goBack} />
+            </>
+          )}
+
+          {step === 2 && (
+            <>
+              <p className="text-xl text-white mb-8 text-center">Use this FAQ and guide to answer the voter's question.</p>
+              <ProgressBar step={step} total={TOTAL_STEPS} />
+              <Faq />
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+                <FlowButton color="green" icon={Check} onClick={() => setStep(3)}>Answered</FlowButton>
+                <FlowButton color="red" icon={AlertCircle} onClick={() => navigate('/support')}>Need Help</FlowButton>
+              </div>
+              <BackButton onClick={goBack} />
+            </>
+          )}
+
+          {step === 3 && (
+            <>
+              <p className="text-xl text-white mb-8 text-center">Fill out the Zendesk guide for easy-to-answer questions.</p>
+              <ProgressBar step={step} total={TOTAL_STEPS} />
+              <div className="max-w-5xl mx-auto space-y-4 mb-6">
+                <a href="https://scribehow.com/viewer/Helpline_Guide__ScfEFDdKRsWE6KXslygI5A" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">Open Guide in New Tab</a>
+                <div className="rounded-lg overflow-hidden border border-white/20">
+                  <iframe title="Helpline Guide" src="https://scribehow.com/viewer/Helpline_Guide__ScfEFDdKRsWE6KXslygI5A" className="w-full" style={{ height: '75vh' }} allowFullScreen />
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+                <FlowButton color="green" icon={Check} onClick={() => navigate('/finish')}>Filled Out</FlowButton>
+                <FlowButton color="red" icon={AlertCircle} onClick={() => navigate('/support')}>Need Help</FlowButton>
+              </div>
+              <BackButton onClick={goBack} />
+            </>
+          )}
+        </div>
+      </main>
+    </GlobalLayout>
+  );
+}

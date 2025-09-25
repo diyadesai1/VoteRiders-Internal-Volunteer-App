@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
-import GlobalLayout from "./global";
+import GlobalLayout from "../core/global";
 import { ArrowLeft, ArrowRight, IdCard, MapPin, Users, AlertTriangle, CheckCircle, RotateCcw } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 

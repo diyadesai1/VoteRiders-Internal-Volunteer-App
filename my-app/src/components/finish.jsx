@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalLayout from "./global";
+import GlobalLayout from "../core/global";
 import { CheckCircle, RefreshCw, LogOut, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 

@@ -1,8 +1,20 @@
 import React from "react";
 import { Bell, User, ChevronDown, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import { signOut } from 'firebase/auth';
+import { auth } from './firebase';
 
 export default function GlobalLayout({ children, onLogout }) {
+  async function handleSignOut() {
+    if (onLogout) {
+      return onLogout();
+    }
+    try {
+      await signOut(auth);
+    } catch (e) {
+      console.error('Sign out failed', e);
+    }
+  }
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Header */}
@@ -62,10 +74,19 @@ export default function GlobalLayout({ children, onLogout }) {
               {/* Profile Dropdown */}
               <div className="relative group">
                 <button className="flex items-center space-x-2 text-white hover:text-blue-300 transition-colors">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                    <User className="w-4 h-4" />
-                  </div>
-                  <span className="hidden sm:block">Volunteer</span>
+                  {auth.currentUser?.photoURL ? (
+                    <img
+                      src={auth.currentUser.photoURL}
+                      alt={auth.currentUser.displayName || 'Profile'}
+                      className="w-8 h-8 rounded-full object-cover border border-white/20"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                      <User className="w-4 h-4" />
+                    </div>
+                  )}
+                  <span className="hidden sm:block">{auth.currentUser?.displayName?.split(' ')[0] || 'Volunteer'}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
@@ -73,7 +94,7 @@ export default function GlobalLayout({ children, onLogout }) {
                 <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-md rounded-lg shadow-lg border border-white/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="py-1">
                     <button 
-                      onClick={onLogout}
+                      onClick={handleSignOut}
                       className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors"
                     >
                       Sign out

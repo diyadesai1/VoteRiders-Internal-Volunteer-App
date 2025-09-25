@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GlobalLayout from "./global";
+import GlobalLayout from "../core/global";
 import { 
   Headphones,
   ExternalLink,
@@ -20,7 +20,7 @@ import {
   ChevronUp,
   ArrowLeft
 } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Support({ onLogout }) {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import GlobalLayout from "./global";
-import { ArrowLeft, FileText, MessageSquare, Phone, Copy, CheckCircle, Users, Shield } from "lucide-react";
+import GlobalLayout from "../core/global";
+import { ArrowLeft, FileText, MessageSquare, Phone, CheckCircle, Users, Shield } from "lucide-react"; // Removed unused Copy icon
 
 export default function Agree({ onLogout }) {
   const navigate = useNavigate();
@@ -9,35 +9,21 @@ export default function Agree({ onLogout }) {
   const fromFlow = location?.state?.from === 'chat' ? 'chat' : 'helpline';
   const [scriptMode, setScriptMode] = useState('verbal');
   const [isAgreed, setIsAgreed] = useState(false);
-  const [copied, setCopied] = useState(false);
 
-  const verbalScript = `You have asked VoteRiders to help you get a state ID or other documents. In order to do this, we will need to ask you questions and get certain information
-We will use this information to fill out online applications for you to get the documents you need
-We will take reasonable steps to keep this information safe and private
-We will pay for the costs of the documents and provide you with a free ride to the DMV or other offices if needed using an independent ride agency
-We don't promise that you will be able to get your ID. You agree that you will not make a claim against us if we are unsuccessful in those efforts. We also cannot promise that you will be able to vote – but, we'll do our very best on all this!
-We may share anonymous information about your experience to help others understand ID-related challenges. Only general aspects of your situation may be used as examples, and identifying details will never be shared unless VoteRiders first contacts you to obtain your explicit permission.
-Do you understand and agree with what I have just said? Can you confirm that you are at least 16 years of age, a current US citizen, and therefore meet the criteria for receiving free ID help from VoteRiders?`;
+  // Consolidated script text & mode config
+  const verbalScript = `You have asked VoteRiders to help you get a state ID or other documents. In order to do this, we will need to ask you questions and get certain information\nWe will use this information to fill out online applications for you to get the documents you need\nWe will take reasonable steps to keep this information safe and private\nWe will pay for the costs of the documents and provide you with a free ride to the DMV or other offices if needed using an independent ride agency\nWe don't promise that you will be able to get your ID. You agree that you will not make a claim against us if we are unsuccessful in those efforts. We also cannot promise that you will be able to vote – but, we'll do our very best on all this!\nWe may share anonymous information about your experience to help others understand ID-related challenges. Only general aspects of your situation may be used as examples, and identifying details will never be shared unless VoteRiders first contacts you to obtain your explicit permission.\nDo you understand and agree with what I have just said? Can you confirm that you are at least 16 years of age, a current US citizen, and therefore meet the criteria for receiving free ID help from VoteRiders?`;
 
-  const textScript = `You have asked VoteRiders to help you get a state ID or other documents
-In order to do this, we will need to ask you questions and get certain information
-We will use this information to fill out online applications for you to get the documents you need
-We will take reasonable steps to keep this information safe and private
-We will pay for the costs of the documents and provide you with a free ride to the DMV or other offices if needed using an independent ride agency
-We don't promise that you will be able to get your ID. You agree that you will not make a claim against us if we are unsuccessful in those efforts. We also cannot promise that you will be able to vote – but, we'll do our very best on all this!
-We may share anonymous information about your experience to help others understand ID-related challenges. Only general aspects of your situation may be used as examples, and identifying details will never be shared unless VoteRiders first contacts you to obtain your explicit permission.
-Do you understand and agree with what you have just read?
-Can you confirm that you are at least 16 years of age, a current US citizen, and therefore meet the criteria for receiving free ID help from VoteRiders?`;
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(textScript).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
+  const MODES = [
+    { key: 'verbal', label: 'Verbal Script', Icon: Phone, activeColor: 'bg-blue-600 hover:bg-blue-700', inactiveColor: 'bg-white/10 hover:bg-white/20' },
+    { key: 'text', label: 'Text Message', Icon: MessageSquare, activeColor: 'bg-green-600 hover:bg-green-700', inactiveColor: 'bg-white/10 hover:bg-white/20' }
+  ];
 
   const onBack = () => navigate('/dtree', { state: { from: fromFlow } });
   const onComplete = () => navigate('/zendesk');
+
+  const InfoNote = ({ color = 'blue', children }) => (
+    <div className={`mt-6 p-4 bg-${color}-500/10 border border-${color}-400/20 rounded`}>{children}</div>
+  );
 
   return (
     <GlobalLayout onLogout={onLogout}>
@@ -83,18 +69,19 @@ Can you confirm that you are at least 16 years of age, a current US citizen, and
                 <p className="text-blue-200 text-sm">Choose how you'll share the agreement with the voter</p>
               </div>
               <div className="flex gap-2">
-                <button
-                  onClick={() => setScriptMode('verbal')}
-                  className={`${scriptMode === 'verbal' ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white/10 text-white hover:bg-white/20'} px-3 py-2 rounded-md inline-flex items-center`}
-                >
-                  <Phone className="w-4 h-4 mr-2" /> Verbal Script
-                </button>
-                <button
-                  onClick={() => setScriptMode('text')}
-                  className={`${scriptMode === 'text' ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-white/10 text-white hover:bg-white/20'} px-3 py-2 rounded-md inline-flex items-center`}
-                >
-                  <MessageSquare className="w-4 h-4 mr-2" /> Text Message
-                </button>
+                {MODES.map(m => {
+                  const active = scriptMode === m.key;
+                  const Icon = m.Icon;
+                  return (
+                    <button
+                      key={m.key}
+                      onClick={() => setScriptMode(m.key)}
+                      className={`${active ? m.activeColor + ' text-white' : m.inactiveColor + ' text-white'} px-3 py-2 rounded-md inline-flex items-center`}
+                    >
+                      <Icon className="w-4 h-4 mr-2" /> {m.label}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -115,7 +102,6 @@ Can you confirm that you are at least 16 years of age, a current US citizen, and
                   </>
                 )}
               </div>
-
               {scriptMode === 'text' && (
                 <a
                   href="https://drive.google.com/uc?export=download&id=1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh"
@@ -131,37 +117,26 @@ Can you confirm that you are at least 16 years of age, a current US citizen, and
             <div className="bg-white/5 border border-white/10 rounded-lg p-6">
               {scriptMode === 'verbal' ? (
                 <div>
-                  <div className="mb-4">
-                    <span className="inline-block px-2 py-1 rounded border bg-blue-500/20 text-blue-200 border-blue-400/30 mb-3 text-xs font-medium">
-                      READ ALOUD TO VOTER
-                    </span>
-                  </div>
+                  <span className="inline-block px-2 py-1 rounded border bg-blue-500/20 text-blue-200 border-blue-400/30 mb-4 text-xs font-medium">
+                    READ ALOUD TO VOTER
+                  </span>
                   <ul className="list-disc pl-6 space-y-2 text-white font-mono text-sm">
-                    {verbalScript
-                      .split('\n')
-                      .filter((line) => line.trim().length > 0)
-                      .map((line, idx) => (
-                        <li key={idx}>{line}</li>
-                      ))}
+                    {verbalScript.split('\n').map((line, idx) => line.trim() && <li key={idx}>{line}</li>)}
                   </ul>
-                  <div className="mt-6 p-4 bg-blue-500/10 border border-blue-400/20 rounded">
+                  <InfoNote>
                     <p className="text-blue-200 text-sm text-left">
                       <strong>Note:</strong> This script can also be texted to the voter in advance of the call and their agreement recorded in the checkbox on the ID form or the Internal Notes Section of the Zendesk ticket.
                     </p>
-                  </div>
+                  </InfoNote>
                 </div>
               ) : (
                 <div>
-                  <div className="mb-4">
-                    <span className="inline-block px-2 py-1 rounded border bg-green-500/20 text-green-200 border-green-400/30 mb-3 text-xs font-medium">
-                      DOWNLOAD AND ATTACH TO TEXT MESSAGE
-                    </span>
-                  </div>
-
+                  <span className="inline-block px-2 py-1 rounded border bg-green-500/20 text-green-200 border-green-400/30 mb-4 text-xs font-medium">
+                    DOWNLOAD AND ATTACH TO TEXT MESSAGE
+                  </span>
                   <p className="text-white text-sm mb-3 text-left">
                     Download the agreement file below and attach it to your text message to the voter.
                   </p>
-
                   <a
                     href="https://drive.google.com/uc?export=download&id=1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh"
                     target="_blank"
@@ -170,12 +145,11 @@ Can you confirm that you are at least 16 years of age, a current US citizen, and
                   >
                     <FileText className="w-4 h-4 mr-2" /> Download Agreement
                   </a>
-
-                  <div className="mt-6 p-4 bg-green-500/10 border border-green-400/20 rounded">
+                  <InfoNote color="green">
                     <p className="text-green-200 text-sm text-left">
                       <strong>Instructions:</strong> After downloading, attach the file to your text message, then record the voter's agreement in the checkbox on the ID form or the Internal Notes Section of the Zendesk ticket.
                     </p>
-                  </div>
+                  </InfoNote>
                 </div>
               )}
             </div>
