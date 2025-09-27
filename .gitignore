@@ -37,6 +37,19 @@ dist-ssr/
 !.env.example
 !.env.sample
 
+# Firebase / service account credentials (do NOT commit real keys)
+firebase-debug.log
+*.firebase-debug.log*
+*.serviceAccountKey.json
+serviceAccount*.json
+*.serviceAccount.json
+*.secret.json
+*.secrets.json
+server/keys/
+
+# (Optional) Allowlist file may contain PII (emails). Uncomment to ignore it from VCS
+# server/scripts/allowedEmails.txt
+
 # Test coverage
 coverage/
 .nyc_output/

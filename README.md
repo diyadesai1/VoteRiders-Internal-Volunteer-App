@@ -1,29 +1,64 @@
-# What this website does
+# VoteRiders Internal Volunteer Portal
 
-This website turns a basic list of URLs into an organized, browsable catalog. Resources are presented as clean, consistent cards with clear titles and descriptions, making it faster to scan, search, and open what you need on any device.
-
-## Advantages over a plain list of links
-
-- Better scannability: readable titles, descriptions, and icons improve recognition and reduce hunting.
-- Organization: group by category or tags; sort and filter to surface the right items quickly.
-- Discoverability: search helps find items by name, topic, or keywords.
-- Context: show metadata (e.g., source, type) so users know what they’ll get before clicking.
-- Usability: consistent “open in new tab,” copy-link actions, and keyboard navigation improve speed.
-- Accessibility: structured markup and focus management make navigation easier for all users.
-- Performance: snappy client-side navigation and caching make the UI feel fast compared to reloading pages.
-- Safety: normalized external links (e.g., noreferrer/noopener) reduce common security pitfalls.
+## Overview
+Secure internal platform for managing voter assistance requests and standardizing volunteer workflows. Enables volunteers to triage, prioritize, and respond to inquiries efficiently while maintaining data security and access control.
 
 ---
 
-# React + Vite
+## Core Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Authentication & Access Control
+- **Serverless authentication** via Firebase Identity Platform.  
+- **JWT-based sessions** with email allowlist verification stored in Firestore. Unauthorized accounts are blocked automatically.  
+- **Infrastructure:** Firebase BaaS and Firestore for serverless persistence.
 
-Currently, two official plugins are available:
+### Voter Assistance Triage
+- **Decision tree algorithm** computes eligibility and urgency scores for incoming tickets.  
+- Prioritizes cases based on calculated risk and urgency metrics to ensure timely resolution.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### FAQ Knowledge Base
+- Fully **searchable and filterable** FAQ repository.  
 
-## Expanding the ESLint configuration
+### Support & Resources
+- Static support page with training materials, team contacts, and external references.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+- **Frontend:** React  
+- **Backend Services:** Firebase (Serverless)  
+- **Database:** Firestore (NoSQL)  
+- **Authentication:** Firebase Identity Platform (JWT)  
+- **Hosting & Deployment:** Vercel  
+- **Development:** Node.js  
+
+---
+
+## Architecture
+- **Serverless, scalable design:** React frontend communicates directly with Firebase services.  
+- **Business logic & security:** Firestore rules enforce access control; Cloud Functions handle complex operations.  
+- Clear separation of **UI** and **backend** responsibilities.
+
+---
+
+## Deployment
+- Frontend hosted on Vercel with **continuous deployment** from `main`.  
+
+**Production URL:** https://vote-riders-internal-volunteer-app.vercel.app/
+
+---
+
+## Local Setup
+```bash
+git clone [repo-url]
+cd [repo-name]
+npm install
+
+Create .env.local with Firebase config:
+
+REACT_APP_FIREBASE_API_KEY="..."
+REACT_APP_FIREBASE_AUTH_DOMAIN="..."
+REACT_APP_FIREBASE_PROJECT_ID="..."
+
+npm run dev
+App runs at http://localhost:5173/
