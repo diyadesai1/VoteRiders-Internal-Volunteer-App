@@ -50,6 +50,22 @@ export async function isEmailAllowed(email) {
   }
 }
 
+export async function isEmailAdmin(email) {
+  if (!email) return false;
+  try {
+    const ref = doc(db, 'allowedEmails', email.toLowerCase());
+    const snap = await getDoc(ref);
+    if (!snap.exists()) return false;
+    const data = snap.data() || {};
+    if (data.isAdmin === true) return true;
+    if (Array.isArray(data.roles) && data.roles.includes('admin')) return true;
+    return false;
+  } catch (e) {
+    console.error('Firestore admin check failed', e);
+    return false;
+  }
+}
+
 export async function signInWithGoogleAndAllowlist() {
   const result = await signInWithPopup(auth, provider);
   const email = result.user.email?.toLowerCase();

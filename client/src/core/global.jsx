@@ -1,10 +1,12 @@
 import React from "react";
 import { Bell, User, ChevronDown, Menu } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase';
 
 export default function GlobalLayout({ children, onLogout }) {
+  const navigate = useNavigate();
+  
   async function handleSignOut() {
     if (onLogout) {
       return onLogout();
@@ -98,6 +100,12 @@ export default function GlobalLayout({ children, onLogout }) {
                       className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors"
                     >
                       Sign out
+                    </button>
+                    <button 
+                      onClick={() => navigate('/admin')}
+                      className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors"
+                    >
+                      Admin Settings
                     </button>
                   </div>
                 </div>

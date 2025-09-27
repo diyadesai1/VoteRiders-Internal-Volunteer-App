@@ -10,11 +10,13 @@ import Agree from '../components/agree';
 import Zendesk from '../components/zendesk';
 import Chat from '../pages/chat';
 import ChatZendesk from '../components/chat_zendesk';
+import Admin from '../components/admin';
+import AdminDenied from '../components/adminDenied';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 // Added Firebase auth state handling
 import { auth } from './firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { isEmailAllowed } from './firebase';
+import { isEmailAllowed, isEmailAdmin } from './firebase';
 
 function ScrollToTop() {
   const { pathname, search, hash } = useLocation();
@@ -27,6 +29,7 @@ function ScrollToTop() {
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loadingAuth, setLoadingAuth] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (user) => {
@@ -37,8 +40,14 @@ function App() {
           try { await signOut(auth); } catch(_) {}
           setIsLoggedIn(false);
           setLoadingAuth(false);
+          setIsAdmin(false);
           return; // abort so we don't set logged in
         }
+        // Check admin (non-blocking but awaited before finishing auth state)
+        const adminFlag = await isEmailAdmin(user.email);
+        setIsAdmin(adminFlag);
+      } else {
+        setIsAdmin(false);
       }
       setIsLoggedIn(!!user);
       setLoadingAuth(false);
@@ -73,6 +82,7 @@ function App() {
         <Route path="/zendesk" element={<Zendesk onLogout={handleLogout} />} />
         <Route path="/chat" element={<Chat onLogout={handleLogout} />} />
         <Route path="/chat-zendesk" element={<ChatZendesk onLogout={handleLogout} />} />
+        <Route path="/admin" element={isAdmin ? <Admin onLogout={handleLogout} /> : <AdminDenied onLogout={handleLogout} />} />
         <Route path="*" element={<Home onLogout={handleLogout} />} />
       </Routes>
     </Router>
