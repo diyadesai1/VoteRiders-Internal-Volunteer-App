@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import GlobalLayout from "../core/global";
-import { ArrowLeft, ArrowRight, IdCard, MapPin, Users, AlertTriangle, CheckCircle, RotateCcw } from "lucide-react";
+import { ArrowLeft, ArrowRight, IdCard, MapPin, Users, AlertTriangle, CheckCircle, RotateCcw, Clipboard } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function DTree({ onLogout }) {
@@ -12,6 +12,7 @@ export default function DTree({ onLogout }) {
   const [history, setHistory] = useState([]);
   const [isStarted, setIsStarted] = useState(false);
   const [navError, setNavError] = useState("");
+  const [copied, setCopied] = useState(false); // feedback for copy
 
   const focusStateContacts = useMemo(() => ({
     Arizona: { code: "K1", person: "Valerie El Ghouti" },
@@ -178,6 +179,29 @@ export default function DTree({ onLogout }) {
     const node = steps[currentNode];
     return !!(node && node.isSolution);
   }, [steps, currentNode]);
+
+  const buildDecisionHistoryText = () => {
+    const lines = [];
+    // History[0] is state selection; skip it for numbering.
+    history.slice(1).forEach((h, idx) => {
+      const q = h.question.replace(/<[^>]+>/g, '').trim();
+      lines.push(`${idx + 1}. ${q}`); // number and question on same line now
+      lines.push(`Answer: ${h.answer}`);
+    });
+    return lines.join('\n');
+  };
+
+  const copyDecisionHistory = async () => {
+    try {
+      const text = buildDecisionHistoryText();
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch (e) {
+      console.error('Copy failed', e);
+      alert('Copy to clipboard failed. Please manually select and copy the decision history.');
+    }
+  };
 
   const begin = () => {
     if (!selectedState) {
@@ -363,13 +387,16 @@ export default function DTree({ onLogout }) {
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-white mb-4 text-left">Solution Found</h3>
                         <div className="text-white leading-relaxed text-left" dangerouslySetInnerHTML={{ __html: qText }} />
-                        <div className="mt-6 flex flex-wrap gap-3">
+                        <p className="mt-4 text-yellow-200 text-sm italic text-left">
+                          Please copy and paste the decision history into the internal notes in the voter's Zendesk ticket.
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-3 items-center">
                           <button
-                            onClick={() => navigate(isFromChat ? "/chat" : "/helpline")}
-                            className="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700 text-white inline-flex items-center"
+                            onClick={copyDecisionHistory}
+                            className="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700 text-white inline-flex items-center gap-2"
                           >
-                            <ArrowRight className="w-4 h-4 mr-2" />
-                            {isFromChat ? 'Back to Chat' : 'Back to Helpline'}
+                            <Clipboard className="w-4 h-4" />
+                            {copied ? 'Copied!' : 'Copy Decision'}
                           </button>
                           <button
                             onClick={restart}
@@ -378,7 +405,18 @@ export default function DTree({ onLogout }) {
                             <RotateCcw className="w-4 h-4 mr-2" />
                             Start Over
                           </button>
+                          <button
+                            onClick={handleNextClick}
+                            aria-disabled={!isSolutionCurrent}
+                            className={`px-4 py-2 rounded-md border border-white/30 text-white hover:bg-white/10 inline-flex items-center ${!isSolutionCurrent ? 'opacity-50 cursor-not-allowed' : ''}`}
+                          >
+                            Next Step
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </button>
                         </div>
+                        {copied && (
+                          <div className="text-green-300 text-xs mt-2">Decision history copied to clipboard.</div>
+                        )}
                       </div>
                     </div>
                   </div>

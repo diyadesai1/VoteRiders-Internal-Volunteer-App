@@ -9,6 +9,18 @@ export default function Agree({ onLogout }) {
   const fromFlow = location?.state?.from === 'chat' ? 'chat' : 'helpline';
   const [scriptMode, setScriptMode] = useState('verbal');
   const [isAgreed, setIsAgreed] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false); // new state for copy feedback
+
+  const AGREEMENT_LINK = 'https://drive.google.com/file/d/1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh/view';
+  const copyAgreementLink = async () => {
+    try {
+      await navigator.clipboard.writeText(AGREEMENT_LINK);
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    } catch (e) {
+      alert('Copy failed. Please copy manually: ' + AGREEMENT_LINK);
+    }
+  };
 
   // Consolidated script text & mode config
   const verbalScript = `You have asked VoteRiders to help you get a state ID or other documents. In order to do this, we will need to ask you questions and get certain information\nWe will use this information to fill out online applications for you to get the documents you need\nWe will take reasonable steps to keep this information safe and private\nWe will pay for the costs of the documents and provide you with a free ride to the DMV or other offices if needed using an independent ride agency\nWe don't promise that you will be able to get your ID. You agree that you will not make a claim against us if we are unsuccessful in those efforts. We also cannot promise that you will be able to vote – but, we'll do our very best on all this!\nWe may share anonymous information about your experience to help others understand ID-related challenges. Only general aspects of your situation may be used as examples, and identifying details will never be shared unless VoteRiders first contacts you to obtain your explicit permission.\nDo you understand and agree with what I have just said? Can you confirm that you are at least 16 years of age, a current US citizen, and therefore meet the criteria for receiving free ID help from VoteRiders?`;
@@ -43,6 +55,18 @@ export default function Agree({ onLogout }) {
             <p className="text-lg text-blue-100 max-w-2xl mx-auto">
               Essential information that must be shared with voters before providing ID assistance.
             </p>
+            {/* Spanish Version Quick Access */}
+            <div className="mt-4">
+              <a
+                href="https://drive.google.com/file/d/1I8qeyObJLm88SzlcIVR5s1NPbfwPZ8AU/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:from-blue-300 hover:via-blue-400 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 transition"
+              >
+                <span>Click to Open Spanish Version</span>
+                <span className="text-xs uppercase tracking-wide bg-white/20 px-2 py-0.5 rounded">PDF</span>
+              </a>
+            </div>
           </div>
 
           {/* Important Notice */}
@@ -98,19 +122,18 @@ export default function Agree({ onLogout }) {
                 ) : (
                   <>
                     <MessageSquare className="w-5 h-5 text-green-300" />
-                    <h3 className="text-white font-medium">Text Message Attachment</h3>
+                    <h3 className="text-white font-medium">Text Message Link</h3>
                   </>
                 )}
               </div>
               {scriptMode === 'text' && (
-                <a
-                  href="https://drive.google.com/uc?export=download&id=1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={copyAgreementLink}
                   className="px-3 py-2 border border-white/30 text-white hover:bg-white/10 rounded-md inline-flex items-center"
                 >
-                  <FileText className="w-4 h-4 mr-2" /> Download File
-                </a>
+                  <FileText className="w-4 h-4 mr-2" /> {linkCopied ? 'Link Copied!' : 'Copy Link'}
+                </button>
               )}
             </div>
 
@@ -132,22 +155,24 @@ export default function Agree({ onLogout }) {
               ) : (
                 <div>
                   <span className="inline-block px-2 py-1 rounded border bg-green-500/20 text-green-200 border-green-400/30 mb-4 text-xs font-medium">
-                    DOWNLOAD AND ATTACH TO TEXT MESSAGE
+                    COPY AND TEXT TO VOTER
                   </span>
                   <p className="text-white text-sm mb-3 text-left">
-                    Download the agreement file below and attach it to your text message to the voter.
+                    Click the button below to copy the agreement link, then paste it into your text message to the voter. Ask them to review it and confirm their agreement.
                   </p>
-                  <a
-                    href="https://drive.google.com/uc?export=download&id=1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={copyAgreementLink}
                     className="inline-flex items-center px-3 py-2 rounded-md bg-green-600 hover:bg-green-700 text-white text-sm"
                   >
-                    <FileText className="w-4 h-4 mr-2" /> Download Agreement
-                  </a>
+                    <FileText className="w-4 h-4 mr-2" /> {linkCopied ? 'Link Copied!' : 'Copy Agreement Link'}
+                  </button>
+                  <p className="text-green-200 text-xs mt-3 break-all select-all">
+                    {AGREEMENT_LINK}
+                  </p>
                   <InfoNote color="green">
                     <p className="text-green-200 text-sm text-left">
-                      <strong>Instructions:</strong> After downloading, attach the file to your text message, then record the voter's agreement in the checkbox on the ID form or the Internal Notes Section of the Zendesk ticket.
+                      <strong>Instructions:</strong> Paste the link in your text. After the voter confirms, record their agreement in the checkbox on the ID form or the Internal Notes Section of the Zendesk ticket.
                     </p>
                   </InfoNote>
                 </div>

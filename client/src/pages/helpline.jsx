@@ -45,7 +45,32 @@ export default function Helpline({ onBack }) {
 
           {step === 2 && (
             <>
-              <p className="text-xl text-white mb-8 text-center">Use this FAQ and guide to answer the voter's question.</p>
+              {/* Resource links + intro moved from FAQ */}
+              <div className="mb-6 flex flex-col items-center gap-4">
+                <p className="text-center text-blue-100 text-base sm:text-lg max-w-2xl px-4">
+                  Open these resources in a new tab, or use the FAQ search below to help the voter.
+                </p>
+                <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 text-sm">
+                  <a
+                    href="https://example.com/faq-document" /* TODO: replace real FAQ doc URL */
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600/30 hover:bg-blue-600/40 text-blue-50 border border-blue-400/40 shadow-sm hover:shadow transition"
+                  >
+                    <span className="font-semibold">FAQ Doc</span>
+                    <span className="opacity-80 text-[0.65rem] sm:text-xs tracking-wide uppercase">New Tab</span>
+                  </a>
+                  <a
+                    href="https://www.voteriders.org/staterules"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/40 text-indigo-50 border border-indigo-400/40 shadow-sm hover:shadow transition"
+                  >
+                    <span className="font-semibold">State Rules</span>
+                    <span className="opacity-80 text-[0.65rem] sm:text-xs tracking-wide uppercase">New Tab</span>
+                  </a>
+                </div>
+              </div>
               <ProgressBar step={step} total={TOTAL_STEPS} />
               <Faq />
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">

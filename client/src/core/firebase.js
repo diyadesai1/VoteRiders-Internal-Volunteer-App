@@ -38,10 +38,17 @@ export function trackEvent(name, params) {
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 
+// Allow any email whose domain matches this, in addition to explicit allowlist entries.
+const AUTO_ALLOWED_DOMAIN = 'voteriders.org';
+
 export async function isEmailAllowed(email) {
   if (!email) return false;
+  const lower = email.toLowerCase();
+  const domain = lower.split('@')[1];
+  // Auto-allow trusted domain
+  if (domain === AUTO_ALLOWED_DOMAIN) return true;
   try {
-    const ref = doc(db, 'allowedEmails', email.toLowerCase());
+    const ref = doc(db, 'allowedEmails', lower);
     const snap = await getDoc(ref);
     return snap.exists();
   } catch (e) {
@@ -73,7 +80,7 @@ export async function signInWithGoogleAndAllowlist() {
   if (!email || !allowed) {
     try { await result.user.delete(); } catch (_) {}
     await signOut(auth);
-    throw new Error('This email address is not registered for our volunteer program. Please contact your administrator if you believe this is an error.');
+    throw new Error('Access denied. This Google account is not on the approved list or VoteRiders.org domain. Contact your administrator if you believe this is an error.');
   }
   trackEvent('login', { method: 'google', email_domain: email.split('@')[1] });
   return result.user;

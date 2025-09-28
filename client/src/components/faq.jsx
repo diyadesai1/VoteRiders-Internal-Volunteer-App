@@ -102,7 +102,7 @@ export default function Faq() {
   );
 
   return (
-    <>
+    <> 
       {/* Search and Filter Bar */}
       <div className="relative z-50 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 mb-6">
         <div className="flex flex-col lg:flex-row items-stretch gap-4">
@@ -189,7 +189,6 @@ export default function Faq() {
           </div>
         </div>
       </div>
-
       {/* FAQ List */}
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 mb-8 max-h-96 overflow-y-auto overflow-x-visible">
         <div className="p-6 text-left">
