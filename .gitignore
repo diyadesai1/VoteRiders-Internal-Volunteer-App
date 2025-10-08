@@ -48,7 +48,7 @@ serviceAccount*.json
 server/keys/
 
 # (Optional) Allowlist file may contain PII (emails). Uncomment to ignore it from VCS
-# server/scripts/allowedEmails.txt
+server/scripts/allowedEmails.txt
 
 # Test coverage
 coverage/
