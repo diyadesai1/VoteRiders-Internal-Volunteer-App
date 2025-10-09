@@ -66,7 +66,7 @@ export default function Support({ onLogout }) {
                   </div>
                   <div>
                     <p className="text-white font-medium text-left">Volunteer Intranet</p>
-                    <p className="text-blue-200 text-sm mb-2">Access detailed guides, documents, and training materials</p>
+                    <p className="text-blue-200 text-sm mb-2">Guides, documents, training materials, and <a href="https://sites.google.com/voteriders.org/volunteerintranet/vid-assist-team-leads?authuser=3" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white underline">team contact information</a>. </p>
                     <a
                       href="https://sites.google.com/voteriders.org/volunteerintranet/home"
                       target="_blank"
@@ -245,8 +245,8 @@ export default function Support({ onLogout }) {
               <div className="bg-white/10 rounded-lg p-4">
                 <h5 className="text-white font-medium text-sm mb-3 text-left">Before Responding:</h5>
                 <div className="flex items-start space-x-3">
-                  <Search className="w-4 h-4 text-green-300 mt-1 flex-shrink-0" />
-                  <p className="text-green-200 text-sm">If the voter clearly states their question, look up the information before responding.</p>
+                  <Search className="w-4 h-4 text-green-300 mt-1 flex-shrink-0 " />
+                  <p className="text-green-200 text-sm text-left">If the voter clearly states their question, look up the information using helpline & chat core resources before responding.</p>
                 </div>
               </div>
 
@@ -280,19 +280,25 @@ export default function Support({ onLogout }) {
                     <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">1</span>
                     </div>
-                    <p className="text-green-200 text-sm">VoteRiders team members</p>
+                    <a href="https://www.voteriders.org/staterules/" target="_blank" rel="noopener noreferrer" className="text-green-200 text-sm hover:underline">VoteRiders State Rules Page</a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">2</span>
                     </div>
-                    <p className="text-green-200 text-sm">County election office</p>
+                    <a href="https://docs.google.com/document/d/1wKgPdH1n680K9bv9X9ZD4X48Ln7VnOxC-gFLeucqFb4/edit?tab=t.0" target="_blank" rel="noopener noreferrer" className="text-green-200 text-sm hover:underline">Helpline &amp; Chat FAQs</a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">3</span>
                     </div>
-                    <p className="text-green-200 text-sm">State election office</p>
+                    <a href="https://voteriders.turbovote.org/" target="_blank" rel="noopener noreferrer" className="text-green-200 text-sm hover:underline">VoteRiders Turbo Vote</a>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">4</span>
+                    </div>
+                    <a href="https://voteriders.slack.com/archives/C01BGKCJ399" target="_blank" rel="noopener noreferrer" className="text-green-200 text-sm hover:underline">Team Slack Support</a>
                   </div>
                 </div>
               </div>

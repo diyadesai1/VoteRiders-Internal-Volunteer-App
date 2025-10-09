@@ -126,7 +126,7 @@ export default function DTree({ onLogout }) {
       },
       BC_URGENT: {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/view/vrvolunteer/vid-assist-team-leads?authuser=1' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-blue-300 hover:text-white underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/vid-assist-team-leads?authuser=3' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-blue-300 hover:text-white underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "urgent",
       },
@@ -144,19 +144,19 @@ export default function DTree({ onLogout }) {
       },
       J: {
         question:
-          "Solved: VR can help, mark as urgent. Use <a href='https://sites.google.com/view/vrvolunteer/vid-assist-team-leads?authuser=1' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack.",
+          "Solved: VR can help, mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack.",
         isSolution: true,
         type: "urgent",
       },
       NVJ: {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/view/vrvolunteer/vid-assist-team-leads?authuser=1' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack.",
+          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack.",
         isSolution: true,
         type: "urgent",
       },
       L: {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/view/vrvolunteer/vid-assist-team-leads?authuser=1' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-blue-300 hover:text-white underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-blue-300 hover:text-white underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "urgent",
       },
@@ -166,7 +166,7 @@ export default function DTree({ onLogout }) {
     Object.values(focusStateContacts).forEach(({ code }) => {
       s[code] = {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/view/vrvolunteer/vid-assist-team-leads?authuser=1' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-blue-300 hover:text-white underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-blue-300 hover:text-white underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-blue-300 hover:text-white underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "urgent",
       };
@@ -340,9 +340,6 @@ export default function DTree({ onLogout }) {
               {selectedState && (
                 <div className="space-y-4">
                   <div className="flex items-center justify-center gap-3 text-sm">
-                    <span className={`px-2 py-1 rounded-md border ${noVoterIDStates.includes(selectedState) ? 'bg-green-500/20 text-green-200 border-green-400/30' : 'bg-yellow-500/20 text-yellow-200 border-yellow-400/30'}`}>
-                      {noVoterIDStates.includes(selectedState) ? 'No Voter ID Required' : 'Voter ID Required'}
-                    </span>
                     {focusStateContacts[selectedState] && (
                       <span className="px-2 py-1 rounded-md border bg-blue-500/20 text-blue-200 border-blue-400/30">Focus State</span>
                     )}

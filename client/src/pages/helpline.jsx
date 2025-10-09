@@ -33,10 +33,10 @@ export default function Helpline({ onBack }) {
 
           {step === 1 && (
             <>
-              <p className="text-2xl text-white mb-8 max-w-3xl mx-auto leading-snug">Does the voter have an easy-to-answer question, or do they need<br />ID assistance?</p>
+              <p className="text-2xl text-white mb-8 max-w-3xl mx-auto leading-snug">Does the voter have an research-based question, or do they need<br />ID assistance?</p>
               <ProgressBar step={step} total={TOTAL_STEPS} />
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-                <FlowButton color="blue" icon={HelpCircle} onClick={() => setStep(2)}>Easy to Answer</FlowButton>
+                <FlowButton color="blue" icon={HelpCircle} onClick={() => setStep(2)}>Research-Based Question</FlowButton>
                 <FlowButton color="red" icon={CreditCard} onClick={() => navigate('/dtree')}>ID Assistance</FlowButton>
               </div>
               <BackButton onClick={goBack} />
@@ -83,7 +83,7 @@ export default function Helpline({ onBack }) {
 
           {step === 3 && (
             <>
-              <p className="text-xl text-white mb-8 text-center">Fill out the Zendesk guide for easy-to-answer questions.</p>
+              <p className="text-xl text-white mb-8 text-center">Fill out the Zendesk guide for research-based questions.</p>
               <ProgressBar step={step} total={TOTAL_STEPS} />
               <div className="max-w-5xl mx-auto space-y-4 mb-6">
                 <a href="https://scribehow.com/viewer/Helpline_Guide__ScfEFDdKRsWE6KXslygI5A" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">Open Guide in New Tab</a>

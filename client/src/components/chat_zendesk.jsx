@@ -9,7 +9,7 @@ export default function ChatZendesk({ onLogout }) {
     <GlobalLayout onLogout={onLogout}>
       <GuidePage
         title="ZENDESK/SCRIBE GUIDE"
-        description="Fill out the Zendesk guide for easy-to-answer questions."
+        description="Fill out the Zendesk guide for research-based questions."
         step={3}
         total={4}
         guideUrl="https://scribehow.com/viewer/Chat_Guide__yupGjKBkRW6IoZ_egps3gQ"
