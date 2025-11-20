@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import GlobalLayout from "../core/global";
-import { ArrowLeft, FileText, MessageSquare, Phone, CheckCircle, Users, Shield } from "lucide-react"; // Removed unused Copy icon
+import { ArrowLeft, FileText, MessageSquare, Phone, Shield } from "lucide-react"; // Removed CheckCircle, Users
 
 export default function Agree({ onLogout }) {
   const navigate = useNavigate();
   const location = useLocation();
   const fromFlow = location?.state?.from === 'chat' ? 'chat' : 'helpline';
   const [scriptMode, setScriptMode] = useState('verbal');
-  const [isAgreed, setIsAgreed] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false); // new state for copy feedback
 
   const AGREEMENT_LINK = 'https://drive.google.com/file/d/1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh/view';
@@ -22,7 +21,6 @@ export default function Agree({ onLogout }) {
     }
   };
 
-  // Consolidated script text & mode config
   const verbalScript = `You have asked VoteRiders to help you get a state ID or other documents. In order to do this, we will need to ask you questions and get certain information\nWe will use this information to fill out online applications for you to get the documents you need\nWe will take reasonable steps to keep this information safe and private\nWe will pay for the costs of the documents and provide you with a free ride to the DMV or other offices if needed using an independent ride agency\nWe don't promise that you will be able to get your ID. You agree that you will not make a claim against us if we are unsuccessful in those efforts. We also cannot promise that you will be able to vote – but, we'll do our very best on all this!\nWe may share anonymous information about your experience to help others understand ID-related challenges. Only general aspects of your situation may be used as examples, and identifying details will never be shared unless VoteRiders first contacts you to obtain your explicit permission.\nDo you understand and agree with what I have just said? Can you confirm that you are at least 16 years of age, a current US citizen, and therefore meet the criteria for receiving free ID help from VoteRiders?`;
 
   const MODES = [
@@ -180,34 +178,6 @@ export default function Agree({ onLogout }) {
             </div>
           </div>
 
-          {/* Agreement Confirmation */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 mb-8">
-            <h3 className="text-white font-medium mb-4">Volunteer Confirmation</h3>
-            <div className="space-y-4">
-              <label className="flex items-start space-x-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={isAgreed}
-                  onChange={(e) => setIsAgreed(e.target.checked)}
-                  className="mt-1 h-4 w-4 text-blue-600 bg-white/10 border-white/20 rounded focus:ring-blue-500 focus:ring-2"
-                />
-                <span className="text-blue-200 text-sm leading-relaxed text-left">
-                  I have shared the Voter Agreement script with the voter and received their understanding and agreement. I have confirmed they are at least 16 years old and a US citizen, meeting the criteria for VoteRiders ID assistance.
-                </span>
-              </label>
-
-              {isAgreed && (
-                <div className="p-4 bg-green-500/10 border border-green-400/20 rounded-lg">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-green-200 font-medium">Agreement Confirmed</span>
-                  </div>
-                  <p className="text-green-300 text-sm mt-1 text-left">Remember to record this confirmation in your Zendesk ticket notes.</p>
-                </div>
-              )}
-            </div>
-          </div>
-
           {/* Navigation */}
           <div className="flex justify-between items-center">
             <button
@@ -224,24 +194,10 @@ export default function Agree({ onLogout }) {
 
             <button
               onClick={onComplete}
-              disabled={!isAgreed}
-              className={`${
-                isAgreed
-                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800'
-                  : 'bg-gray-600 cursor-not-allowed'
-              } text-white transition-all duration-300 px-6 py-2 rounded-md inline-flex items-center`}
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transition-all duration-300 px-6 py-2 rounded-md inline-flex items-center"
             >
-              {isAgreed ? (
-                <>
-                  <ArrowLeft className="w-4 h-4 mr-2 rotate-180" />
-                  Continue
-                </>
-              ) : (
-                <>
-                  <Users className="w-4 h-4 mr-2" />
-                  Confirm Agreement First
-                </>
-              )}
+              <ArrowLeft className="w-4 h-4 mr-2 rotate-180" />
+              Continue
             </button>
           </div>
         </div>

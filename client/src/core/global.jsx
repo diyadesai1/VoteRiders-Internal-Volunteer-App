@@ -45,6 +45,7 @@ export default function GlobalLayout({ children, onLogout }) {
               >
                 HOME
               </Link>
+            
               <Link 
                 to="/helpline"
                 className="text-white font-bold no-underline hover:bg-blue-500/50 hover:rounded-md px-3 py-1 transition-colors"
@@ -63,6 +64,20 @@ export default function GlobalLayout({ children, onLogout }) {
               >
                 SUPPORT
               </Link>
+
+              <Link 
+                to="/dtree"
+                className="text-white font-bold no-underline hover:bg-blue-500/50 hover:rounded-md px-3 py-1 transition-colors"
+              >
+                DECISION TREE
+              </Link>
+              <Link 
+                to="/agree"
+                className="text-white font-bold no-underline hover:bg-blue-500/50 hover:rounded-md px-3 py-1 transition-colors"
+              >
+                AGREEMENT
+              </Link>
+              
             </nav>
 
             {/* Right side - Notifications and Profile */}

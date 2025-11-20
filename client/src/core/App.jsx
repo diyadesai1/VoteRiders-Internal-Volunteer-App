@@ -12,6 +12,7 @@ import Chat from '../pages/chat';
 import ChatZendesk from '../components/chat_zendesk';
 import Admin from '../components/admin';
 import AdminDenied from '../components/adminDenied';
+import Faq from '../components/faq';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 // Added Firebase auth state handling
 import { auth } from './firebase';
@@ -82,6 +83,7 @@ function App() {
         <Route path="/zendesk" element={<Zendesk onLogout={handleLogout} />} />
         <Route path="/chat" element={<Chat onLogout={handleLogout} />} />
         <Route path="/chat-zendesk" element={<ChatZendesk onLogout={handleLogout} />} />
+        <Route path="/faq" element={<Faq onLogout={handleLogout} />} />
         <Route path="/admin" element={isAdmin ? <Admin onLogout={handleLogout} /> : <AdminDenied onLogout={handleLogout} />} />
         <Route path="*" element={<Home onLogout={handleLogout} />} />
       </Routes>

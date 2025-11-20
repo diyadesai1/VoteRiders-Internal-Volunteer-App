@@ -33,10 +33,10 @@ export default function Helpline({ onBack }) {
 
           {step === 1 && (
             <>
-              <p className="text-2xl text-white mb-8 max-w-3xl mx-auto leading-snug">Does the voter have an research-based question, or do they need<br />ID assistance?</p>
+              <p className="text-2xl text-white mb-8 max-w-3xl mx-auto leading-snug">Does the voter have an resource-based question, or do they need<br />ID assistance?</p>
               <ProgressBar step={step} total={TOTAL_STEPS} />
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-                <FlowButton color="blue" icon={HelpCircle} onClick={() => setStep(2)}>Research-Based Question</FlowButton>
+                <FlowButton color="blue" icon={HelpCircle} onClick={() => setStep(2)}>Resource-Based Question</FlowButton>
                 <FlowButton color="red" icon={CreditCard} onClick={() => navigate('/dtree')}>ID Assistance</FlowButton>
               </div>
               <BackButton onClick={goBack} />
