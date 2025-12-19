@@ -54,7 +54,7 @@ export default function Chat() {
                 </p>
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 text-sm">
                   <a
-                    href="https://example.com/faq-document" /* TODO: replace real FAQ doc URL */
+                    href="https://docs.google.com/document/d/1wKgPdH1n680K9bv9X9ZD4X48Ln7VnOxC-gFLeucqFb4/edit?usp=sharing" /* TODO: replace real FAQ doc URL */
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600/30 hover:bg-blue-600/40 text-blue-50 border border-blue-400/40 shadow-sm hover:shadow transition"
