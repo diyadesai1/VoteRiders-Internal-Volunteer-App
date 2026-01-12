@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+
+  /* Surface + text */
+  --background: #f5f6f8; /* warm light gray like the dashboard canvas */
+  --foreground: #ffffff; /* generic foreground for surfaces/cards if needed */
+  --text: #111827; /* primary body text color, darker for contrast */
+  --card: #ffffff;
+  --card-foreground: #e1e2e0;
+  --popover: #ffffff;
+  --popover-foreground: #a3b5d6;
+
+  /* Brand + accents (inspired by the dashboard chips/cards) */
+  --primary-foreground: #f9fafb;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #4f5a73;
+  --muted: #e5e7eb;
+  --muted-foreground: #6b7280; /* medium gray for labels and secondary text */
+  --accent: #e5e7eb;
+  --accent-foreground: #7f838d;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  /* Borders, inputs, focus rings */
+  --border: #e1e2e0; /* universal light gray outline color */
+  --input: transparent;
+  --input-background: #ffffff;
+  --switch-background: #d1d5db;
+  --ring: rgba(59, 130, 246, 0.35);
+
+  /* Typography weights */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Dashboard metric colors */
+  --chart-1: #22c55e; /* green metric pill */
+  --chart-2: #a855f7; /* purple weekly streak */
+  --chart-3: #fbbf24; /* warm yellow for hours volunteered */
+  --chart-4: #0ea5e9;
+  --chart-5: #f97316;
+
+  /* Radii tuned for soft cards like in the mock */
+  --radius: 0.5rem;
+
+  /* Sidebar theme (dark left rail) */
+  --sidebar: #111827;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #f9fafb;
+  --sidebar-primary-foreground: #111827;
+  --sidebar-accent: #020617;
+  --sidebar-accent-foreground: #f9fafb;
+  --sidebar-border: #020617;
+  --sidebar-ring: rgba(248, 250, 252, 0.22);
+
+  /* VoteRiders brand-inspired colors (for charts/accents) */
+  --vr-blue: #0d3373;
+  --vr-green: #1ac166;
+  --vr-purple: #780aef;
+  --vr-yellow-orange: #ffb803;
+  --vr-pink: #ffe37a;
+  --vr-denim: #0d3373;
+}
+
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--text); /* main app text uses dedicated text color */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Config', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+      'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Ensure any generic `border` uses the universal light gray by default */
+  *, *::before, *::after {
+    border-color: var(--color-border);
+  }
+
+  /* Reusable light gray script box background used in helpline flows */
+  .bg-script-box {
+    background-color: #e5e5e5;
+  }
+}
