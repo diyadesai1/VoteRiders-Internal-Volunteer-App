@@ -385,7 +385,7 @@ export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProp
         {/* Resource Links */}
         <div className="mb-6 flex flex-wrap gap-3">
           <a
-            href="https://docs.google.com/document/d/YOUR_FAQ_DOC_ID"
+            href="https://docs.google.com/document/d/1wKgPdH1n680K9bv9X9ZD4X48Ln7VnOxC-gFLeucqFb4/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-3 bg-card border-2 border-border rounded-xl hover:bg-muted hover:border-primary/40 transition-all group"
@@ -401,7 +401,7 @@ export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProp
           </a>
           
           <a
-            href="https://docs.google.com/document/d/YOUR_STATE_RULES_ID"
+            href="https://www.voteriders.org/staterules/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-3 bg-card border-2 border-border rounded-xl hover:bg-muted hover:border-primary/40 transition-all group"

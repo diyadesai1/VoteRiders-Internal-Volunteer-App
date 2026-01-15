@@ -919,10 +919,10 @@ More questions to come.  Thanks!`;
             isOpen={showInfoCollection}
             onClose={() => setShowInfoCollection(false)}
           />
-          {/* Fixed Continue Button - only shown for ID assistance outcomes in flow context */}
+          {/* Fixed Continue Button - shown for any outcome in helpline/chat flow context */}
           {(() => {
             const node = steps[currentNode];
-            const showContinueButton = node?.isSolution && (node.type === 'urgent' || node.type === 'regular') && flowType && onContinue;
+            const showContinueButton = !!(node?.isSolution && flowType && onContinue);
             if (!showContinueButton) return null;
             
             return (
@@ -948,9 +948,10 @@ More questions to come.  Thanks!`;
             isOpen={showInfoCollection}
             onClose={() => setShowInfoCollection(false)}
           />
-          {/* Fixed Continue Button - always shown in flow context when not embedded */}
+          {/* Fixed Continue Button - shown for any outcome in helpline/chat flow context */}
           {(() => {
-            const showContinueButton = !!(flowType && onContinue);
+            const node = steps[currentNode];
+            const showContinueButton = !!(node?.isSolution && flowType && onContinue);
             if (!showContinueButton) return null;
             return (
               <button

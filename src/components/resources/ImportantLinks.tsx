@@ -15,21 +15,21 @@ const links: LinkItem[] = [
     color: '#4A90E2'
   },
   {
-    title: 'Volunteer resources',
-    url: '#',
-    description: 'Access training materials and volunteer guides',
+    title: 'Volunteer Intranet',
+    url: 'https://sites.google.com/voteriders.org/volunteerintranet/home',
+    description: 'Guides, documents, training materials, and team contact information.',
     color: '#1AC166'
   },
   {
-    title: 'State voter ID requirements',
-    url: '#',
+    title: 'State Voter ID Requirements',
+    url: 'https://www.voteriders.org/staterules/',
     description: 'Up-to-date information on voter ID laws by state',
     color: '#8B5CF6'
   },
   {
-    title: 'Support documentation',
-    url: '#',
-    description: 'Help documentation for volunteers',
+    title: 'Team Contact Information',
+    url: 'https://sites.google.com/voteriders.org/volunteerintranet/vid-assist-team-leads',
+    description: 'Voter ID Assistance Staff Leads, Organizers, and State Directors',
     color: '#F59E0B'
   },
 ];

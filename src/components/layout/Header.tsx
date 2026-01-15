@@ -1,6 +1,18 @@
 import { ChevronDown } from 'lucide-react';
 
-type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step2-research';
+// extend Page type to cover all app pages
+type Page =
+  | 'dashboard'
+  | 'helpline-step1'
+  | 'helpline-step2-id'
+  | 'helpline-step2-research'
+  | 'chat-step1'
+  | 'resources-decision-tree'
+  | 'resources-state-rules'
+  | 'resources-support'
+  | 'resources-research-based'
+  | 'resources-voter-agreement'
+  | 'important-links';
 
 interface HeaderProps {
   currentPage: Page;
@@ -8,9 +20,37 @@ interface HeaderProps {
 
 export function Header({ currentPage }: HeaderProps) {
   const getPageTitle = () => {
-    if (currentPage.startsWith('helpline')) {
-      return 'Helpline';
+    // Chat flow pages
+    if (currentPage.startsWith('chat')) {
+      return 'Chat Flow';
     }
+
+    // Helpline flow pages
+    if (currentPage.startsWith('helpline')) {
+      return 'Helpline Flow';
+    }
+
+    // Resources pages
+    switch (currentPage) {
+      case 'resources-decision-tree':
+        return 'Decision Tree';
+      case 'resources-research-based':
+        return 'Resource Based';
+      case 'resources-support':
+        return 'Support';
+      case 'resources-voter-agreement':
+        return 'Voter Agreement';
+      // state rules is external, but if ever routed here you can customize later
+      default:
+        break;
+    }
+
+    // Important Links page
+    if (currentPage === 'important-links') {
+      return 'Important Links';
+    }
+
+    // Fallback for dashboard and any other case
     return 'Dashboard';
   };
 

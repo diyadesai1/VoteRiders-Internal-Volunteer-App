@@ -115,7 +115,7 @@ export function ResearchZendeskGuide({ onBack, onComplete, flowType = 'helpline'
           <h3 className="mb-4">Additional Resources</h3>
           <div className="space-y-3">
             <a
-              href="https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat"
+              href="https://sites.google.com/voteriders.org/volunteerintranet/home"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-muted transition-colors group"

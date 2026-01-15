@@ -17,9 +17,14 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
 
   const resourceItems = [
     { icon: Network, label: 'Decision Tree', page: 'resources-decision-tree' as Page },
-    { icon: BookOpen, label: 'State Rules', page: 'resources-state-rules' as Page },
+    {
+      icon: BookOpen,
+      label: 'State Rules',
+      page: 'resources-state-rules' as Page,
+      href: 'https://www.voteriders.org/staterules/'
+    },
     { icon: LifeBuoy, label: 'Support', page: 'resources-support' as Page },
-    { icon: HelpCircle, label: 'Research-Based', page: 'resources-research-based' as Page },
+    { icon: HelpCircle, label: 'Resource-Based', page: 'resources-research-based' as Page },
     { icon: FileText, label: 'Voter Agreement', page: 'resources-voter-agreement' as Page },
   ];
 
@@ -90,10 +95,17 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
             {resourceItems.map((item) => {
               const Icon = item.icon;
               const active = currentPage === item.page;
+              const handleClick = () => {
+                if ('href' in item && item.href) {
+                  window.open(item.href, '_blank', 'noopener,noreferrer');
+                } else {
+                  onNavigate(item.page);
+                }
+              };
               return (
                 <button
                   key={item.label}
-                  onClick={() => onNavigate(item.page)}
+                  onClick={handleClick}
                   className="flex w-full items-center gap-3 px-4 py-2.5 rounded-lg transition-colors"
                   style={{
                     backgroundColor: active ? '#F7F9F7' : 'transparent',

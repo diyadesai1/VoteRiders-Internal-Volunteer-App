@@ -127,7 +127,7 @@ export function IDZendeskGuide({ onBack, onComplete, flowType = 'helpline' }: ID
             </button>
 
             <a
-              href="https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat"
+              href="https://sites.google.com/voteriders.org/volunteerintranet/home"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-muted transition-colors group"
