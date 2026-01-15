@@ -1,15 +1,14 @@
 import { ArrowLeft, FileQuestion, CreditCard, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 
-interface Step1Props {
+interface OpeningScriptProps {
   onBack: () => void;
-  // Update prop comment to reflect new behavior
-  // onSelectResearch now routes to Step3VoterAgreement
   onSelectResearch: () => void;
   onSelectID: () => void;
+  flowType?: 'helpline' | 'chat';
 }
 
-export function Step1({ onBack, onSelectResearch, onSelectID }: Step1Props) {
+export function OpeningScript({ onBack, onSelectResearch, onSelectID, flowType = 'helpline' }: OpeningScriptProps) {
   const [selectedType, setSelectedType] = useState<'research' | 'id' | null>(null);
   const [copied, setCopied] = useState(false);
 
@@ -48,10 +47,8 @@ export function Step1({ onBack, onSelectResearch, onSelectID }: Step1Props) {
 
   const handleContinue = () => {
     if (selectedType === 'research') {
-      // For research-based questions, navigate to the ResearchBased flow (App routes this to ResearchBased.tsx)
       onSelectResearch();
     } else if (selectedType === 'id') {
-      // ID assistance still goes to Step 2 ID Assistance
       onSelectID();
     }
   };
@@ -70,7 +67,7 @@ export function Step1({ onBack, onSelectResearch, onSelectID }: Step1Props) {
 
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="mb-2">Helpline: Step 1</h1>
+          <h1 className="mb-2">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 1</h1>
           <p className="text-muted-foreground">
             Start with the opening script to gather voter information
           </p>
@@ -103,7 +100,7 @@ export function Step1({ onBack, onSelectResearch, onSelectID }: Step1Props) {
             </button>
           </div>
           
-          <div className=" bg-script-box rounded-lg p-4 border border-border">
+          <div className="bg-muted rounded-lg p-4 border border-border">
             <p className="leading-relaxed">{script}</p>
           </div>
         </div>
@@ -164,7 +161,6 @@ export function Step1({ onBack, onSelectResearch, onSelectID }: Step1Props) {
               className="px-6 py-3 rounded-lg text-white transition-all hover:shadow-lg"
               style={{ backgroundColor: selectedType === 'research' ? '#8B5CF6' : '#1AC166' }}
             >
-              {/* Label still says Step 2 for UI consistency; routing now depends on type */}
               Continue to Step 2
             </button>
           </div>

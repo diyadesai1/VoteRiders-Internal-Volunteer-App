@@ -1,49 +1,47 @@
 @import "tailwindcss";
 
 :root {
+  --font-size: 16px;
 
-  /* Surface + text */
-  --background: #f5f6f8; /* warm light gray like the dashboard canvas */
-  --foreground: #ffffff; /* generic foreground for surfaces/cards if needed */
-  --text: #111827; /* primary body text color, darker for contrast */
+  /* Canvas + text (match dashboard mock) */
+  --background: #f5f6f8;
+  --foreground: #111827;
   --card: #ffffff;
-  --card-foreground: #e1e2e0;
+  --card-foreground: #111827;
   --popover: #ffffff;
-  --popover-foreground: #a3b5d6;
+  --popover-foreground: #4b5563;
 
-  /* Brand + accents (inspired by the dashboard chips/cards) */
+  /* Core tokens */
+  --primary: #111827;
   --primary-foreground: #f9fafb;
   --secondary: #f3f4f6;
-  --secondary-foreground: #4f5a73;
+  --secondary-foreground: #111827;
   --muted: #e5e7eb;
-  --muted-foreground: #6b7280; /* medium gray for labels and secondary text */
+  --muted-foreground: #6b7280;
   --accent: #e5e7eb;
-  --accent-foreground: #7f838d;
+  --accent-foreground: #111827;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  /* Borders, inputs, focus rings */
-  --border: #e1e2e0; /* universal light gray outline color */
+  /* Universal border color you liked */
+  --border: #e1e2e0;
+  --ring: rgba(59, 130, 246, 0.35);
+
   --input: transparent;
   --input-background: #ffffff;
   --switch-background: #d1d5db;
-  --ring: rgba(59, 130, 246, 0.35);
 
-  /* Typography weights */
   --font-weight-medium: 500;
   --font-weight-normal: 400;
 
-  /* Dashboard metric colors */
-  --chart-1: #22c55e; /* green metric pill */
-  --chart-2: #a855f7; /* purple weekly streak */
-  --chart-3: #fbbf24; /* warm yellow for hours volunteered */
+  --chart-1: #22c55e;
+  --chart-2: #a855f7;
+  --chart-3: #fbbf24;
   --chart-4: #0ea5e9;
   --chart-5: #f97316;
 
-  /* Radii tuned for soft cards like in the mock */
-  --radius: 0.5rem;
+  --radius: 0.625rem;
 
-  /* Sidebar theme (dark left rail) */
   --sidebar: #111827;
   --sidebar-foreground: #f9fafb;
   --sidebar-primary: #f9fafb;
@@ -52,19 +50,48 @@
   --sidebar-accent-foreground: #f9fafb;
   --sidebar-border: #020617;
   --sidebar-ring: rgba(248, 250, 252, 0.22);
-
-  /* VoteRiders brand-inspired colors (for charts/accents) */
-  --vr-blue: #0d3373;
-  --vr-green: #1ac166;
-  --vr-purple: #780aef;
-  --vr-yellow-orange: #ffb803;
-  --vr-pink: #ffe37a;
-  --vr-denim: #0d3373;
 }
 
-:root {
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--text); /* main app text uses dedicated text color */
+  --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -104,6 +131,9 @@
 }
 
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
 
   html,
   body,
@@ -112,22 +142,67 @@
   }
 
   body {
-    margin: 0;
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Config', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
-      'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+    font-family: 'Config', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
 
-  /* Ensure any generic `border` uses the universal light gray by default */
-  *, *::before, *::after {
-    border-color: var(--color-border);
-  }
-
-  /* Reusable light gray script box background used in helpline flows */
+  /* Global reusable script box bg */
   .bg-script-box {
     background-color: #e5e5e5;
   }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
 }

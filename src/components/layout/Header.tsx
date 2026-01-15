@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react';
-import type { Page } from './App';
+
+type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step2-research';
 
 interface HeaderProps {
   currentPage: Page;
@@ -14,7 +15,7 @@ export function Header({ currentPage }: HeaderProps) {
   };
 
   return (
-    <header className="bg-background px-8 py-4 border-b border-border">
+    <header className="border-b border-border bg-background px-8 py-4">
       <div className="flex items-center justify-between">
         <div>
           <h1>{getPageTitle()}</h1>

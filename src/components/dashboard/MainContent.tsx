@@ -34,12 +34,17 @@ const tips = [
   "Near Election Day: We get many messages and may not be able to return all of them, especially if the issue is outside our core voter ID work.",
 ];
 
+// Get random tip of the day (in a real app, this would be based on date or user preferences)
+const getTipOfTheDay = () => tips[Math.floor(Math.random() * tips.length)];
+
 interface MainContentProps {
   onNavigateToHelpline: () => void;
+  onNavigateToChat: () => void;
 }
 
-export function MainContent({ onNavigateToHelpline }: MainContentProps) {
-  const volunteerName = "DIYA FIX LATERRR"; // In a real app, this would come from auth/user context
+export function MainContent({ onNavigateToHelpline, onNavigateToChat }: MainContentProps) {
+  const volunteerName = "USER"; // In a real app, this would come from auth/user context
+  const tipOfTheDay = getTipOfTheDay();
   
   const [currentTipIndex, setCurrentTipIndex] = useState(0);
 
@@ -67,7 +72,7 @@ export function MainContent({ onNavigateToHelpline }: MainContentProps) {
         <div className="mb-12">
           <h1 className="mb-2">Welcome Back, {volunteerName}!</h1>
           <p className="text-muted-foreground mb-8">
-            Here's your impact for 2025 so far!
+            Here's your impact for 2026 so far!
           </p>
           
           {/* Stats Grid */}
@@ -77,7 +82,7 @@ export function MainContent({ onNavigateToHelpline }: MainContentProps) {
               return (
                 <div 
                   key={stat.label}
-                  className="border border-border border-solid bg-card rounded-xl p-5 hover:shadow-md transition-shadow"
+                  className="border border-border bg-card rounded-xl p-5 hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <div 
@@ -96,7 +101,7 @@ export function MainContent({ onNavigateToHelpline }: MainContentProps) {
         </div>
 
         {/* Tip of the Day */}
-        <div className="mb-8 border border-border border-solid bg-card rounded-xl p-6">
+        <div className="mb-8 border border-border bg-card rounded-xl p-6">
           <div className="flex gap-4 items-start mb-3">
             <div 
               className="rounded-lg p-3 flex-shrink-0"
@@ -157,8 +162,8 @@ export function MainContent({ onNavigateToHelpline }: MainContentProps) {
             return (
               <button
                 key={card.title}
-                className="group border border-border border-solid bg-card p-8 rounded-2xl hover:shadow-lg transition-all text-left"
-                onClick={card.title === 'Helpline' ? onNavigateToHelpline : undefined}
+                className="group border border-border bg-card p-8 rounded-2xl hover:shadow-lg transition-all text-left"
+                onClick={card.title === 'Helpline' ? onNavigateToHelpline : card.title === 'Chat' ? onNavigateToChat : undefined}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div

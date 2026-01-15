@@ -1,15 +1,6 @@
-import { Home, Link, Phone, MessageSquare, Network, BookOpen, LifeBuoy, HelpCircle } from 'lucide-react';
+import { Home, Link, Phone, MessageSquare, Network, BookOpen, LifeBuoy, HelpCircle, FileText } from 'lucide-react';
 
-type Page =
-  | 'dashboard'
-  | 'helpline-step1'
-  | 'helpline-step2-id'
-  | 'helpline-step2-research'
-  | 'helpline-step3'
-  | 'helpline-step4-zendesk'
-  | 'helpline-thank-you'
-  | 'resources-important-links'
-  | 'resources-research-based';
+type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step2-research' | 'chat-step1' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'important-links';
 
 interface SidebarProps {
   currentPage: Page;
@@ -19,16 +10,17 @@ interface SidebarProps {
 export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
   const mainMenuItems = [
     { icon: Home, label: 'Dashboard', page: 'dashboard' as Page, enabled: true },
-    { icon: Link, label: 'Important Links', page: 'resources-important-links' as Page, enabled: true },
+    { icon: Link, label: 'Important Links', page: 'important-links' as Page, enabled: true },
     { icon: Phone, label: 'Helpline Flow', page: 'helpline-step1' as Page, enabled: true },
-    { icon: MessageSquare, label: 'Chat Flow', page: 'dashboard' as Page, enabled: false },
+    { icon: MessageSquare, label: 'Chat Flow', page: 'chat-step1' as Page, enabled: true },
   ];
 
   const resourceItems = [
-    { icon: Network, label: 'Decision Tree' },
-    { icon: BookOpen, label: 'State Rules', href: 'https://www.voteriders.org/staterules' },
-    { icon: LifeBuoy, label: 'Support' },
-    { icon: HelpCircle, label: 'FAQs', page: 'resources-research-based' as Page }
+    { icon: Network, label: 'Decision Tree', page: 'resources-decision-tree' as Page },
+    { icon: BookOpen, label: 'State Rules', page: 'resources-state-rules' as Page },
+    { icon: LifeBuoy, label: 'Support', page: 'resources-support' as Page },
+    { icon: HelpCircle, label: 'Research-Based', page: 'resources-research-based' as Page },
+    { icon: FileText, label: 'Voter Agreement', page: 'resources-voter-agreement' as Page },
   ];
 
   const isActive = (item: typeof mainMenuItems[0]) => {
@@ -41,8 +33,11 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
     if (item.page === 'helpline-step1') {
       return currentPage.startsWith('helpline');
     }
-    if (item.page === 'resources-important-links') {
-      return currentPage === 'resources-important-links';
+    if (item.page === 'chat-step1') {
+      return currentPage.startsWith('chat');
+    }
+    if (item.page === 'important-links') {
+      return currentPage === 'important-links';
     }
     return false;
   };
@@ -68,7 +63,7 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
                   className="flex w-full items-center gap-3 px-4 py-2.5 rounded-lg transition-colors"
                   style={{
                     backgroundColor: active ? '#F7F9F7' : 'transparent',
-                    color: active ? '#191919' : '#F7F9F7',
+                    color: active ? '#191919' : '#F7F9F7'
                   }}
                   onMouseEnter={(e) => {
                     if (!active) {
@@ -94,24 +89,25 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
           <div className="space-y-1">
             {resourceItems.map((item) => {
               const Icon = item.icon;
-              const handleClick = () => {
-                if (item.href) {
-                  window.open(item.href, '_blank', 'noopener,noreferrer');
-                } else if (item.page) {
-                  onNavigate(item.page);
-                }
-              };
+              const active = currentPage === item.page;
               return (
                 <button
                   key={item.label}
+                  onClick={() => onNavigate(item.page)}
                   className="flex w-full items-center gap-3 px-4 py-2.5 rounded-lg transition-colors"
-                  style={{ color: '#F7F9F7' }}
-                  onClick={handleClick}
+                  style={{
+                    backgroundColor: active ? '#F7F9F7' : 'transparent',
+                    color: active ? '#191919' : '#F7F9F7'
+                  }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#2a2a2a';
+                    if (!active) {
+                      e.currentTarget.style.backgroundColor = '#2a2a2a';
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
+                    if (!active) {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    }
                   }}
                 >
                   <Icon className="size-4" />

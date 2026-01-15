@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Link as LinkIcon } from "lucide-react";
 
 interface LinkItem {
   title: string;
@@ -12,74 +12,86 @@ const links: LinkItem[] = [
     title: 'VoteRiders main website',
     url: 'https://voteriders.org',
     description: 'Official VoteRiders website with resources and information',
-    color: '#0362FF'
+    color: '#4A90E2'
   },
   {
     title: 'Volunteer resources',
     url: '#',
     description: 'Access training materials and volunteer guides',
-    color: '#1AC156'
+    color: '#1AC166'
   },
   {
     title: 'State voter ID requirements',
     url: '#',
     description: 'Up-to-date information on voter ID laws by state',
-    color: '#7755FF'
+    color: '#8B5CF6'
   },
   {
     title: 'Support documentation',
     url: '#',
     description: 'Help documentation for volunteers',
-    color: '#FFB503'
+    color: '#F59E0B'
   },
 ];
 
 export function ImportantLinks() {
   return (
-    <main className="flex-1 overflow-auto" style={{ backgroundColor: '#F7F9F7' }}>
-      <div className="max-w-5xl mx-auto p-8">
-        <div className="space-y-6">
+    <main className="flex-1 overflow-auto">
+      <div className="max-w-4xl mx-auto px-8 py-12">
+        {/* Header */}
+        <div className="mb-8 flex items-center gap-4">
+          <div
+            className="rounded-2xl p-4"
+            style={{ backgroundColor: '#4A90E2' }}
+          >
+            <LinkIcon className="size-6 text-white" />
+          </div>
           <div>
-            <h1 className="heading-primary mb-2" style={{ color: '#191919', fontSize: '2.5rem' }}>
-              Important links
-            </h1>
-            <p style={{ color: '#6B6B6B', fontSize: '1.125rem' }}>Quick access to essential resources</p>
+            <h1 className="mb-1">Important Links</h1>
+            <p className="text-muted-foreground">
+              Quick access to essential resources and documentation
+            </p>
           </div>
+        </div>
 
-          <div className="space-y-4 mt-8">
-            {links.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-3xl p-6 transition-all duration-300 glass-card hover:shadow-xl group"
-                style={{
-                  border: '2px solid rgba(25, 25, 25, 0.1)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = link.color;
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(25, 25, 25, 0.1)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="heading-secondary mb-1" style={{ color: '#191919', fontSize: '1.25rem' }}>
-                      {link.title}
-                    </h3>
-                    <p style={{ color: '#6B6B6B' }}>{link.description}</p>
-                  </div>
-                  <div className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: link.color }}>
-                    <ExternalLink className="w-5 h-5" style={{ color: '#F7F9F7' }} />
-                  </div>
+        {/* Links Grid */}
+        <div className="grid gap-4">
+          {links.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border border-border bg-card rounded-xl p-6 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-opacity-0"
+              style={{
+                '--hover-border': link.color,
+              } as React.CSSProperties}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = link.color;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '';
+              }}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <h3 className="mb-2 flex items-center gap-2">
+                    {link.title}
+                    <ExternalLink className="size-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {link.description}
+                  </p>
                 </div>
-              </a>
-            ))}
-          </div>
+                <div 
+                  className="size-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
+                  style={{ backgroundColor: link.color }}
+                >
+                  <LinkIcon className="size-5 text-white" />
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </main>

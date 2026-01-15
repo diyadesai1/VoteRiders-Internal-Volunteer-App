@@ -1,11 +1,20 @@
 import { ArrowLeft, FileCheck, ExternalLink } from 'lucide-react';
 
-interface Step4ZendeskProps {
+interface ResearchZendeskGuideProps {
   onBack: () => void;
   onComplete: () => void;
+  flowType?: 'helpline' | 'chat';
 }
 
-export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
+export function ResearchZendeskGuide({ onBack, onComplete, flowType = 'helpline' }: ResearchZendeskGuideProps) {
+  const guideUrl = flowType === 'chat' 
+    ? 'https://scribehow.com/viewer/Chat_Guide__yupGjKBkRW6IoZ_egps3gQ'
+    : 'https://scribehow.com/viewer/Helpline_Guide__ScfEFDdKRsWE6KXslygI5A';
+  
+  const embedUrl = flowType === 'chat'
+    ? 'https://scribehow.com/embed/Chat_Guide__yupGjKBkRW6IoZ_egps3gQ'
+    : 'https://scribehow.com/embed/Helpline_Guide__ScfEFDdKRsWE6KXslygI5A';
+
   return (
     <main className="flex-1 overflow-auto">
       <div className="max-w-4xl mx-auto px-8 py-12">
@@ -15,21 +24,21 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6 group"
         >
           <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Step 3</span>
+          <span>Back to Research-Based Questions</span>
         </button>
 
         {/* Page Header */}
         <div className="mb-8 flex items-center gap-4">
           <div
             className="rounded-2xl p-4"
-            style={{ backgroundColor: '#F59E0B' }}
+            style={{ backgroundColor: '#8B5CF6' }}
           >
             <FileCheck className="size-6 text-white" />
           </div>
           <div>
-            <h1 className="mb-1">Helpline: Step 4 - Zendesk Guide</h1>
+            <h1 className="mb-1">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 3 - Zendesk Guide</h1>
             <p className="text-muted-foreground">
-              Fill out the Zendesk ticket for ID assist questions
+              Fill out the Zendesk guide for resource-based questions
             </p>
           </div>
         </div>
@@ -39,7 +48,7 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
           <div className="flex items-center justify-between mb-3">
             <span className="text-sm text-muted-foreground">Final Step</span>
             <span className="text-sm" style={{ color: '#1AC166' }}>
-              Step 4 of 4
+              Step 3 of 3
             </span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
@@ -54,13 +63,13 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
         </div>
 
         {/* Important Notice */}
-        <div className="border border-border rounded-xl p-6 mb-8" style={{ backgroundColor: '#F59E0B' + '10', borderColor: '#F59E0B' + '30' }}>
+        <div className="border border-border rounded-xl p-6 mb-8" style={{ backgroundColor: '#8B5CF6' + '10', borderColor: '#8B5CF6' + '30' }}>
           <div className="flex items-start gap-3">
-            <FileCheck className="size-6 flex-shrink-0 mt-1" style={{ color: '#F59E0B' }} />
+            <FileCheck className="size-6 flex-shrink-0 mt-1" style={{ color: '#8B5CF6' }} />
             <div>
               <h3 className="mb-2">Complete the Zendesk Ticket</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Follow the interactive Scribe guide below to properly document the voter's case in Zendesk. This ensures that the ID Assist team has all the information they need to help the voter.
+                Follow the interactive Scribe guide below to properly document the voter's research-based question in Zendesk. This ensures that your response is properly recorded and the voter receives appropriate follow-up.
               </p>
             </div>
           </div>
@@ -79,7 +88,7 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
               </div>
             </div>
             <a
-              href="https://scribehow.com/viewer/Helpline_to_ID_Tutorial_Updated_42525__HR9I79GfTj-4cB6bwsozgA"
+              href={guideUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-muted-foreground/10"
@@ -92,8 +101,8 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
           
           <div className="relative w-full" style={{ paddingBottom: '75%', minHeight: '600px' }}>
             <iframe
-              src="https://scribehow.com/embed/Helpline_to_ID_Tutorial_Updated_42525__HR9I79GfTj-4cB6bwsozgA"
-              title="Zendesk Guide for ID Assist"
+              src={embedUrl}
+              title="Zendesk Guide for Resource-Based Questions"
               className="absolute top-0 left-0 w-full h-full"
               style={{ border: 'none' }}
               allowFullScreen
@@ -116,8 +125,8 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
                   <FileCheck className="size-5" style={{ color: '#4A90E2' }} />
                 </div>
                 <div>
-                  <p className="text-sm">VID Assist Team Leads</p>
-                  <p className="text-xs text-muted-foreground">Who to tag in Slack for different states</p>
+                  <p className="text-sm">Helpline and Chat Support</p>
+                  <p className="text-xs text-muted-foreground">Access volunteer intranet resources</p>
                 </div>
               </div>
               <ExternalLink className="size-4 text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -150,7 +159,7 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
             className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-lg hover:bg-muted transition-all group"
           >
             <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Step 3
+            Back to Research-Based Questions
           </button>
 
           <button
@@ -158,7 +167,7 @@ export function Step4Zendesk({ onBack, onComplete }: Step4ZendeskProps) {
             className="px-6 py-3 rounded-lg text-white transition-all hover:shadow-lg hover:scale-[1.02]"
             style={{ backgroundColor: '#1AC166' }}
           >
-            Complete Ticket
+            Complete & Return to Dashboard
           </button>
         </div>
       </div>
