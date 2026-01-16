@@ -367,7 +367,7 @@ export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProp
               <FileQuestion className="size-6 text-white" />
             </div>
             <div>
-              <h1 className="mb-1">Helpline: Step 2 - Research-Based Questions</h1>
+              <h1 className="mb-1">Helpline: Step 2 - Resource-Based Questions</h1>
               <p className="text-muted-foreground">
                 Quick answers to common voter ID and registration questions
               </p>
@@ -375,7 +375,7 @@ export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProp
           </div>
         ) : (
           <div className="mb-8">
-            <h1 className="mb-2">Resources: Research-Based Questions</h1>
+            <h1 className="mb-2">Resources: Resource-Based Questions</h1>
             <p className="text-muted-foreground">
               Quick answers to common voter ID and registration questions
             </p>

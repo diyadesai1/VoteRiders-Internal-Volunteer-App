@@ -126,7 +126,7 @@ export function OpeningScript({ onBack, onSelectResearch, onSelectID, flowType =
             >
               <FileQuestion className="size-6 text-white" />
             </div>
-            <h3 className="mb-2">Research-Based Question</h3>
+            <h3 className="mb-2">Resource-Based Question</h3>
             <p className="text-muted-foreground">
               Voter needs information about registration, voting locations, or general voting process
             </p>

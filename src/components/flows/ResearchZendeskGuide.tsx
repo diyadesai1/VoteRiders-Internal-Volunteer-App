@@ -24,7 +24,7 @@ export function ResearchZendeskGuide({ onBack, onComplete, flowType = 'helpline'
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6 group"
         >
           <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Research-Based Questions</span>
+          <span>Back to Resource-Based Questions</span>
         </button>
 
         {/* Page Header */}
@@ -69,7 +69,7 @@ export function ResearchZendeskGuide({ onBack, onComplete, flowType = 'helpline'
             <div>
               <h3 className="mb-2">Complete the Zendesk Ticket</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Follow the interactive Scribe guide below to properly document the voter's research-based question in Zendesk. This ensures that your response is properly recorded and the voter receives appropriate follow-up.
+                Follow the interactive Scribe guide below to properly document the voter's resource-based question in Zendesk. This ensures that your response is properly recorded and the voter receives appropriate follow-up.
               </p>
             </div>
           </div>
@@ -159,7 +159,7 @@ export function ResearchZendeskGuide({ onBack, onComplete, flowType = 'helpline'
             className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-lg hover:bg-muted transition-all group"
           >
             <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Research-Based Questions
+            Back to Resource-Based Questions
           </button>
 
           <button

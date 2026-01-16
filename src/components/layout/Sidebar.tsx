@@ -1,6 +1,5 @@
 import { Home, Link, Phone, MessageSquare, Network, BookOpen, LifeBuoy, HelpCircle, FileText } from 'lucide-react';
-
-type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step2-research' | 'chat-step1' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'important-links';
+import type { Page } from '../../App';
 
 interface SidebarProps {
   currentPage: Page;
@@ -132,8 +131,8 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
       </nav>
 
       <div className="p-6 border-t" style={{ borderColor: '#2a2a2a' }}>
-        <p className="text-xs" style={{ color: 'rgba(247, 249, 247, 0.5)' }}>Version 1.0.0</p>
-        <p className="text-xs mt-1" style={{ color: 'rgba(247, 249, 247, 0.5)' }}>VoteRiders © 2025</p>
+        <p className="text-xs" style={{ color: 'rgba(247, 249, 247, 0.5)' }}>Version 2.0.0</p>
+        <p className="text-xs mt-1" style={{ color: 'rgba(247, 249, 247, 0.5)' }}>VoteRiders © 2026</p>
       </div>
     </aside>
   );

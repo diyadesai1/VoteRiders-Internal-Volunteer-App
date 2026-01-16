@@ -12,12 +12,41 @@ import { ImportantLinks } from './components/resources/ImportantLinks';
 import { DecisionTree } from './components/resources/DecisionTree';
 import { VoterAgreement } from './components/resources/VoterAgreement';
 import { Support } from './components/resources/Support';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { SplashScreen } from './components/auth/SplashScreen';
+import { LoginScreen } from './components/auth/LoginScreen';
+import { auth } from './firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import type { User } from 'firebase/auth';
 
-type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step2-research' | 'helpline-step3' | 'helpline-step3-research-zendesk' | 'helpline-step4' | 'chat-step1' | 'chat-step2-id' | 'chat-step2-research' | 'chat-step3' | 'chat-step3-research-zendesk' | 'chat-step4' | 'thank-you' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'important-links';
+// Re-export Page type for use in other components to avoid duplicate definitions
+export type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step2-research' | 'helpline-step3' | 'helpline-step3-research-zendesk' | 'helpline-step4' | 'chat-step1' | 'chat-step2-id' | 'chat-step2-research' | 'chat-step3' | 'chat-step3-research-zendesk' | 'chat-step4' | 'thank-you' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'important-links';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard');
+  const [showSplash, setShowSplash] = useState(true);
+  const [user, setUser] = useState<User | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+      setAuthLoading(false);
+    });
+    return () => unsub();
+  }, []);
+
+  if (showSplash) {
+    return <SplashScreen onComplete={() => setShowSplash(false)} />;
+  }
+
+  if (authLoading) {
+    return null; // or a loading spinner if you prefer
+  }
+
+  if (!user) {
+    return <LoginScreen onLoginSuccess={() => { /* onAuthStateChanged will update user */ }} />;
+  }
 
   return (
     <div className="h-screen flex">

@@ -1,18 +1,7 @@
 import { ChevronDown } from 'lucide-react';
-
-// extend Page type to cover all app pages
-type Page =
-  | 'dashboard'
-  | 'helpline-step1'
-  | 'helpline-step2-id'
-  | 'helpline-step2-research'
-  | 'chat-step1'
-  | 'resources-decision-tree'
-  | 'resources-state-rules'
-  | 'resources-support'
-  | 'resources-research-based'
-  | 'resources-voter-agreement'
-  | 'important-links';
+import React from 'react';
+import type { Page } from '../../App';
+import { auth } from '../../firebase';
 
 interface HeaderProps {
   currentPage: Page;
@@ -41,18 +30,32 @@ export function Header({ currentPage }: HeaderProps) {
       case 'resources-voter-agreement':
         return 'Voter Agreement';
       // state rules is external, but if ever routed here you can customize later
+      case 'important-links':
+        return 'Important Links';
       default:
-        break;
+        return 'Dashboard';
     }
-
-    // Important Links page
-    if (currentPage === 'important-links') {
-      return 'Important Links';
-    }
-
-    // Fallback for dashboard and any other case
-    return 'Dashboard';
   };
+
+  const user = auth.currentUser;
+  const display = user?.displayName || user?.email || 'Volunteer User';
+  const [first, last = ''] = display.split(' ');
+  const fullName = `${first}${last ? ' ' + last : ''}`;
+
+  const initials = (() => {
+    if (user?.displayName) {
+      const parts = user.displayName.trim().split(' ');
+      return parts.slice(0, 2).map(p => p[0]?.toUpperCase()).join('') || 'VU';
+    }
+    if (user?.email) {
+      const local = user.email.split('@')[0] || '';
+      if (!local) return 'VU';
+      return local[0].toUpperCase();
+    }
+    return 'VU';
+  })();
+
+  const photoURL = user?.photoURL;
 
   return (
     <header className="border-b border-border bg-background px-8 py-4">
@@ -62,12 +65,23 @@ export function Header({ currentPage }: HeaderProps) {
         </div>
         <div className="flex items-center gap-3">
           <div className="text-right">
-            <p>Volunteer User</p>
+            <p>{fullName}</p>
             <p className="text-muted-foreground text-sm">Volunteer</p>
           </div>
-          <div className="bg-[#0D80FF] text-white rounded-full size-10 flex items-center justify-center">
-            <span>VU</span>
-          </div>
+          {photoURL ? (
+  <div className="w-10 h-10 rounded-full overflow-hidden border border-border flex items-center justify-center">
+    <img
+      src={photoURL}
+      alt={fullName || 'Volunteer profile'}
+      className="w-full h-full object-cover"
+      referrerPolicy="no-referrer"
+    />
+  </div>
+) : (
+  <div className="w-10 h-10 bg-[#0D80FF] text-white rounded-full flex items-center justify-center">
+    <span>{initials}</span>
+  </div>
+)}
           <ChevronDown className="size-4 text-muted-foreground" />
         </div>
       </div>

@@ -1,5 +1,7 @@
 import { Phone, MessageSquare, ArrowRight, HelpCircle, Users, Award, TrendingUp, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { auth } from '../../firebase';
+import type { User } from 'firebase/auth';
 
 const actionCards = [
   {
@@ -43,10 +45,21 @@ interface MainContentProps {
 }
 
 export function MainContent({ onNavigateToHelpline, onNavigateToChat }: MainContentProps) {
-  const volunteerName = "USER"; // In a real app, this would come from auth/user context
-  const tipOfTheDay = getTipOfTheDay();
-  
+  const [volunteerName, setVolunteerName] = useState<string>('');
   const [currentTipIndex, setCurrentTipIndex] = useState(0);
+
+  useEffect(() => {
+    const user: User | null = auth.currentUser;
+    if (user) {
+      const raw = user.displayName || user.email || 'Volunteer';
+      // Take just the first word before a space or '@'
+      const firstSegment = raw.split(' ')[0];
+      const firstName = firstSegment.split('@')[0];
+      setVolunteerName(firstName);
+    } else {
+      setVolunteerName('Volunteer');
+    }
+  }, []);
 
   // Auto-rotate tips every 8 seconds
   useEffect(() => {
