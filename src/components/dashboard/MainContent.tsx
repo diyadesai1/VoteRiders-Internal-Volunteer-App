@@ -84,33 +84,7 @@ export function MainContent({ onNavigateToHelpline, onNavigateToChat }: MainCont
         {/* Welcome Section with Stats */}
         <div className="mb-12">
           <h1 className="mb-2">Welcome Back, {volunteerName}!</h1>
-          <p className="text-muted-foreground mb-8">
-            Here's your impact for 2026 so far!
-          </p>
           
-          {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-4 mb-8">
-            {stats.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <div 
-                  key={stat.label}
-                  className="border border-border bg-card rounded-xl p-5 hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div 
-                      className="rounded-lg p-2"
-                      style={{ backgroundColor: stat.color + '15' }}
-                    >
-                      <Icon className="size-4" style={{ color: stat.color }} />
-                    </div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wide">{stat.label}</p>
-                  </div>
-                  <p className="text-2xl">{stat.value}</p>
-                </div>
-              );
-            })}
-          </div>
         </div>
 
         {/* Tip of the Day */}
