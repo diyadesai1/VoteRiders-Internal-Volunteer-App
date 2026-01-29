@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Search, ChevronDown, RotateCcw, X, Maximize2, Minimize2, ListFilter, Info, FileText, IdCard, ClipboardList, ShieldCheck, ArrowLeft, FileQuestion, ExternalLink } from "lucide-react";
+import type { ReactNode } from "react";
+import { Search, RotateCcw, X, Maximize2, ListFilter, Info, FileText, IdCard, ClipboardList, ShieldCheck, ArrowLeft, FileQuestion, ExternalLink } from "lucide-react";
 
 interface ResearchBasedProps {
   context?: 'helpline' | 'resources';
@@ -245,20 +246,18 @@ const faqs = [
 ];
 
 const categoryOptions = [
-  { value: "all", label: "All Topics", Icon: ListFilter },
-  { value: "General Information", label: "General Information", Icon: Info },
-  { value: "Registration", label: "Registration", Icon: FileText },
-  { value: "ID & Documents", label: "ID & Documents", Icon: IdCard },
-  { value: "Voting Methods and Process", label: "Voting Methods and Process", Icon: ClipboardList },
-  { value: "Rights & Special Circumstances", label: "Rights & Special Circumstances", Icon: ShieldCheck },
-];
+  { value: "all", label: "All Topics", Icon: ListFilter as React.ComponentType<any> },
+  { value: "General Information", label: "General Information", Icon: Info as React.ComponentType<any> },
+  { value: "Registration", label: "Registration", Icon: FileText as React.ComponentType<any> },
+  { value: "ID & Documents", label: "ID & Documents", Icon: IdCard as React.ComponentType<any> },
+  { value: "Voting Methods and Process", label: "Voting Methods and Process", Icon: ClipboardList as React.ComponentType<any> },
+  { value: "Rights & Special Circumstances", label: "Rights & Special Circumstances", Icon: ShieldCheck as React.ComponentType<any> },
+] as const;
 
 export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedQuestion, setSelectedQuestion] = useState<number | null>(null);
-
-  const selectedOption = categoryOptions.find(o => o.value === selectedCategory);
 
   const filteredFAQs = faqs
     .filter(faq => 
@@ -274,9 +273,9 @@ export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProp
     }
   }, [selectedQuestion, filteredFAQs.length]);
 
-  const linkifyText = (text: string) => {
+  const linkifyText = (text: string): ReactNode[] => {
     const combined = /([^\s()]+)\s*\(((?:https?:\/\/|www\.)?[^\s()]*\.(?:com|gov|org)[^\s()]*)\)|((?:https?:\/\/|www\.)?[^\s()]*\.(?:com|gov|org)[^\s()]*)/gi;
-    const nodes: (string | JSX.Element)[] = [];
+    const nodes: ReactNode[] = [];
     let lastIndex = 0;
     let match;
 
@@ -496,7 +495,7 @@ export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProp
         {filteredFAQs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredFAQs.map((item, index) => {
-              const categoryOption = categoryOptions.find(c => c.category === item.category);
+              const categoryOption = categoryOptions.find(c => c.value === item.category);
               const CategoryIcon = categoryOption?.Icon || Info;
               
               return (

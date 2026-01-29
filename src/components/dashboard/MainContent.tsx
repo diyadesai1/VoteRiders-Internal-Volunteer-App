@@ -1,4 +1,4 @@
-import { Phone, MessageSquare, ArrowRight, HelpCircle, Users, Award, TrendingUp, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Phone, MessageSquare, ArrowRight, HelpCircle, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { auth } from '../../firebase';
 import type { User } from 'firebase/auth';
@@ -18,12 +18,6 @@ const actionCards = [
   },
 ];
 
-const stats = [
-  { label: 'Voters Helped', value: '127', icon: Users, color: '#1AC166' },
-  { label: 'Weekly Streak', value: '4', icon: TrendingUp, color: '#8B5CF6' },
-  { label: 'Hours Volunteered', value: '23', icon: Award, color: '#F59E0B' },
-];
-
 const tips = [
   "Phone & Text Messages: Standard hours are 8am - 8pm. Return calls/texts during the voter's local time zone.",
   "Respond immediately if: Voter contacted within last 30 minutes, close to registration deadline, close to absentee/vote by mail deadline, or on Election Day.",
@@ -35,9 +29,6 @@ const tips = [
   "When You Don't Know: It's OK to say 'Let me confirm this information for you' - but don't make promises about timing.",
   "Near Election Day: We get many messages and may not be able to return all of them, especially if the issue is outside our core voter ID work.",
 ];
-
-// Get random tip of the day (in a real app, this would be based on date or user preferences)
-const getTipOfTheDay = () => tips[Math.floor(Math.random() * tips.length)];
 
 interface MainContentProps {
   onNavigateToHelpline: () => void;
@@ -83,7 +74,7 @@ export function MainContent({ onNavigateToHelpline, onNavigateToChat }: MainCont
       <div className="max-w-5xl mx-auto px-8 py-12">
         {/* Welcome Section with Stats */}
         <div className="mb-12">
-          <h1 className="mb-2">Welcome Back, {volunteerName}!</h1>
+          <h1 className="mb-2 text-3xl md:text-3xl">Welcome Back, {volunteerName}!</h1>
           
         </div>
 

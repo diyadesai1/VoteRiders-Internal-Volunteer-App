@@ -14,7 +14,6 @@ import {
   Shield,
   Search,
   Zap,
-  CheckCircle,
   ChevronDown,
   ChevronUp,
   ArrowLeft

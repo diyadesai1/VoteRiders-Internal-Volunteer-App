@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import React from 'react';
+// import React from 'react';
 import type { Page } from '../../App';
 import { auth } from '../../firebase';
 
