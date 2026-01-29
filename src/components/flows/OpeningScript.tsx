@@ -12,7 +12,7 @@ export function OpeningScript({ onBack, onSelectResearch, onSelectID, flowType =
   const [selectedType, setSelectedType] = useState<'research' | 'id' | null>(null);
   const [copied, setCopied] = useState(false);
 
-  const script = "Hi [VOTER NAME (if available)]! I'm [YOUR NAME/ALIAS], a VoteRiders volunteer, and I'm happy to help! To make sure I can assist you quickly, could you please share your full name, the state you live in, your ZIP code, and your question? That'll help me figure out the best next steps for you.";
+  const script = "Hi [VOTER NAME (if available)]! I'm [YOUR NAME/ALIAS], a VoteRiders volunteer, and I'm happy to help! To make sure I can assist you quickly, could you please share your full name, the state you live in, your ZIP code, and your question? That'll help me figure out the best next steps for you.\n\nMay I ask how you heard about VoteRiders?" ;
 
   const handleCopyScript = async () => {
     // Try modern clipboard API first
@@ -101,7 +101,14 @@ export function OpeningScript({ onBack, onSelectResearch, onSelectID, flowType =
           </div>
           
           <div className="bg-muted rounded-lg p-4 border border-border">
-            <p className="leading-relaxed">{script}</p>
+            <p className="leading-relaxed">
+              {script.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < script.split('\n').length - 1 && <br />}
+                </span>
+              ))}
+            </p>
           </div>
         </div>
 
