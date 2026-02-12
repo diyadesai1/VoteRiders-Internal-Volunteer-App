@@ -7,6 +7,22 @@ interface SidebarProps {
 }
 
 export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
+  const navigateWithUrl = (page: Page) => {
+    // keep internal state navigation
+    onNavigate(page);
+    // map page to URL path
+    let path = '/home';
+    if (page === 'important-links') path = '/important-links';
+    else if (page === 'helpline-step1') path = '/helpline';
+    else if (page === 'chat-step1') path = '/chat';
+    else if (page === 'resources-support') path = '/support';
+    else if (page === 'resources-decision-tree') path = '/resources-decision-tree';
+    else if (page === 'resources-research-based') path = '/resource-based';
+    else if (page === 'resources-voter-agreement') path = '/resources-voter-agreement';
+
+    window.history.pushState({}, '', path);
+  };
+
   const mainMenuItems = [
     { icon: Home, label: 'Dashboard', page: 'dashboard' as Page, enabled: true },
     { icon: Link, label: 'Important Links', page: 'important-links' as Page, enabled: true },
@@ -63,7 +79,7 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
               return (
                 <button
                   key={item.label}
-                  onClick={() => onNavigate(item.page)}
+                  onClick={() => navigateWithUrl(item.page)}
                   className="flex w-full items-center gap-3 px-4 py-2.5 rounded-lg transition-colors"
                   style={{
                     backgroundColor: active ? '#F7F9F7' : 'transparent',
@@ -98,7 +114,7 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
                 if ('href' in item && item.href) {
                   window.open(item.href, '_blank', 'noopener,noreferrer');
                 } else {
-                  onNavigate(item.page);
+                  navigateWithUrl(item.page);
                 }
               };
               return (
