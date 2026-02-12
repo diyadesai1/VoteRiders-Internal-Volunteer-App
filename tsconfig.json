@@ -4,7 +4,8 @@
     { "path": "./tsconfig.node.json" }
   ],
   "exclude": [
-    "node_modules/vite/dist/node/**"
+    "node_modules/vite/dist/node/**",
+    "**/*.d.ts"
   ],
   "compilerOptions": {
     "skipLibCheck": true
