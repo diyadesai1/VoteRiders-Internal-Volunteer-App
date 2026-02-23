@@ -12,6 +12,7 @@ import { ImportantLinks } from './components/resources/ImportantLinks';
 import { DecisionTree } from './components/resources/DecisionTree';
 import { VoterAgreement } from './components/resources/VoterAgreement';
 import { Support } from './components/resources/Support';
+import { InformationCollection } from './components/flows/InformationCollection';
 import { useEffect, useState } from 'react';
 import { SplashScreen } from './components/auth/SplashScreen';
 import { LoginScreen } from './components/auth/LoginScreen';
@@ -20,7 +21,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import type { User } from 'firebase/auth';
 
 // Re-export Page type for use in other components to avoid duplicate definitions
-export type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step2-research' | 'helpline-step3' | 'helpline-step3-research-zendesk' | 'helpline-step4' | 'chat-step1' | 'chat-step2-id' | 'chat-step2-research' | 'chat-step3' | 'chat-step3-research-zendesk' | 'chat-step4' | 'thank-you' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'important-links';
+export type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step3-id' | 'helpline-step2-research' | 'helpline-step3' | 'helpline-step3-research-zendesk' | 'helpline-step4' | 'chat-step1' | 'chat-step2-id' | 'chat-step3-id' | 'chat-step2-research' | 'chat-step3' | 'chat-step3-research-zendesk' | 'chat-step4' | 'thank-you' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'important-links' | 'information-collection';
 
 interface AppProps {
   initialPage?: Page;
@@ -73,6 +74,13 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         {currentPage === 'helpline-step2-id' && (
           <IDAssistance 
             onBack={() => setCurrentPage('helpline-step1')}
+            onContinue={() => setCurrentPage('helpline-step3-id')}
+          />
+        )}
+        {currentPage === 'helpline-step3-id' && (
+          <InformationCollection
+            flowType="helpline"
+            onBack={() => setCurrentPage('helpline-step2-id')}
             onContinue={() => setCurrentPage('helpline-step3')}
           />
         )}
@@ -85,7 +93,7 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         )}
         {currentPage === 'helpline-step3' && (
           <VoterAgreementFlow 
-            onBack={() => setCurrentPage('helpline-step2-id')}
+            onBack={() => setCurrentPage('helpline-step3-id')}
             onComplete={() => setCurrentPage('helpline-step4')}
           />
         )}
@@ -118,6 +126,13 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
           <IDAssistance 
             flowType="chat"
             onBack={() => setCurrentPage('chat-step1')}
+            onContinue={() => setCurrentPage('chat-step3-id')}
+          />
+        )}
+        {currentPage === 'chat-step3-id' && (
+          <InformationCollection
+            flowType="chat"
+            onBack={() => setCurrentPage('chat-step2-id')}
             onContinue={() => setCurrentPage('chat-step3')}
           />
         )}
@@ -131,7 +146,7 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         {currentPage === 'chat-step3' && (
           <VoterAgreementFlow 
             flowType="chat"
-            onBack={() => setCurrentPage('chat-step2-id')}
+            onBack={() => setCurrentPage('chat-step3-id')}
             onComplete={() => setCurrentPage('chat-step4')}
           />
         )}

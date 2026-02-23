@@ -201,7 +201,7 @@ Do you understand and agree with what I have just said? Can you confirm that you
             <FileText className="size-6 text-white" />
           </div>
           <div>
-            <h1 className="mb-1">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 3 - Virtual Voter Agreement</h1>
+            <h1 className="mb-1">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 4 - Virtual Voter Agreement</h1>
             <p className="text-muted-foreground">
               Essential information that must be shared with voters before providing ID assistance
             </p>

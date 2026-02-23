@@ -20,7 +20,7 @@ export function IDZendeskGuide({ onBack, onComplete, flowType = 'helpline' }: ID
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6 group"
         >
           <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Step 3</span>
+          <span>Back to Step 4</span>
         </button>
 
         {/* Page Header */}
@@ -32,7 +32,7 @@ export function IDZendeskGuide({ onBack, onComplete, flowType = 'helpline' }: ID
             <FileCheck className="size-6 text-white" />
           </div>
           <div>
-            <h1 className="mb-1">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 4 - Zendesk Guide</h1>
+            <h1 className="mb-1">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 5 - Zendesk Guide</h1>
             <p className="text-muted-foreground">
               Fill out the Zendesk ticket for ID assist questions
             </p>
@@ -44,7 +44,7 @@ export function IDZendeskGuide({ onBack, onComplete, flowType = 'helpline' }: ID
           <div className="flex items-center justify-between mb-3">
             <span className="text-sm text-muted-foreground">Final Step</span>
             <span className="text-sm" style={{ color: '#1AC166' }}>
-              Step 4 of 4
+              Step 5 of 5
             </span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">

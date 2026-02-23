@@ -1,4 +1,4 @@
-import { Phone, MessageSquare, ArrowRight, HelpCircle, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Phone, MessageSquare, ArrowRight, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { auth } from '../../firebase';
 import type { User } from 'firebase/auth';
@@ -160,10 +160,6 @@ export function MainContent({ onNavigateToHelpline, onNavigateToChat }: MainCont
         </div>
       </div>
 
-      {/* Help Button */}
-      <button className="fixed bottom-6 right-6 bg-primary text-primary-foreground rounded-full p-4 shadow-lg hover:shadow-xl transition-shadow">
-        <HelpCircle className="size-6" />
-      </button>
     </main>
   );
 }

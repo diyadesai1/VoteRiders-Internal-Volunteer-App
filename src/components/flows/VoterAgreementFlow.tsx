@@ -17,7 +17,7 @@ export function VoterAgreementFlow({ onBack, onComplete, flowType = 'helpline' }
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6 group"
         >
           <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Step 2</span>
+          <span>Back to Step 3</span>
         </button>
 
         {/* Voter Agreement Content */}
@@ -30,7 +30,7 @@ export function VoterAgreementFlow({ onBack, onComplete, flowType = 'helpline' }
             className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-lg hover:bg-muted transition-all group"
           >
             <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Step 2
+            Back to Step 3
           </button>
 
           <button
@@ -38,7 +38,7 @@ export function VoterAgreementFlow({ onBack, onComplete, flowType = 'helpline' }
             className="px-6 py-3 rounded-lg text-white transition-all hover:shadow-lg hover:scale-[1.02]"
             style={{ backgroundColor: '#1AC166' }}
           >
-            Continue to Step 4
+            Continue to Step 5
           </button>
         </div>
       </div>
