@@ -77,7 +77,7 @@ export function InformationCollection({ onBack, onContinue, flowType = 'helpline
                   </p>
                   <ul className="space-y-2 ml-4">
                     <li className="leading-relaxed">• The full address where you can receive mail?</li>
-                    <li className="leading-relaxed">• Have you ever had an ID from your current state or any other state before? If so, what happened to it? (Is it current, expired, lost, etc.?) If you have a picture of it or know the number on it, please send that.</li>
+                    <li className="leading-relaxed">• Have you ever had an ID from your current state or any other state before? If so, what happened to it? (Is it current, expired, lost, etc.?) If you know the number on it, please send that.</li>
                     <li className="leading-relaxed">• Do you have your social security card or know your social security number? Please do NOT share it with me, just let me know if you know it.</li>
                   </ul>
                 </div>
