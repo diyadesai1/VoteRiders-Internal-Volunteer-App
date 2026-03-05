@@ -165,9 +165,7 @@ More questions to come.  Thanks!`;
       },
       H: {
         question: () => {
-          if (selectedState === "Arizona") {
-            return "Needs just birth certificate for voter registration, housing, or employment?";
-          } else if (selectedState === "New Hampshire") {
+          if (selectedState === "Arizona" || selectedState === "New Hampshire" || selectedState === "Wyoming" || selectedState === "Louisiana") {
             return "Needs just birth certificate for voter registration, housing, or employment?";
           } else {
             return "Needs just birth certificate for housing or employment?";
