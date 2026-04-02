@@ -238,12 +238,23 @@ const faqs = [
       "category": "ID & Documents"
     },
     {
+      "question": "I moved. Where do I vote?",
+      "answer": "Which situation best describes your move?\n\nI moved within the same precinct.\nI moved to a different precinct within the same county.\nI moved to a different county.\nI moved to a different state.\n\nBased on the voter’s response, visit 866ourvote.org/states/, select their state, and open the heading that says “If You Have Moved Within Your State.” Communicate the guidance listed there",
+      "tags": ["voter registration", "address changes"],
+      "category": "Registration"
+    },
+];
+
+/*
+OUT OF DATE OLD QUESTION
+{
       "question": "I moved. Where do I vote? Do I need to update my address?",
       "answer": "Whether and how a voter should update their address on their voter registration varies by state and timing. \n\nStates require you to update your voter registration when you move or change your name. However,  the rules about whether and how you can still vote if you have not updated your registration vary by state. Please contact your local election official to get accurate information for your specific situation.\n\nSome states offer Same Day Registration, which allows you to register and vote at the same time. This also allows voters who are already registered but need to update their registration to make changes to their registration at the time that they vote. Info on whether a state offers SDR is available on our state pages https://www.voteriders.org/staterules/\nOther states will still allow you to vote if you moved close in time to Election Day, but it will vary by state whether you need to vote in your old precinct or your new precinct. Usually, if a voter only moves across town, or within the same congressional district, but did not update their voter registration, that person can still vote. However, they will likely have to go to their former polling location or a central voting site and vote in person. \n\nSome states may require a voter who moved to vote a provisional ballot as a way to update their voter registration address.\nVoters who move to a different state within 30 days of the election might find that the state they just moved to has a registration deadline or residency requirement that prevents them from registering and voting there.\nVoters who move states within 30 days of an election can contact their former state's elections office to request a special ballot that will allow them to at least vote in the presidential race.\nSee the FAQ below “DIFFERENT / NEW / OLD ADDRESS ON ID” for what to do if a voter has moved and has not updated their ID address",
       "tags": ["voter registration", "address changes"],
       "category": "Registration"
     }
-];
+
+*/
 
 const categoryOptions = [
   { value: "all", label: "All Topics", Icon: ListFilter as React.ComponentType<any> },
