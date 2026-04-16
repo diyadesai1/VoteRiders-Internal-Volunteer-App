@@ -39,7 +39,7 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
       href: 'https://www.voteriders.org/staterules/'
     },
     { icon: LifeBuoy, label: 'Support', page: 'resources-support' as Page },
-    { icon: HelpCircle, label: 'Resource-Based', page: 'resources-research-based' as Page },
+    { icon: HelpCircle, label: 'Helpline/Chat FAQ’s', page: 'resources-research-based' as Page },
     { icon: FileText, label: 'Voter Agreement', page: 'resources-voter-agreement' as Page },
     {
       icon: PhoneCall,

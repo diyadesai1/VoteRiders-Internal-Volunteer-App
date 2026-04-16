@@ -385,7 +385,7 @@ export function ResearchBased({ context, onBack, onContinue }: ResearchBasedProp
           </div>
         ) : (
           <div className="mb-8">
-            <h1 className="mb-2">Resources: Resource-Based Questions</h1>
+            <h1 className="mb-2">Resources: Helpline/Chat FAQ’s</h1>
             <p className="text-muted-foreground">
               Quick answers to common voter ID and registration questions
             </p>
