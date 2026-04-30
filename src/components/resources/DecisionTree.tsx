@@ -142,7 +142,7 @@ More questions to come.  Thanks!`;
       },
       F: {
         question:
-          "Solved: Refer to VIDA as regular priority (do not tag in Slack). Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Refer to VIDA (do not tag in Slack). Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "regular",
       },
@@ -203,13 +203,13 @@ More questions to come.  Thanks!`;
       },
       BC_URGENT: {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/vid-assist-team-leads?authuser=3' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Mark as urgent. Use <a href='https://voteriders.slack.com/archives/C01BGKCJ399/p1773426423514979' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "urgent",
       },
       BC_REGULAR: {
         question:
-          "Solved: Refer to VIDA as regular priority (do not tag in Slack). Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Refer to VIDA (do not tag in Slack). Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "regular",
       },
@@ -221,19 +221,19 @@ More questions to come.  Thanks!`;
       },
       J: {
         question:
-          "Solved: VR can help, mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack.",
+          "Solved: VR can help, mark as urgent. Use <a href='https://voteriders.slack.com/archives/C01BGKCJ399/p1773426423514979' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack.",
         isSolution: true,
         type: "urgent",
       },
       NVJ: {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack.",
+          "Solved: Mark as urgent. Use <a href='https://voteriders.slack.com/archives/C01BGKCJ399/p1773426423514979' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack.",
         isSolution: true,
         type: "urgent",
       },
       L: {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Mark as urgent. Use <a href='https://voteriders.slack.com/archives/C01BGKCJ399/p1773426423514979' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "urgent",
       },
@@ -243,7 +243,7 @@ More questions to come.  Thanks!`;
     Object.values(focusStateContacts).forEach(({ code }) => {
       s[code] = {
         question:
-          "Solved: Mark as urgent. Use <a href='https://sites.google.com/voteriders.org/volunteerintranet/helpline-and-chat' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+          "Solved: Mark as urgent. Use <a href='https://voteriders.slack.com/archives/C01BGKCJ399/p1773426423514979' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>this document</a> to determine who you should tag in Slack. Go over the <a href='https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
         isSolution: true,
         type: "urgent",
       };
@@ -753,7 +753,7 @@ More questions to come.  Thanks!`;
                         </div>
                         <h2 className="mb-2">
                           {node.type === 'urgent' && 'Urgent Action Required'}
-                          {node.type === 'regular' && 'Regular Priority'}
+                          {node.type === 'regular' && ' '}
                           {node.type === 'no-assistance' && 'Unable to Assist'}
                         </h2>
                       </div>
