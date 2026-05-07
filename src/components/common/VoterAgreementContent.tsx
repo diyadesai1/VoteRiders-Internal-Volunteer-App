@@ -13,7 +13,7 @@ export function VoterAgreementContent({ flowType }: VoterAgreementContentProps) 
   const [closingScriptCopied, setClosingScriptCopied] = useState(false);
   const [textIntroScriptCopied, setTextIntroScriptCopied] = useState(false);
 
-  const AGREEMENT_LINK = 'https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view';
+  const AGREEMENT_LINK = 'https://vote-riders-internal-volunteer-app.vercel.app/resources-decision-tree';
   
   const introScript = `To get started, though, we need your consent to collect this information. Please read through the following voter agreement and then respond with your answers to the questions at the bottom.`;
 

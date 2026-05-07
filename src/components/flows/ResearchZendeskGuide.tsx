@@ -133,7 +133,7 @@ export function ResearchZendeskGuide({ onBack, onComplete, flowType = 'helpline'
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1v9CCQor2FMF6XFPu_sgFjx3o99ttNT1H/view"
+              href="https://vote-riders-internal-volunteer-app.vercel.app/resources-decision-tree"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-muted transition-colors group"
