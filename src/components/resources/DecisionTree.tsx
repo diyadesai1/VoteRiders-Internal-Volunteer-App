@@ -166,9 +166,9 @@ More questions to come.  Thanks!`;
       H: {
         question: () => {
           if (selectedState === "Arizona" || selectedState === "New Hampshire" || selectedState === "Wyoming" || selectedState === "Louisiana") {
-            return "Needs just birth certificate for voter registration, housing, or employment?";
+            return "Needs just birth certificate or SSC for voter registration, housing, or employment?";
           } else {
-            return "Needs just birth certificate for housing or employment?";
+            return "Needs just birth certificate or SSC for housing or employment?";
           }
         },
         script: [
@@ -177,7 +177,7 @@ More questions to come.  Thanks!`;
             text: "Do you need this documentation for a particular reason?"
           },
           {
-            guide: "If BC is needed for something other than housing/employment. Use Community Resources to refer them to another organization.",
+            guide: "If BC or SSC is needed for something other than housing/employment. Use Community Resources to refer them to another organization.",
             text: "I am sorry. VoteRiders is a voting rights organization that helps eligible voters get IDs and underlying documents so that they can cast their ballot. Since you have an ID you can use to cast your ballot, we are unable to assist in this circumstance."
           }
         ],
@@ -189,11 +189,11 @@ More questions to come.  Thanks!`;
       BC1: {
         question: () => {
           if (selectedState === "Arizona") {
-            return "Needs BC for an impending deadline (<a href='https://www.voteriders.org/register/arizona/' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>to register to vote in a state/local election</a>, job offer pending their ability to show ID by a certain date, OR must complete a housing application by a given date)?";
+            return "Needs BC or SSC for an impending deadline (<a href='https://www.voteriders.org/register/arizona/' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>to register to vote in a state/local election</a>, job offer pending their ability to show ID by a certain date, OR must complete a housing application by a given date)?";
           } else if (selectedState === "New Hampshire") {
-            return "Needs BC for an impending deadline (<a href='https://www.voteriders.org/register/new-hampshire/' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>to register to vote in a state/local election</a>, job offer pending their ability to show ID by a certain date, OR must complete a housing application by a given date)?";
+            return "Needs BC or SSC for an impending deadline (<a href='https://www.voteriders.org/register/new-hampshire/' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>to register to vote in a state/local election</a>, job offer pending their ability to show ID by a certain date, OR must complete a housing application by a given date)?";
           } else {
-            return "Needs BC for an impending deadline (job offer pending their ability to show ID by a certain date OR must complete a housing application by a given date)?";
+            return "Needs BC or SSC for an impending deadline (job offer pending their ability to show ID by a certain date OR must complete a housing application by a given date)?";
           }
         },
         answers: [
