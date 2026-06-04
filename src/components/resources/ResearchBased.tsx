@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     "question": "Ride to the polls",
-    "answer": "VoteRiders does not provide rides to the polls for insurance reasons. We share information about free or discounted local resources if we have them, and recommend contacting local groups in a voter’s area (like the League of Women Voters and NAACP, among others). Beyond that, we cannot recommend one party over another, but local political parties or candidate headquarters often provide rides.\n\nMany rideshare platforms (like Lyft and Uber) and cities offer free transit rides on Election Day. If you let me know what city and state you live in, there might be a resource for you I can check on.\n\nWhile VoteRiders does not provide rides to the polls for the general public, we do offer this service to voters whom we’ve previously assisted in getting their ID. If one of these former clients reaches out, please flag for staff in Slack so we can provide proper assistance.",
+    "answer": "If the voter is someone we have helped to get an ID, we will help them get a ride to the polls. If not, please refer to the info below.\n\nWe don’t provide rides to the polls for insurance reasons. We share information about free or discounted local resources if we have them and recommend contacting local groups in a voter’s area.\n\nMany rideshare platforms (like Lyft and Uber) and cities offer free transit rides around and on Election Day. If you let us know what city and state you live in, there might be a resource for you.\n\nVolunteers can check here for options to share: Rides to Polls 2026 (https://docs.google.com/spreadsheets/d/1MA3KTOgDN6kNE0Y4MrEKkWnFLxR_Fj6kHW3_MDi1BIA/edit?usp=sharing)\n\nWhile VoteRiders does not provide rides to the polls for the general public, we do offer this service to voters whom we’ve previously assisted in getting their ID. If one of these former clients reaches out, please flag for staff in Slack so we can provide proper assistance.",
     "tags": ["rides", "election day", "poll access"],
     "category": "Voting Methods and Process"
   },
@@ -49,6 +49,18 @@ const faqs = [
     "question": "Other volunteer needs",
     "answer": "VoteRiders needs volunteers to help call, text, respond to voter questions, and meet voters in person to help them with registration, IDs, and general voting questions. We also need help with data entry and research. Interested volunteers can sign up here: voteriders.org/volunteer.",
     "tags": ["volunteers", "outreach", "support needs"],
+    "category": "General Information"
+  },
+  {
+    "question": "Text banking, letter-writing event volunteers",
+    "answer": "Any questions about text banking or letter-writing, they should email volunteer@voteriders.org",
+    "tags": ["volunteers", "text banking", "letter-writing"],
+    "category": "General Information"
+  },
+  {
+    "question": "Removal from letter mailings",
+    "answer": "First, ask which letters they're receiving:\n\nIf donor letters: Get their name and address, then let staff know and we will send it to the development team.\n\nIf letter-writing letters: Explain that we get these lists from state voter rolls. Ask them to contact their local election office to update the address or report that the person no longer lives there. This will update the voter roll and stop letters from us and other organizations from mailing them.",
+    "tags": ["letter mailings", "donor letters", "letter-writing", "voter rolls"],
     "category": "General Information"
   },
   {
@@ -239,8 +251,8 @@ const faqs = [
     },
     {
       "question": "I moved. Where do I vote?",
-      "answer": "Which situation best describes your move?\n\nI moved within the same precinct.\nI moved to a different precinct within the same county.\nI moved to a different county.\nI moved to a different state.\n\nBased on the voter’s response, visit 866ourvote.org/states/, select their state, and open the heading that says “If You Have Moved Within Your State.” Communicate the guidance listed there",
-      "tags": ["voter registration", "address changes"],
+      "answer": "Which situation best describes your move?\n\nI moved within the same precinct.\nI moved to a different precinct within the same county.\nI moved to a different county.\nI moved to a different state.\n\nBased on the voter’s response, visit https://866ourvote.org/states/, select their state, and open the heading that says “If You Have Moved Within Your State.” Communicate the guidance listed there.",
+      "tags": ["voter registration", "address changes", "moved", "where to vote"],
       "category": "Registration"
     },
 ];
