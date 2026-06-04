@@ -56,6 +56,8 @@ export function Header({ currentPage }: HeaderProps) {
         return 'Support';
       case 'resources-voter-agreement':
         return 'Voter Agreement';
+      case 'resources-case-managers-no-phone':
+        return 'CMs & No Phone';
       // state rules is external, but if ever routed here you can customize later
       case 'important-links':
         return 'Important Links';

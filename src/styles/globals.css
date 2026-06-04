@@ -206,3 +206,17 @@
 html {
   font-size: var(--font-size);
 }
+
+@keyframes sidebar-scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.sidebar-more-chevron-hint {
+  animation: sidebar-scroll-hint 1.4s ease-in-out 2;
+}

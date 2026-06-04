@@ -12,6 +12,7 @@ import { ImportantLinks } from './components/resources/ImportantLinks';
 import { DecisionTree } from './components/resources/DecisionTree';
 import { VoterAgreement } from './components/resources/VoterAgreement';
 import { Support } from './components/resources/Support';
+import { CaseManagersNoPhone } from './components/resources/CaseManagersNoPhone';
 import { InformationCollection } from './components/flows/InformationCollection';
 import { useEffect, useState } from 'react';
 import { SplashScreen } from './components/auth/SplashScreen';
@@ -21,7 +22,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import type { User } from 'firebase/auth';
 
 // Re-export Page type for use in other components to avoid duplicate definitions
-export type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step3-id' | 'helpline-step2-research' | 'helpline-step3' | 'helpline-step3-research-zendesk' | 'helpline-step4' | 'chat-step1' | 'chat-step2-id' | 'chat-step3-id' | 'chat-step2-research' | 'chat-step3' | 'chat-step3-research-zendesk' | 'chat-step4' | 'thank-you' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'important-links' | 'information-collection';
+export type Page = 'dashboard' | 'helpline-step1' | 'helpline-step2-id' | 'helpline-step3-id' | 'helpline-step2-research' | 'helpline-step3' | 'helpline-step3-research-zendesk' | 'helpline-step4' | 'chat-step1' | 'chat-step2-id' | 'chat-step3-id' | 'chat-step2-research' | 'chat-step3' | 'chat-step3-research-zendesk' | 'chat-step4' | 'thank-you' | 'resources-research-based' | 'resources-decision-tree' | 'resources-state-rules' | 'resources-support' | 'resources-faqs' | 'resources-voter-agreement' | 'resources-case-managers-no-phone' | 'important-links' | 'information-collection';
 
 interface AppProps {
   initialPage?: Page;
@@ -170,6 +171,9 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         {currentPage === 'important-links' && <ImportantLinks />}
         {currentPage === 'resources-voter-agreement' && <VoterAgreement onBack={() => setCurrentPage('dashboard')} />}
         {currentPage === 'resources-support' && <Support onBack={() => setCurrentPage('dashboard')} />}
+        {currentPage === 'resources-case-managers-no-phone' && (
+          <CaseManagersNoPhone onBack={() => setCurrentPage('dashboard')} />
+        )}
       </div>
     </div>
   );
