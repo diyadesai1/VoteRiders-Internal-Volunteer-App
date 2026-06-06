@@ -179,7 +179,7 @@ export function CaseManagersNoPhone({ onBack }: CaseManagersNoPhoneProps) {
                 partnership.
               </p>
               <a
-                href="https://sites.google.com/voteriders.org/volunteerintranet/vid-assist-team-leads"
+                href="https://voteriders.slack.com/archives/C01BGKCJ399/p1773426423514979"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-sm font-medium hover:underline transition-colors"
@@ -204,7 +204,7 @@ export function CaseManagersNoPhone({ onBack }: CaseManagersNoPhoneProps) {
                 in-person clinic we can refer them to.
               </p>
               <a
-                href="https://voteriders.slack.com/"
+                href="https://voteriders.slack.com/archives/C01BGKCJ399/p1773426423514979"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-sm font-medium hover:underline transition-colors"
