@@ -75,14 +75,14 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         {currentPage === 'helpline-step2-id' && (
           <IDAssistance 
             onBack={() => setCurrentPage('helpline-step1')}
-            onContinue={() => setCurrentPage('helpline-step3-id')}
+            onContinue={() => setCurrentPage('helpline-step3')}
           />
         )}
         {currentPage === 'helpline-step3-id' && (
           <InformationCollection
             flowType="helpline"
-            onBack={() => setCurrentPage('helpline-step2-id')}
-            onContinue={() => setCurrentPage('helpline-step3')}
+            onBack={() => setCurrentPage('helpline-step3')}
+            onContinue={() => setCurrentPage('helpline-step4')}
           />
         )}
         {currentPage === 'helpline-step2-research' && (
@@ -94,8 +94,8 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         )}
         {currentPage === 'helpline-step3' && (
           <VoterAgreementFlow 
-            onBack={() => setCurrentPage('helpline-step3-id')}
-            onComplete={() => setCurrentPage('helpline-step4')}
+            onBack={() => setCurrentPage('helpline-step2-id')}
+            onComplete={() => setCurrentPage('helpline-step3-id')}
           />
         )}
         {currentPage === 'helpline-step3-research-zendesk' && (
@@ -106,7 +106,7 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         )}
         {currentPage === 'helpline-step4' && (
           <IDZendeskGuide 
-            onBack={() => setCurrentPage('helpline-step3')}
+            onBack={() => setCurrentPage('helpline-step3-id')}
             onComplete={() => setCurrentPage('thank-you')}
           />
         )}
@@ -127,14 +127,14 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
           <IDAssistance 
             flowType="chat"
             onBack={() => setCurrentPage('chat-step1')}
-            onContinue={() => setCurrentPage('chat-step3-id')}
+            onContinue={() => setCurrentPage('chat-step3')}
           />
         )}
         {currentPage === 'chat-step3-id' && (
           <InformationCollection
             flowType="chat"
-            onBack={() => setCurrentPage('chat-step2-id')}
-            onContinue={() => setCurrentPage('chat-step3')}
+            onBack={() => setCurrentPage('chat-step3')}
+            onContinue={() => setCurrentPage('chat-step4')}
           />
         )}
         {currentPage === 'chat-step2-research' && (
@@ -147,8 +147,8 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         {currentPage === 'chat-step3' && (
           <VoterAgreementFlow 
             flowType="chat"
-            onBack={() => setCurrentPage('chat-step3-id')}
-            onComplete={() => setCurrentPage('chat-step4')}
+            onBack={() => setCurrentPage('chat-step2-id')}
+            onComplete={() => setCurrentPage('chat-step3-id')}
           />
         )}
         {currentPage === 'chat-step3-research-zendesk' && (
@@ -161,7 +161,7 @@ export default function App({ initialPage = 'dashboard' }: AppProps) {
         {currentPage === 'chat-step4' && (
           <IDZendeskGuide 
             flowType="chat"
-            onBack={() => setCurrentPage('chat-step3')}
+            onBack={() => setCurrentPage('chat-step3-id')}
             onComplete={() => setCurrentPage('thank-you')}
           />
         )}

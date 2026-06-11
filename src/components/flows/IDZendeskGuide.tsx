@@ -171,7 +171,7 @@ export function IDZendeskGuide({ onBack, onComplete, flowType = 'helpline' }: ID
             className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-lg hover:bg-muted transition-all group"
           >
             <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Step 3
+            Back to Step 4
           </button>
 
           <button

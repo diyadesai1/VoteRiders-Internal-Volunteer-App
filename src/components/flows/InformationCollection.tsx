@@ -19,7 +19,7 @@ export function InformationCollection({ onBack, onContinue, flowType = 'helpline
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft className="size-4" />
-          <span>Back to Step 2</span>
+          <span>Back to Step 3</span>
         </button>
 
         {/* Page Header */}
@@ -31,7 +31,7 @@ export function InformationCollection({ onBack, onContinue, flowType = 'helpline
             <FileText className="size-6 text-white" />
           </div>
           <div>
-            <h1 className="mb-1">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 3 - Information Collection</h1>
+            <h1 className="mb-1">{flowType === 'chat' ? 'Chat' : 'Helpline'}: Step 4 - Information Collection</h1>
             <p className="text-muted-foreground">
               ID Assistance Data Collection Script
             </p>
@@ -145,7 +145,7 @@ export function InformationCollection({ onBack, onContinue, flowType = 'helpline
             className="px-6 py-3 rounded-lg text-white transition-all hover:shadow-lg hover:scale-[1.02]"
             style={{ backgroundColor: '#1AC166' }}
           >
-            Continue to Step 4
+            Continue to Step 5
           </button>
         </div>
       </div>
