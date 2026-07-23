@@ -215,7 +215,7 @@ More questions to come.  Thanks!`;
       },
       I: {
         question:
-          "VR is unable to provide assistance. Reference community resource guide for alternative organizations.",
+          "VR is unable to provide assistance. Reference community resource guide for alternative organizations. You can check the rules on restoration of voting rights by state <a href='https://campaignlegal.org/restoreyourvote' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>here</a>.",
         isSolution: true,
         type: "no-assistance",
       },
