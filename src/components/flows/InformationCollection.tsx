@@ -92,7 +92,7 @@ export function InformationCollection({ onBack, onContinue, flowType = 'helpline
                 </div>
                 <div className="bg-muted rounded-lg p-5 border border-border space-y-2">
                   <p className="leading-relaxed">• Please provide a direct phone number and email address</p>
-                  <p className="leading-relaxed">• Do you have your birth certificate? If needed, we can help get that, too.</p>
+                  <p className="leading-relaxed">• Do you have your birth certificate? If needed to get your ID, we can help get that, too.</p>
                   <p className="leading-relaxed">• Your birth date</p>
                   <p className="leading-relaxed">• The city/state where you were born</p>
                 </div>

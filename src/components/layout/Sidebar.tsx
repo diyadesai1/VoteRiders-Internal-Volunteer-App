@@ -15,6 +15,7 @@ import {
   MessageCircleMore,
   ArrowUpRight,
   PhoneOff,
+  CalendarClock,
   ChevronDown,
   type LucideIcon,
 } from 'lucide-react';
@@ -29,6 +30,7 @@ type ResourceItem = {
 
 const primaryResourceItems: ResourceItem[] = [
   { icon: Network, label: 'Decision Tree', page: 'resources-decision-tree' },
+  { icon: CalendarClock, label: 'Special Decision Tree', page: 'resources-special-decision-tree' },
   { icon: FileText, label: 'Voter Agreement', page: 'resources-voter-agreement' },
   { icon: HelpCircle, label: 'FAQs', page: 'resources-research-based' },
   { icon: PhoneOff, label: 'CMs & No Phone', page: 'resources-case-managers-no-phone' },
@@ -79,6 +81,7 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
     else if (page === 'chat-step1') path = '/chat';
     else if (page === 'resources-support') path = '/support';
     else if (page === 'resources-decision-tree') path = '/resources-decision-tree';
+    else if (page === 'resources-special-decision-tree') path = '/resources-special-decision-tree';
     else if (page === 'resources-research-based') path = '/resource-based';
     else if (page === 'resources-voter-agreement') path = '/resources-voter-agreement';
     else if (page === 'resources-case-managers-no-phone') path = '/resources-case-managers-no-phone';

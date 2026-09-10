@@ -1,5 +1,5 @@
 import { ArrowLeft, CreditCard } from 'lucide-react';
-import { DecisionTree } from '../resources/DecisionTree';
+import { SpecialDecisionTree } from '../resources/SpecialDecisionTree';
 
 interface IDAssistanceProps {
   onBack: () => void;
@@ -37,7 +37,7 @@ export function IDAssistance({ onBack, onContinue, flowType = 'helpline' }: IDAs
         </div>
 
         {/* Embedded Decision Tree */}
-        <DecisionTree embedded={true} flowType={flowType} onContinue={onContinue} />
+        <SpecialDecisionTree embedded={true} flowType={flowType} onContinue={onContinue} />
       </div>
     </main>
   );

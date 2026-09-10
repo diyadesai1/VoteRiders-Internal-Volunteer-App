@@ -14,7 +14,7 @@ export function InfoCollectionScripts({ selectedState, isOpen, onClose }: InfoCo
 • Have you ever had an ID from ${selectedState || '[STATE]'} or any other state before?  If so, what happened to it?  (Is it current, expired, lost, etc.?)  If you have a picture of it or know the number on it, please send that.
 • Your birth date${selectedState ? '' : ' (if you were unable to get that information before)'}:
 • The city/state where you were born:
-• Do you have your birth certificate? (If needed, we can help get that, too.)
+• Do you have your birth certificate? (If needed to get your ID, we can help get that, too.)
 • Do you have your social security card or know your social security number? (Please do NOT share it with me, just let me know if you know it.)
 
 Looking forward to hearing back from you so we can get your case over to the folks who will work with you to get what you need!

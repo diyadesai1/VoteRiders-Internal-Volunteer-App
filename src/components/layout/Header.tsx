@@ -50,6 +50,8 @@ export function Header({ currentPage }: HeaderProps) {
     switch (currentPage) {
       case 'resources-decision-tree':
         return 'Decision Tree';
+      case 'resources-special-decision-tree':
+        return 'Special Decision Tree';
       case 'resources-research-based':
         return 'Resource Based';
       case 'resources-support':

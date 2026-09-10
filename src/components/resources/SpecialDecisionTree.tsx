@@ -1,14 +1,14 @@
-import { CreditCard, MapPin, AlertTriangle, CheckCircle, Users, RotateCcw, Clipboard, ChevronRight, Copy, Check } from 'lucide-react';
+import { CreditCard, MapPin, AlertTriangle, CheckCircle, Users, RotateCcw, Clipboard, ChevronRight, Copy, Check, CalendarClock } from 'lucide-react';
 import { useMemo, useState, useEffect } from 'react';
 import { InfoCollectionScripts } from '../common/InfoCollectionScripts';
 
-interface DecisionTreeProps {
+interface SpecialDecisionTreeProps {
   embedded?: boolean;
   flowType?: 'helpline' | 'chat';
   onContinue?: () => void;
 }
 
-export function DecisionTree({ embedded = false, flowType = 'helpline', onContinue }: DecisionTreeProps = {}) {
+export function SpecialDecisionTree({ embedded = false, flowType = 'helpline', onContinue }: SpecialDecisionTreeProps = {}) {
   const [selectedState, setSelectedState] = useState("");
   const [currentNode, setCurrentNode] = useState("");
   const [history, setHistory] = useState<Array<{ id: string; question: string; answer: string }>>([]);
@@ -18,12 +18,19 @@ export function DecisionTree({ embedded = false, flowType = 'helpline', onContin
   const [scriptCopied, setScriptCopied] = useState(false);
   const [scriptType, setScriptType] = useState<'email' | 'text'>('text');
   const [showInfoCollection, setShowInfoCollection] = useState(false);
+  // Tracks the answer to Question 4 ("Do you have an ID you can use to vote in your state?")
+  const [votingIDStatus, setVotingIDStatus] = useState<'yes' | 'no' | null>(null);
 
   const emailScript = "[Introduce self if this is first reply].  Thanks so much for reaching out. Unfortunately, you currently do not meet the eligibility criteria for Voter Riders ID assistance.\nIf I'm wrong about where you live or the reason that you've contacted us, please write back and let me know.\nIf I've misunderstood your location or the reason you contacted us, please feel free to write back and let me know — I'd be happy to take another look and help however I can.\nLet me know if you'd like me to see if we have a referral organization in your area that may be able to help.";
 
   const textScript = "The mission of VoteRiders is to help people get the ID they need in order to vote. Unfortunately, you currently do not meet the eligibility criteria for Voter Riders ID assistance.\nIf I'm wrong about where you live or the reason that you've contacted us, please write back and let me know.";
 
   const assistanceScript = "Thank you for answering these questions.  We should be able to help!  We have a two-step process: first, we will collect some information from you, and after that is complete we can send your case to our ID Assistance Team.  Someone from that group will then reach out to you by phone and work with you one-on-one to get you what you need.";
+
+  // 2026 Election Day closing scripts (shown at the end of the decision tree based on Question 4)
+  const closingScriptHasID = "Thank you. We are sending your case to our ID assistance team. They will be in touch as soon as they're able; however, if we are unable to get you a driver's license/state ID by Election Day, you still have the ID you need to vote in this election. Please bring your [insert voter's accepted ID], and you'll be able to vote.";
+
+  const closingScriptNoID = "Thank you. We are sending your case to our ID assistance team and have let them know you need an ID to vote. They will be in touch with you as soon as they are able. Our team will try their best to get you an ID before Election Day; however, if that is not possible, you should still plan to go vote and follow the instructions from pollworkers on how to make sure your ballot is counted.";
 
   const emailCollectionScript = `Great, thanks for that.  Now I'll need to collect some additional information from you.  Can you let me know:
 • The full address where you can receive mail?
@@ -116,8 +123,59 @@ More questions to come.  Thanks!`;
           }
         ],
         answers: [
-          { text: "Yes", next: "D" },
+          { text: "Yes", next: "REG" },
           { text: "No", next: () => (selectedState === "Nevada" ? "I" : "H") },
+        ],
+      },
+      // NEW (2026 protocol): registration check inserted after Question 2
+      REG: {
+        question:
+          "Are you registered to vote? If so, are you registered under your current legal name? Are you registered at your current address?",
+        script: [
+          {
+            guide: "Confirm the voter's registration status",
+            text: "Are you registered to vote? If so, are you registered under your current legal name? Are you registered at your current address? You can confirm your voter registration status here: https://voteriders.turbovote.org/check-your-registration/voter-info"
+          }
+        ],
+        answers: [
+          { text: "Yes — registered under current legal name & address", next: "Q4" },
+          { text: "No — needs to register or update registration", next: "REG_NO" },
+        ],
+      },
+      // NEW (2026 protocol): registration guidance shown when the voter is not registered
+      REG_NO: {
+        question:
+          "Help the voter register to vote, then move on to Question 4.",
+        script: [
+          {
+            guide: "Send the voter the registration link",
+            text: "You may be able to register to vote here: https://voteriders.turbovote.org/register-to-vote/voter-info. Please note that in many states if you do not have a current driver's license or state ID, you will not be able to register to vote online. You can instead use the mail-in registration application or register in-person."
+          },
+          {
+            guide: "For volunteers",
+            text: "We do not fill out the registration form on behalf of voters. Please send it to them so they can complete it themselves."
+          },
+          {
+            guide: "State registration deadlines",
+            text: "Find state registration deadlines here: https://voteriders.turbovote.org/"
+          }
+        ],
+        answers: [
+          { text: "Voter has registered — Continue to Question 4", next: "Q4" },
+        ],
+      },
+      // NEW (2026 protocol): Question 4 — do they have an ID they can use to vote?
+      Q4: {
+        question: "Do you have an ID you can use to vote in your state?",
+        script: [
+          {
+            guide: "For volunteers",
+            text: "Please review the list of acceptable IDs from their state's page and send them their options. https://voteriders.org/staterules/"
+          }
+        ],
+        answers: [
+          { text: "Yes — has an ID they can use to vote", next: "D" },
+          { text: "No — does not have an ID to vote", next: "D" },
         ],
       },
       D: {
@@ -275,7 +333,7 @@ More questions to come.  Thanks!`;
 
   const copyDecisionHistory = async () => {
     const text = buildDecisionHistoryText();
-    
+
     // Try modern clipboard API first
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
@@ -287,7 +345,7 @@ More questions to come.  Thanks!`;
         console.warn('Clipboard API failed, trying fallback', e);
       }
     }
-    
+
     // Fallback: use textarea method
     try {
       const textarea = document.createElement('textarea');
@@ -309,7 +367,7 @@ More questions to come.  Thanks!`;
   const copyScript = async () => {
     const node = steps[currentNode];
     let script = '';
-    
+
     // Determine which script to copy based on the outcome type
     if (node?.type === 'urgent' || node?.type === 'regular') {
       script = assistanceScript;
@@ -317,7 +375,7 @@ More questions to come.  Thanks!`;
       script = scriptType === 'email' ? emailScript : textScript;
       script = script.replace(/\[STATE\]/g, selectedState);
     }
-    
+
     // Try modern clipboard API first
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
@@ -329,7 +387,7 @@ More questions to come.  Thanks!`;
         console.warn('Clipboard API failed, trying fallback', e);
       }
     }
-    
+
     // Fallback: use textarea method
     try {
       const textarea = document.createElement('textarea');
@@ -354,6 +412,7 @@ More questions to come.  Thanks!`;
       return;
     }
     setIsStarted(true);
+    setVotingIDStatus(null);
     setHistory([{ id: "STATE_SELECT", question: "State selection", answer: selectedState }]);
     const firstNode = selectedState === "Washington" || (noVoterIDStates.includes(selectedState) && selectedState !== "Nevada") ? "I" : selectedState === "Nevada" ? "NV1" : "B";
     setCurrentNode(firstNode);
@@ -364,7 +423,7 @@ More questions to come.  Thanks!`;
     if (!node) return;
 
     setIsTransitioning(true);
-    
+
     setTimeout(() => {
       const newEntry = {
         id: currentNode,
@@ -373,13 +432,14 @@ More questions to come.  Thanks!`;
       };
       setHistory((prev) => [...prev, newEntry]);
 
-      if (selectedState === "Nevada" && currentNode === "C" && answerText === "Yes") {
-        setCurrentNode("NVJ");
-      } else {
-        const next = typeof nextNode === "function" ? nextNode() : nextNode;
-        setCurrentNode(next);
+      // Record the answer to Question 4 so we can show the correct 2026 closing script
+      if (currentNode === "Q4") {
+        setVotingIDStatus(answerText.startsWith("Yes") ? "yes" : "no");
       }
-      
+
+      const next = typeof nextNode === "function" ? nextNode() : nextNode;
+      setCurrentNode(next);
+
       setIsTransitioning(false);
     }, 200);
   };
@@ -389,13 +449,18 @@ More questions to come.  Thanks!`;
       setIsStarted(false);
       setCurrentNode("");
       setHistory([]);
+      setVotingIDStatus(null);
       return;
     }
-    
+
     setIsTransitioning(true);
     setTimeout(() => {
       const newHistory = history.slice(0, -1);
       setHistory(newHistory);
+      // If we stepped back past Question 4, clear the recorded voting-ID status
+      if (!newHistory.some((h) => h.id === "Q4")) {
+        setVotingIDStatus(null);
+      }
       if (newHistory.length === 1) {
         const firstNode = selectedState === "Washington" || (noVoterIDStates.includes(selectedState) && selectedState !== "Nevada") ? "I" : selectedState === "Nevada" ? "NV1" : "B";
         setCurrentNode(firstNode);
@@ -412,6 +477,7 @@ More questions to come.  Thanks!`;
     setCurrentNode("");
     setHistory([]);
     setIsStarted(false);
+    setVotingIDStatus(null);
   };
 
   const getSolutionIcon = (type: string) => {
@@ -457,9 +523,9 @@ More questions to come.  Thanks!`;
             <CreditCard className="size-6 text-white" />
           </div>
           <div>
-            <h1 className="mb-1">ID Assistance Decision Tree</h1>
+            <h1 className="mb-1">Special Decision Tree — 2026 Election Protocol</h1>
             <p className="text-muted-foreground">
-              Interactive decision tree to determine the appropriate assistance for voter ID needs
+              Interactive decision tree for the 2026 Midterm Election helpline protocol
             </p>
           </div>
         </div>
@@ -467,6 +533,37 @@ More questions to come.  Thanks!`;
 
       {!isStarted ? (
         <>
+          {/* 2026 Election Helpline Protocol preamble */}
+          <div className="border-2 rounded-xl p-6 mb-6" style={{ backgroundColor: '#4A90E2' + '10', borderColor: '#4A90E2' + '40' }}>
+            <div className="flex items-center gap-3 mb-4">
+              <CalendarClock className="size-5" style={{ color: '#4A90E2' }} />
+              <h2>2026 Election Helpline Protocol</h2>
+            </div>
+            <div className="space-y-4 leading-relaxed text-sm">
+              <p>
+                When working with a voter who has called about getting their ID or confirming their
+                registration process, please start with the following questions.
+              </p>
+              <p>
+                With the 2026 Midterm Elections just around the corner, VoteRiders wants to make sure
+                everyone who calls our helpline has everything they need to successfully cast their ballot in
+                November. When you're working with a voter who has called about getting their ID or confirming
+                their registration process please start with the questions below.
+              </p>
+              <p>
+                Please note, people call our helpline for urgent ID assistance services that may be unrelated
+                to voting, and may be reluctant to have these conversations. If someone is calling for ID needs
+                outside of voting please say:
+              </p>
+              <div className="bg-background/70 rounded-lg p-4 border border-border italic">
+                "I understand that you need help getting your ID for [insert reason]. We are going to do our
+                very best to help you get your ID as quickly as we are able. As the election is approaching, we
+                also want to assess if you are prepared to vote, and give you additional support with that
+                process if needed, so I am going to ask you a few follow up questions."
+              </div>
+            </div>
+          </div>
+
           {/* State Selection */}
           <div className="border border-border bg-card rounded-xl p-8 mb-6">
             <div className="flex items-center gap-3 mb-6">
@@ -562,7 +659,7 @@ More questions to come.  Thanks!`;
                           </div>
                         )}
                         <div className={`bg-muted rounded-lg p-4 border border-border ${item.guide ? 'ml-7' : ''}`}>
-                          <p className="leading-relaxed">{item.text}</p>
+                          <p className="leading-relaxed whitespace-pre-line">{item.text}</p>
                         </div>
                       </div>
                     ))}
@@ -585,6 +682,7 @@ More questions to come.  Thanks!`;
               const qText = typeof node.question === "function" ? node.question() : node.question;
 
               if (node.isSolution) {
+                const showClosing = votingIDStatus && (node.type === 'urgent' || node.type === 'regular');
                 return (
                   <div className="space-y-6">
                     {/* Assistance Script - shown for urgent/regular outcomes */}
@@ -703,6 +801,46 @@ More questions to come.  Thanks!`;
                           </div>
                         )}
                       </>
+                    )}
+
+                    {/* 2026 Election Day closing script - based on Question 4 answer */}
+                    {showClosing && (
+                      <div className="border-2 rounded-xl p-6" style={{ backgroundColor: '#F59E0B' + '10', borderColor: '#F59E0B' + '40' }}>
+                        <div className="flex items-center gap-3 mb-4">
+                          <CalendarClock className="size-5" style={{ color: '#F59E0B' }} />
+                          <div>
+                            <h3 className="mb-1">2026 Election Day Closing Script</h3>
+                            <p className="text-sm text-muted-foreground">
+                              Say this at the end of the decision tree once ID Assistance intake is complete
+                            </p>
+                          </div>
+                        </div>
+
+                        {votingIDStatus === 'yes' ? (
+                          <div className="bg-background/70 rounded-lg p-4 border border-border">
+                            <p className="leading-relaxed">{closingScriptHasID}</p>
+                          </div>
+                        ) : (
+                          <div className="space-y-4">
+                            <div className="bg-background/70 rounded-lg p-4 border border-border">
+                              <p className="leading-relaxed">{closingScriptNoID}</p>
+                            </div>
+                            <div className="bg-background/70 rounded-lg p-4 border border-border text-sm leading-relaxed space-y-2">
+                              <p>
+                                Then provide the voter with the information in the "What if I don't have the
+                                right ID to vote?" section on their state page:{' '}
+                                <a href="https://voteriders.org/staterules/" target="_blank" rel="noreferrer" className="text-[#4A90E2] hover:text-[#1AC166] underline">
+                                  https://voteriders.org/staterules/
+                                </a>
+                              </p>
+                              <p className="font-medium" style={{ color: '#EF4444' }}>
+                                Mark the voter's case as "Urgent", tag the state organizer/contractor in Slack,
+                                and note that the ID is needed for voting.
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     )}
 
                     {/* Email/Text Script - shown above "Unable to Assist" */}
