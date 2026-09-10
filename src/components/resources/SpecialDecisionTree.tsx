@@ -523,7 +523,7 @@ More questions to come.  Thanks!`;
             <CreditCard className="size-6 text-white" />
           </div>
           <div>
-            <h1 className="mb-1">Special Decision Tree — 2026 Election Protocol</h1>
+            <h1 className="mb-1">2026 Election Decision Tree</h1>
             <p className="text-muted-foreground">
               Interactive decision tree for the 2026 Midterm Election helpline protocol
             </p>

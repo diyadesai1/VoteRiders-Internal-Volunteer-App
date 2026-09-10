@@ -30,7 +30,7 @@ type ResourceItem = {
 
 const primaryResourceItems: ResourceItem[] = [
   { icon: Network, label: 'Decision Tree', page: 'resources-decision-tree' },
-  { icon: CalendarClock, label: 'Special Decision Tree', page: 'resources-special-decision-tree' },
+  { icon: CalendarClock, label: 'Election Decision Tree', page: 'resources-special-decision-tree' },
   { icon: FileText, label: 'Voter Agreement', page: 'resources-voter-agreement' },
   { icon: HelpCircle, label: 'FAQs', page: 'resources-research-based' },
   { icon: PhoneOff, label: 'CMs & No Phone', page: 'resources-case-managers-no-phone' },
