@@ -21,9 +21,9 @@ export function SpecialDecisionTree({ embedded = false, flowType = 'helpline', o
   // Tracks the answer to Question 4 ("Do you have an ID you can use to vote in your state?")
   const [votingIDStatus, setVotingIDStatus] = useState<'yes' | 'no' | null>(null);
 
-  const emailScript = "[Introduce self if this is first reply].  Thanks so much for reaching out. Unfortunately, you currently do not meet the eligibility criteria for Voter Riders ID assistance.\nIf I'm wrong about where you live or the reason that you've contacted us, please write back and let me know.\nIf I've misunderstood your location or the reason you contacted us, please feel free to write back and let me know — I'd be happy to take another look and help however I can.\nLet me know if you'd like me to see if we have a referral organization in your area that may be able to help.";
+  const emailScript = "[Introduce self if this is first reply].  Thanks so much for reaching out. Unfortunately, you currently do not meet the eligibility criteria for ID assistance.\nIf I'm wrong about where you live or the reason that you've contacted us, please write back and let me know.\nIf I've misunderstood your location or the reason you contacted us, please feel free to write back and let me know — I'd be happy to take another look and help however I can.\nLet me know if you'd like me to see if we have a referral organization in your area that may be able to help.";
 
-  const textScript = "The mission of VoteRiders is to help people get the ID they need in order to vote. Unfortunately, you currently do not meet the eligibility criteria for Voter Riders ID assistance.\nIf I'm wrong about where you live or the reason that you've contacted us, please write back and let me know.";
+  const textScript = "The mission of VoteRiders is to help people get the ID they need in order to vote. Unfortunately, you currently do not meet the eligibility criteria for ID assistance.\nIf I'm wrong about where you live or the reason that you've contacted us, please write back and let me know.";
 
   const assistanceScript = "Thank you for answering these questions.  We should be able to help!  We have a two-step process: first, we will collect some information from you, and after that is complete we can send your case to our ID Assistance Team.  Someone from that group will then reach out to you by phone and work with you one-on-one to get you what you need.";
 
@@ -161,7 +161,7 @@ More questions to come.  Thanks!`;
           }
         ],
         answers: [
-          { text: "Voter has registered — Continue to Question 4", next: "Q4" },
+          { text: "Voter has been provided with registration information — Continue to Question 5", next: "Q4" },
         ],
       },
       // NEW (2026 protocol): Question 4 — do they have an ID they can use to vote?
@@ -217,8 +217,22 @@ More questions to come.  Thanks!`;
           }
         ],
         answers: [
-          { text: "Yes", next: "J" },
+          { text: "Yes", next: "G_DEADLINE" },
           { text: "No", next: "I" },
+        ],
+      },
+      G_DEADLINE: {
+        question:
+          "Needs ID for an impending deadline (e.g., <a href='http://VoteRiders.org/Vote' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>to vote</a>, job offer pending their ability to show ID by a certain date OR must complete a housing application by a given date)?",
+        script: [
+          {
+            guide: "",
+            text: "Is there a specific deadline your documents by? (We cannot make any promises on timeline.)"
+          }
+        ],
+        answers: [
+          { text: "Yes", next: "J" },
+          { text: "No", next: "F" },
         ],
       },
       H: {
