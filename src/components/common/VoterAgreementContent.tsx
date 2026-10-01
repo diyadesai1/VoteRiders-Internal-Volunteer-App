@@ -13,7 +13,7 @@ export function VoterAgreementContent({ flowType }: VoterAgreementContentProps) 
   const [closingScriptCopied, setClosingScriptCopied] = useState(false);
   const [textIntroScriptCopied, setTextIntroScriptCopied] = useState(false);
 
-  const AGREEMENT_LINK = 'https://vote-riders-internal-volunteer-app.vercel.app/resources-decision-tree';
+  const AGREEMENT_LINK = 'https://drive.google.com/file/d/1QW79Nqa5T176SNpaFMfnBT3uBITWkymv/view?usp=sharing';
   
   const introScript = `To get started, though, we need your consent to collect this information. Please read through the following voter agreement and then respond with your answers to the questions at the bottom.`;
 
@@ -26,7 +26,7 @@ I hope to hear back from you soon - thanks for reaching out to VoteRiders!`;
 Our process is to collect some information from you and then send your case to our ID Assistance Team to work with you one-on-one to get you what you need. But before we can do that, please follow the link below to read through VoteRiders Consent Agreement, which has two questions at the bottom. Please respond to both (you can just say "I confirm and agree") and then we can continue with the process.
  
 Here is that link:
-https://drive.google.com/file/d/1NT7XvuwkG3IDvsOZS-KClskPbEmJ4gIh/view?usp=sharing
+${AGREEMENT_LINK}
  
 I hope to hear back from you soon. Thanks!`;
   

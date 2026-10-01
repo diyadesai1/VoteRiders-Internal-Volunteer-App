@@ -254,8 +254,44 @@ More questions to come.  Thanks!`;
           }
         ],
         answers: [
-          { text: "Yes", next: "BC1" },
+          { text: "Yes", next: "BC_REG" },
           { text: "No", next: "I" },
+        ],
+      },
+      // Birth certificate path: voter already has a current ID, so ask about registration and skip the voting-ID question.
+      BC_REG: {
+        question:
+          "Are you registered to vote? If so, are you registered under your current legal name? Are you registered at your current address?",
+        script: [
+          {
+            guide: "Confirm the voter's registration status",
+            text: "Are you registered to vote? If so, are you registered under your current legal name? Are you registered at your current address? You can confirm your voter registration status here: https://voteriders.turbovote.org/check-your-registration/voter-info"
+          }
+        ],
+        answers: [
+          { text: "Yes — registered under current legal name & address", next: "BC1" },
+          { text: "No — needs to register or update registration", next: "BC_REG_NO" },
+        ],
+      },
+      BC_REG_NO: {
+        question:
+          "Help the voter register to vote, then continue.",
+        script: [
+          {
+            guide: "Send the voter the registration link",
+            text: "You may be able to register to vote here: https://voteriders.turbovote.org/register-to-vote/voter-info. Please note that in many states if you do not have a current driver's license or state ID, you will not be able to register to vote online. You can instead use the mail-in registration application or register in-person."
+          },
+          {
+            guide: "For volunteers",
+            text: "We do not fill out the registration form on behalf of voters. Please send it to them so they can complete it themselves."
+          },
+          {
+            guide: "State registration deadlines",
+            text: "Find state registration deadlines here: https://voteriders.turbovote.org/"
+          }
+        ],
+        answers: [
+          { text: "Voter has been provided with registration information — Continue", next: "BC1" },
         ],
       },
       BC1: {
@@ -446,9 +482,12 @@ More questions to come.  Thanks!`;
       };
       setHistory((prev) => [...prev, newEntry]);
 
-      // Record the answer to Question 4 so we can show the correct 2026 closing script
+      // Record whether the voter has an ID they can use to vote so the 2026 closing script matches.
+      // Q4 asks this directly. On the birth-certificate path the voter already has a current ID, so skip that question.
       if (currentNode === "Q4") {
         setVotingIDStatus(answerText.startsWith("Yes") ? "yes" : "no");
+      } else if (currentNode === "H") {
+        setVotingIDStatus(answerText.startsWith("Yes") ? "yes" : null);
       }
 
       const next = typeof nextNode === "function" ? nextNode() : nextNode;
@@ -471,8 +510,13 @@ More questions to come.  Thanks!`;
     setTimeout(() => {
       const newHistory = history.slice(0, -1);
       setHistory(newHistory);
-      // If we stepped back past Question 4, clear the recorded voting-ID status
-      if (!newHistory.some((h) => h.id === "Q4")) {
+      const q4 = newHistory.find((h) => h.id === "Q4");
+      const hasCurrentID = newHistory.some((h) => h.id === "H" && h.answer.startsWith("Yes"));
+      if (q4) {
+        setVotingIDStatus(q4.answer.startsWith("Yes") ? "yes" : "no");
+      } else if (hasCurrentID) {
+        setVotingIDStatus("yes");
+      } else {
         setVotingIDStatus(null);
       }
       if (newHistory.length === 1) {
