@@ -8,6 +8,82 @@ interface SpecialDecisionTreeProps {
   onContinue?: () => void;
 }
 
+function ScriptList({ script }: { script: Array<{ guide?: string; text: string; note?: string }> }) {
+  return (
+    <div className="space-y-4">
+      {script.map((item, idx) => (
+        <div key={idx}>
+          {item.guide && (
+            <div className="flex items-center gap-2 mb-2">
+              <div className="size-5 rounded-full flex items-center justify-center text-xs text-white" style={{ backgroundColor: '#8B5CF6' }}>
+                {idx + 1}
+              </div>
+              <p className="text-sm text-muted-foreground italic">{item.guide}</p>
+            </div>
+          )}
+          <div className={`bg-muted rounded-lg p-4 border border-border ${item.guide ? 'ml-7' : ''}`}>
+            <p className="leading-relaxed whitespace-pre-line">
+              <LinkifiedText text={item.text} />
+            </p>
+          </div>
+          {item.note && (
+            <div
+              className={`mt-3 flex items-start gap-3 rounded-lg p-4 border-l-4 ${item.guide ? 'ml-7' : ''}`}
+              style={{ backgroundColor: '#F59E0B15', borderColor: '#F59E0B' }}
+            >
+              <AlertTriangle className="size-5 flex-shrink-0 mt-0.5" style={{ color: '#F59E0B' }} />
+              <p className="leading-relaxed">
+                <strong>For Volunteers:</strong> {item.note}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function LinkifiedText({ text }: { text: string }) {
+  const parts = text.split(/(https?:\/\/[^\s)]+)/g);
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.startsWith('http') ? (
+          <a
+            key={i}
+            href={part}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[#4A90E2] hover:text-[#1AC166] underline break-all"
+          >
+            {part}
+          </a>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
+const registrationDeadlineQuestion = "Find the state registration deadline here: <a href='https://voteriders.turbovote.org/how-to-vote' target='_blank' rel='noreferrer' class='text-[#4A90E2] hover:text-[#1AC166] underline break-all'>https://voteriders.turbovote.org/how-to-vote</a> (Select voter\u2019s state, then click on \u201CNext Statewide Election\u201D, scroll to the \u201CKey Deadlines\u201D section)";
+
+const registrationScripts = [
+  {
+    guide: "If the state\u2019s registration deadline hasn\u2019t passed",
+    text: "You may be able to register to vote here: https://voteriders.turbovote.org/register-to-vote/voter-info. Please note that in many states if you do not have a current driver's license or state ID, you will not be able to register to vote online. You can instead use the mail-in registration application or register in-person.",
+    note: "We do not fill out the registration form on behalf of voters. Please send it to them so they can complete it themselves.",
+  },
+  {
+    guide: "If the state\u2019s registration deadline has passed and the voter isn\u2019t registered to vote",
+    text: "Unfortunately, your state\u2019s voter registration for the November election has passed. We still encourage you to register to vote as soon as possible, so you\u2019re ready for the next election.",
+  },
+  {
+    guide: "If the state\u2019s registration deadline has passed and the voter needs to update their existing voter registration.",
+    text: "Please ask them what needs to be updated on their registration, such as name or address. Once you have collected that information, tag the Helpline Team in Slack, and we will help you figure out the best next steps for the voter.",
+  },
+];
+
 export function SpecialDecisionTree({ embedded = false, flowType = 'helpline', onContinue }: SpecialDecisionTreeProps = {}) {
   const [selectedState, setSelectedState] = useState("");
   const [currentNode, setCurrentNode] = useState("");
@@ -144,25 +220,19 @@ More questions to come.  Thanks!`;
       },
       // NEW (2026 protocol): registration guidance shown when the voter is not registered
       REG_NO: {
-        question:
-          "Provide the voter with registration information.",
-        script: [
-          {
-            guide: "Send the voter the registration link",
-            text: "You may be able to register to vote here: https://voteriders.turbovote.org/register-to-vote/voter-info. Please note that in many states if you do not have a current driver's license or state ID, you will not be able to register to vote online. You can instead use the mail-in registration application or register in-person."
-          },
-          {
-            guide: "For volunteers",
-            text: "We do not fill out the registration form on behalf of voters. Please send it to them so they can complete it themselves."
-          },
-          {
-            guide: "State registration deadlines",
-            text: "Find state registration deadlines here: https://voteriders.turbovote.org/"
-          }
-        ],
+        question: registrationDeadlineQuestion,
+        script: registrationScripts,
+        embedScripts: true,
         answers: [
-          { text: "Voter has been provided with registration information — Continue", next: "Q4" },
+          { text: "Voter has been provided with registration information - Continue to question 5", next: "Q4" },
+          { text: "Voter registration deadline has passed in their state", next: "REG_PASSED" },
         ],
+      },
+      REG_PASSED: {
+        question:
+          "Solved: Escalate as a non-urgent case. Refer to VIDA (do not tag in Slack). Go over the <a href='https://vote-riders-internal-volunteer-app.vercel.app/resources-decision-tree' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
+        isSolution: true,
+        type: "regular",
       },
       // NEW (2026 protocol): Question 4 — do they have an ID they can use to vote?
       Q4: {
@@ -274,24 +344,12 @@ More questions to come.  Thanks!`;
         ],
       },
       BC_REG_NO: {
-        question:
-          "Provide the voter with registration information.",
-        script: [
-          {
-            guide: "Send the voter the registration link",
-            text: "You may be able to register to vote here: https://voteriders.turbovote.org/register-to-vote/voter-info. Please note that in many states if you do not have a current driver's license or state ID, you will not be able to register to vote online. You can instead use the mail-in registration application or register in-person."
-          },
-          {
-            guide: "For volunteers",
-            text: "We do not fill out the registration form on behalf of voters. Please send it to them so they can complete it themselves."
-          },
-          {
-            guide: "State registration deadlines",
-            text: "Find state registration deadlines here: https://voteriders.turbovote.org/"
-          }
-        ],
+        question: registrationDeadlineQuestion,
+        script: registrationScripts,
+        embedScripts: true,
         answers: [
-          { text: "Voter has been provided with registration information — Continue", next: "BC1" },
+          { text: "Voter has been provided with registration information - Continue to question 5", next: "BC1" },
+          { text: "Voter registration deadline has passed in their state", next: "REG_PASSED" },
         ],
       },
       BC1: {
@@ -701,27 +759,11 @@ More questions to come.  Thanks!`;
           {/* Script Display - if available (separate block) */}
           {(() => {
             const node = steps[currentNode];
-            if (node && !node.isSolution && node.script) {
+            if (node && !node.isSolution && node.script && !node.embedScripts) {
               return (
                 <div className="border border-border bg-card rounded-xl p-6 mb-6">
                   <h3 className="mb-4">Scripts for this question:</h3>
-                  <div className="space-y-4">
-                    {node.script.map((item: any, idx: number) => (
-                      <div key={idx}>
-                        {item.guide && (
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="size-5 rounded-full flex items-center justify-center text-xs text-white" style={{ backgroundColor: '#8B5CF6' }}>
-                              {idx + 1}
-                            </div>
-                            <p className="text-sm text-muted-foreground italic">{item.guide}</p>
-                          </div>
-                        )}
-                        <div className={`bg-muted rounded-lg p-4 border border-border ${item.guide ? 'ml-7' : ''}`}>
-                          <p className="leading-relaxed whitespace-pre-line">{item.text}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <ScriptList script={node.script} />
                 </div>
               );
             }
@@ -1045,7 +1087,13 @@ More questions to come.  Thanks!`;
                     <h2 className="mb-2">
                       <span dangerouslySetInnerHTML={{ __html: qText }} />
                     </h2>
-                    <p className="text-sm text-muted-foreground">Select the option that best describes the voter's situation</p>
+                    {node.embedScripts && node.script && (
+                      <div className="mt-6">
+                        <h3 className="mb-4">Scripts for this question:</h3>
+                        <ScriptList script={node.script} />
+                      </div>
+                    )}
+                    <p className={`text-sm text-muted-foreground ${node.embedScripts ? 'mt-6' : ''}`}>Select the option that best describes the voter's situation</p>
                   </div>
 
                   {node.answers && (
