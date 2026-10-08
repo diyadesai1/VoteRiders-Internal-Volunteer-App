@@ -1,6 +1,7 @@
 import { CreditCard, MapPin, AlertTriangle, CheckCircle, Users, RotateCcw, Clipboard, ChevronRight, Copy, Check, CalendarClock } from 'lucide-react';
 import { useMemo, useState, useEffect } from 'react';
 import { InfoCollectionScripts } from '../common/InfoCollectionScripts';
+import { getRegistrationDeadlineInfo } from '../../utils/electionDeadlines';
 
 interface SpecialDecisionTreeProps {
   embedded?: boolean;
@@ -83,6 +84,47 @@ const registrationScripts = [
     text: "Please ask them what needs to be updated on their registration, such as name or address. Once you have collected that information, tag the Helpline Team in Slack, and we will help you figure out the best next steps for the voter.",
   },
 ];
+
+const registrationLinkClass = "text-[#4A90E2] hover:text-[#1AC166] underline break-all";
+
+// Picks the registration question, scripts and answers based on whether the voter's state deadline has passed.
+// Falls back to the manual TurboVote lookup when the state has no registration deadline on file.
+function buildRegistrationStep(stateName: string, continueTo: string) {
+  const info = getRegistrationDeadlineInfo(stateName);
+  const [openScript, ...passedScripts] = registrationScripts;
+  const continueAnswer = { text: "Voter has been provided with registration information - Continue to question 5", next: continueTo };
+  const passedAnswer = { text: "Voter registration deadline has passed in their state", next: "REG_PASSED" };
+
+  if (!info || info.status === "unknown") {
+    return {
+      question: registrationDeadlineQuestion,
+      script: registrationScripts,
+      embedScripts: true,
+      answers: [continueAnswer, passedAnswer],
+    };
+  }
+
+  const deadlines = info.items
+    .map((item) => `${item.label}: ${item.display}${item.passed ? " (passed)" : ""}`)
+    .join("; ");
+  const turboVoteLink = `<a href='${info.turboVoteUrl}' target='_blank' rel='noreferrer' class='${registrationLinkClass}'>Confirm on TurboVote</a>`;
+
+  if (info.status === "open") {
+    return {
+      question: `${info.stateName}'s voter registration deadline has not passed. Registration deadlines: ${deadlines}. (${turboVoteLink})`,
+      script: [{ text: openScript.text, note: openScript.note }],
+      embedScripts: true,
+      answers: [continueAnswer],
+    };
+  }
+
+  return {
+    question: `${info.stateName}'s voter registration deadline has passed. Registration deadlines: ${deadlines}. (${turboVoteLink})`,
+    script: passedScripts,
+    embedScripts: true,
+    answers: [passedAnswer],
+  };
+}
 
 export function SpecialDecisionTree({ embedded = false, flowType = 'helpline', onContinue }: SpecialDecisionTreeProps = {}) {
   const [selectedState, setSelectedState] = useState("");
@@ -219,15 +261,7 @@ More questions to come.  Thanks!`;
         ],
       },
       // NEW (2026 protocol): registration guidance shown when the voter is not registered
-      REG_NO: {
-        question: registrationDeadlineQuestion,
-        script: registrationScripts,
-        embedScripts: true,
-        answers: [
-          { text: "Voter has been provided with registration information - Continue to question 5", next: "Q4" },
-          { text: "Voter registration deadline has passed in their state", next: "REG_PASSED" },
-        ],
-      },
+      REG_NO: buildRegistrationStep(selectedState, "Q4"),
       REG_PASSED: {
         question:
           "Solved: Escalate as a non-urgent case. Refer to VIDA (do not tag in Slack). Go over the <a href='https://vote-riders-internal-volunteer-app.vercel.app/resources-decision-tree' target='_blank' class='text-[#4A90E2] hover:text-[#1AC166] underline'>Voter Agreement</a> with the voter prior to sending the ticket to ID Assist and check the corresponding box in Zendesk.",
@@ -343,15 +377,7 @@ More questions to come.  Thanks!`;
           { text: "No — needs to register or update registration", next: "BC_REG_NO" },
         ],
       },
-      BC_REG_NO: {
-        question: registrationDeadlineQuestion,
-        script: registrationScripts,
-        embedScripts: true,
-        answers: [
-          { text: "Voter has been provided with registration information - Continue to question 5", next: "BC1" },
-          { text: "Voter registration deadline has passed in their state", next: "REG_PASSED" },
-        ],
-      },
+      BC_REG_NO: buildRegistrationStep(selectedState, "BC1"),
       BC1: {
         question: () => {
           if (selectedState === "Arizona") {

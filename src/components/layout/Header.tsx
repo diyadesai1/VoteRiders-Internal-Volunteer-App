@@ -52,6 +52,8 @@ export function Header({ currentPage }: HeaderProps) {
         return 'Decision Tree';
       case 'resources-special-decision-tree':
         return '2026 Election Decision Tree';
+      case 'resources-key-election-details':
+        return 'Key Election Details';
       case 'resources-research-based':
         return 'Resource Based';
       case 'resources-support':

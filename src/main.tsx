@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/resource-based" element={<App initialPage="resources-research-based" />} />
         <Route path="/resources-decision-tree" element={<App initialPage="resources-decision-tree" />} />
         <Route path="/resources-special-decision-tree" element={<App initialPage="resources-special-decision-tree" />} />
+        <Route path="/resources-key-election-details" element={<App initialPage="resources-key-election-details" />} />
         <Route path="/resources-case-managers-no-phone" element={<App initialPage="resources-case-managers-no-phone" />} />
         <Route path="/" element={<Navigate to="/home" replace />} />
       </Routes>

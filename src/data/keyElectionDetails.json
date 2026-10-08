@@ -1,0 +1,3256 @@
+{
+  "electionDate": "2026-11-03",
+  "electionName": "2026 General Election",
+  "lastUpdated": "2026-10-08",
+  "source": "TurboVote (voteriders.turbovote.org)",
+  "states": [
+    {
+      "code": "AL",
+      "name": "Alabama",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/al/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-19",
+              "display": "Oct 19 close of business"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-19",
+              "deadline": "2026-10-19T23:59-05:00",
+              "display": "Oct 19 by 11:59 p.m. CDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "display": "Oct 27"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T12:00-06:00",
+              "display": "Nov 3 by 12:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-02",
+              "display": "Nov 2 close of business"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AK",
+      "name": "Alaska",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ak/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-04",
+              "deadline": "2026-10-04T16:00-08:00",
+              "display": "Oct 4 by 4:00 p.m. AKDT"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-04",
+              "display": "Oct 4"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-04",
+              "display": "Oct 4"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-24",
+              "display": "Oct 24"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-09:00",
+              "display": "Nov 3 by 8:00 p.m. AKST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-19",
+              "endDate": "2026-11-02",
+              "display": "Oct 19 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AZ",
+      "name": "Arizona",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/az/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-05",
+              "deadline": "2026-10-05T23:59-07:00",
+              "display": "Oct 5 by 11:59 p.m. MST"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-23",
+              "deadline": "2026-10-23T17:00-07:00",
+              "display": "Oct 23 by 5:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-07",
+              "endDate": "2026-10-30",
+              "display": "Oct 7 - Oct 30"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AR",
+      "name": "Arkansas",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ar/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "display": "Oct 27"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:30-06:00",
+              "display": "Nov 3 by 7:30 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-10-30",
+              "display": "Oct 30 close of business"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-19",
+              "endDate": "2026-11-02",
+              "display": "Oct 19 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CA",
+      "name": "California",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ca/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-05",
+              "endDate": "2026-11-02",
+              "display": "Oct 5 - Nov 2"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-19",
+              "deadline": "2026-10-19T23:59-07:00",
+              "display": "Oct 19 by 11:59 p.m. PDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-08:00",
+              "display": "Nov 3 by 8:00 p.m. PST"
+            },
+            {
+              "label": "California sends ballots to actively registered voters",
+              "date": "2026-10-05",
+              "endDate": "2026-10-24",
+              "display": "Oct 5 - Oct 24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CO",
+      "name": "Colorado",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/co/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-19",
+              "endDate": "2026-11-03",
+              "display": "Oct 19 - Nov 3"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            },
+            {
+              "label": "Colorado sends ballots to actively registered voters",
+              "date": "2026-10-02",
+              "endDate": "2026-10-09",
+              "display": "Oct 2 - Oct 9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CT",
+      "name": "Connecticut",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ct/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-19",
+              "endDate": "2026-11-01",
+              "display": "Oct 19 - Nov 1"
+            },
+            {
+              "label": "In person at designated location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-16",
+              "deadline": "2026-10-16T23:59-04:00",
+              "display": "Oct 16 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-16",
+              "display": "Oct 16"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "display": "Nov 2"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-02",
+              "display": "Nov 2"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-19",
+              "endDate": "2026-11-01",
+              "display": "Oct 19 - Nov 1"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DE",
+      "name": "Delaware",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/de/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-10",
+              "display": "Oct 10"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-10",
+              "deadline": "2026-10-10T23:59-04:00",
+              "display": "Oct 10 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-10",
+              "display": "Oct 10"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-30",
+              "display": "Oct 30"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-22",
+              "endDate": "2026-11-01",
+              "display": "Oct 22 - Nov 1"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DC",
+      "name": "District of Columbia",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/dc/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-26",
+              "endDate": "2026-11-01",
+              "display": "Oct 26 - Nov 1"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-26",
+              "endDate": "2026-11-01",
+              "display": "Oct 26 - Nov 1"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "The District of Columbia starts sending ballots to all active registered voters",
+              "date": "2026-09-30",
+              "display": "Sep 30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FL",
+      "name": "Florida",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/fl/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-05",
+              "deadline": "2026-10-05T23:59-04:00",
+              "display": "Oct 5 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-22",
+              "deadline": "2026-10-22T17:00-04:00",
+              "display": "Oct 22 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-05:00",
+              "display": "Nov 3 by 7:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-05:00",
+              "display": "Nov 3 by 7:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GA",
+      "name": "Georgia",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ga/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5 close of business"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-23",
+              "display": "Oct 23"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-13",
+              "endDate": "2026-10-30",
+              "display": "Oct 13 - Oct 30"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HI",
+      "name": "Hawaii",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/hi/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-20",
+              "endDate": "2026-11-02",
+              "display": "Oct 20 - Nov 2"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-26",
+              "display": "Oct 26"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-20",
+              "endDate": "2026-11-02",
+              "display": "Oct 20 - Nov 2"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-10:00",
+              "display": "Nov 3 by 7:00 p.m. HST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-10:00",
+              "display": "Nov 3 by 7:00 p.m. HST"
+            },
+            {
+              "label": "All active registered voters start to receive mail ballots",
+              "date": "2026-10-16",
+              "display": "Oct 16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ID",
+      "name": "Idaho",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/id/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-13",
+              "endDate": "2026-10-30",
+              "display": "Oct 13 - Oct 30"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-23",
+              "display": "Oct 23"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-23",
+              "display": "Oct 23"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-23",
+              "display": "Oct 23"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IL",
+      "name": "Illinois",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/il/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-09-24",
+              "endDate": "2026-11-02",
+              "display": "Sep 24 - Nov 2"
+            },
+            {
+              "label": "In person at designated location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-18",
+              "deadline": "2026-10-18T23:59-05:00",
+              "display": "Oct 18 by 11:59 p.m. CDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-06",
+              "display": "Oct 6"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-29",
+              "display": "Oct 29"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-06:00",
+              "display": "Nov 3 by 7:00 p.m. CST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IN",
+      "name": "Indiana",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/in/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5 close of business"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-05",
+              "deadline": "2026-10-05T23:59-04:00",
+              "display": "Oct 5 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-22",
+              "deadline": "2026-10-22T23:59-04:00",
+              "display": "Oct 22 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "date": "2026-10-06",
+              "endDate": "2026-11-02",
+              "display": "Oct 6 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IA",
+      "name": "Iowa",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ia/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-14",
+              "endDate": "2026-11-02",
+              "display": "Oct 14 - Nov 2"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-19",
+              "deadline": "2026-10-19T23:59-05:00",
+              "display": "Oct 19 by 11:59 p.m. CDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-19",
+              "deadline": "2026-10-19T17:00-05:00",
+              "display": "Oct 19 by 5:00 p.m. CDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-06:00",
+              "display": "Nov 3 by 8:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-06:00",
+              "display": "Nov 3 by 8:00 p.m. CST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "date": "2026-10-14",
+              "endDate": "2026-11-02",
+              "display": "Oct 14 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KS",
+      "name": "Kansas",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ks/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            }
+          ]
+        },
+        {
+          "title": "Advance mail ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "display": "Oct 27"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Advance in-person voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KY",
+      "name": "Kentucky",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ky/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5 close of business"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-20",
+              "display": "Oct 20"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "date": "2026-10-29",
+              "endDate": "2026-10-31",
+              "display": "Oct 29 - Oct 31"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LA",
+      "name": "Louisiana",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/la/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-30",
+              "deadline": "2026-10-30T16:30-05:00",
+              "display": "Oct 30 by 4:30 p.m. CDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-02",
+              "deadline": "2026-11-02T16:30-06:00",
+              "display": "Nov 2 by 4:30 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-02",
+              "deadline": "2026-11-02T16:30-06:00",
+              "display": "Nov 2 by 4:30 p.m. CST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-20",
+              "endDate": "2026-10-27",
+              "display": "Oct 20 - Oct 27"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ME",
+      "name": "Maine",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/me/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T17:00-04:00",
+              "display": "Oct 13 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-13",
+              "display": "Oct 13 close of business"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-29",
+              "display": "Oct 29 close of business"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MD",
+      "name": "Maryland",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/md/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-22",
+              "endDate": "2026-10-29",
+              "display": "Oct 22 - Oct 29"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T23:59-04:00",
+              "display": "Oct 13 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T17:00-04:00",
+              "display": "Oct 13 by 5:00 p.m. EDT"
+            }
+          ]
+        },
+        {
+          "title": "Mail-in ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "deadline": "2026-10-27T20:00-04:00",
+              "display": "Oct 27 by 8:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-22",
+              "endDate": "2026-10-29",
+              "display": "Oct 22 - Oct 29"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MA",
+      "name": "Massachusetts",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ma/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-24",
+              "deadline": "2026-10-24T17:00-04:00",
+              "display": "Oct 24 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-24",
+              "deadline": "2026-10-24T23:59-04:00",
+              "display": "Oct 24 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-24",
+              "display": "Oct 24"
+            }
+          ]
+        },
+        {
+          "title": "Mail and absentee deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "deadline": "2026-10-27T17:00-04:00",
+              "display": "Oct 27 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-17",
+              "endDate": "2026-10-30",
+              "display": "Oct 17 - Oct 30"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MI",
+      "name": "Michigan",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/mi/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-30",
+              "deadline": "2026-10-30T17:00-04:00",
+              "display": "Oct 30 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MN",
+      "name": "Minnesota",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/mn/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-09-18",
+              "endDate": "2026-11-02",
+              "display": "Sep 18 - Nov 2"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T23:59-05:00",
+              "display": "Oct 13 by 11:59 p.m. CDT"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T17:00-05:00",
+              "display": "Oct 13 by 5:00 p.m. CDT"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "display": "Nov 2"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-06:00",
+              "display": "Nov 3 by 8:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T17:00-06:00",
+              "display": "Nov 3 by 5:00 p.m. CST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MS",
+      "name": "Mississippi",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ms/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5 close of business"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "display": "Nov 2"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MO",
+      "name": "Missouri",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/mo/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-07",
+              "deadline": "2026-10-07T17:00-05:00",
+              "display": "Oct 7 by 5:00 p.m. CDT"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-07",
+              "display": "Oct 7"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-07",
+              "display": "Oct 7"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-21",
+              "deadline": "2026-10-21T17:00-05:00",
+              "display": "Oct 21 by 5:00 p.m. CDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-06:00",
+              "display": "Nov 3 by 7:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-06:00",
+              "display": "Nov 3 by 7:00 p.m. CST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "date": "2026-10-20",
+              "endDate": "2026-11-02",
+              "display": "Oct 20 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MT",
+      "name": "Montana",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/mt/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-05",
+              "endDate": "2026-11-02",
+              "display": "Oct 5 - Nov 2"
+            },
+            {
+              "label": "In-person at local election office on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "deadline": "2026-11-02T12:00-07:00",
+              "display": "Nov 2 by 12:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-07:00",
+              "display": "Nov 3 by 8:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-07:00",
+              "display": "Nov 3 by 8:00 p.m. MST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "date": "2026-10-05",
+              "endDate": "2026-11-02",
+              "display": "Oct 5 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NE",
+      "name": "Nebraska",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ne/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-23",
+              "deadline": "2026-10-23T18:00-05:00",
+              "display": "Oct 23 by 6:00 p.m. CDT"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-16",
+              "deadline": "2026-10-16T23:59-05:00",
+              "display": "Oct 16 by 11:59 p.m. CDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-16",
+              "display": "Oct 16"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-23",
+              "display": "Oct 23 close of business"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-05",
+              "endDate": "2026-11-02",
+              "display": "Oct 5 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NV",
+      "name": "Nevada",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/nv/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-17",
+              "endDate": "2026-10-30",
+              "display": "Oct 17 - Oct 30"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-06",
+              "display": "Oct 6"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-17",
+              "endDate": "2026-10-30",
+              "display": "Oct 17 - Oct 30"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-08:00",
+              "display": "Nov 3 by 7:00 p.m. PST"
+            },
+            {
+              "label": "Nevada sends ballots to actively registered voters",
+              "date": "2026-10-05",
+              "endDate": "2026-10-12",
+              "display": "Oct 5 - Oct 12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NH",
+      "name": "New Hampshire",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/nh/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "In-person at local election office in advance",
+              "display": "varies by town"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "deadline": "2026-11-02T12:00-05:00",
+              "display": "Nov 2 by 12:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T17:00-05:00",
+              "display": "Nov 3 by 5:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-02",
+              "deadline": "2026-11-02T17:00-05:00",
+              "display": "Nov 2 by 5:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NJ",
+      "name": "New Jersey",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/nj/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T21:00-04:00",
+              "display": "Oct 13 by 9:00 p.m. EDT"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "display": "Oct 27"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-24",
+              "endDate": "2026-11-01",
+              "display": "Oct 24 - Nov 1"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NM",
+      "name": "New Mexico",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/nm/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-06",
+              "endDate": "2026-10-31",
+              "display": "Oct 6 - Oct 31"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-06",
+              "display": "Oct 6"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-06",
+              "display": "Oct 6"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-20",
+              "display": "Oct 20"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-06",
+              "endDate": "2026-10-31",
+              "display": "Oct 6 - Oct 31"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ny/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-24",
+              "display": "Oct 24"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-24",
+              "display": "Oct 24"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-24",
+              "display": "Oct 24"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-24",
+              "display": "Oct 24"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T21:00-05:00",
+              "display": "Nov 3 by 9:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-24",
+              "endDate": "2026-11-01",
+              "display": "Oct 24 - Nov 1"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NC",
+      "name": "North Carolina",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/nc/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-15",
+              "endDate": "2026-10-31",
+              "display": "Oct 15 - Oct 31"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-09",
+              "display": "Oct 9"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-09",
+              "display": "Oct 9"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-20",
+              "deadline": "2026-10-20T17:00-04:00",
+              "display": "Oct 20 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:30-05:00",
+              "display": "Nov 3 by 7:30 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:30-05:00",
+              "display": "Nov 3 by 7:30 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ND",
+      "name": "North Dakota",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/nd/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "All eligible citizens can vote in North Dakota without prior registration",
+              "display": "No Deadline"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "display": "Nov 2"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "OH",
+      "name": "Ohio",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/oh/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "deadline": "2026-10-05T21:00-04:00",
+              "display": "Oct 5 by 9:00 p.m. EDT"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-05",
+              "deadline": "2026-10-05T23:59-04:00",
+              "display": "Oct 5 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "deadline": "2026-10-27T20:30-04:00",
+              "display": "Oct 27 by 8:30 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:30-05:00",
+              "display": "Nov 3 by 7:30 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:30-05:00",
+              "display": "Nov 3 by 7:30 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-06",
+              "endDate": "2026-11-01",
+              "display": "Oct 6 - Nov 1"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "OK",
+      "name": "Oklahoma",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ok/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-09",
+              "display": "Oct 9"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-09",
+              "display": "Oct 9"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-09",
+              "display": "Oct 9"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-19",
+              "deadline": "2026-10-19T17:00-05:00",
+              "display": "Oct 19 by 5:00 p.m. CDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-06:00",
+              "display": "Nov 3 by 7:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-02",
+              "display": "Nov 2 close of business"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-28",
+              "endDate": "2026-10-31",
+              "display": "Oct 28 - Oct 31"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "OR",
+      "name": "Oregon",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/or/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-13",
+              "display": "Oct 13 close of business"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T23:59-07:00",
+              "display": "Oct 13 by 11:59 p.m. PDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-08:00",
+              "display": "Nov 3 by 8:00 p.m. PST"
+            },
+            {
+              "label": "Oregon sends ballots to actively registered voters",
+              "date": "2026-10-14",
+              "endDate": "2026-10-20",
+              "display": "Oct 14 - Oct 20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PA",
+      "name": "Pennsylvania",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/pa/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            }
+          ]
+        },
+        {
+          "title": "Mail and absentee deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-27",
+              "deadline": "2026-10-27T17:00-04:00",
+              "display": "Oct 27 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "In-person mail ballot voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RI",
+      "name": "Rhode Island",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ri/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-04",
+              "display": "Oct 4"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-04",
+              "display": "Oct 4"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-04",
+              "display": "Oct 4"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (postmarked by)",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T16:00-04:00",
+              "display": "Oct 13 by 4:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-05:00",
+              "display": "Nov 3 by 8:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-14",
+              "endDate": "2026-11-02",
+              "display": "Oct 14 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SC",
+      "name": "South Carolina",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/sc/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-02",
+              "deadline": "2026-10-02T17:00-04:00",
+              "display": "Oct 2 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-04",
+              "deadline": "2026-10-04T23:59-04:00",
+              "display": "Oct 4 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-23",
+              "deadline": "2026-10-23T17:00-04:00",
+              "display": "Oct 23 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-05:00",
+              "display": "Nov 3 by 7:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-05:00",
+              "display": "Nov 3 by 7:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-19",
+              "endDate": "2026-10-31",
+              "display": "Oct 19 - Oct 31"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SD",
+      "name": "South Dakota",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/sd/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-19",
+              "deadline": "2026-10-19T17:00-05:00",
+              "display": "Oct 19 by 5:00 p.m. CDT"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-19",
+              "deadline": "2026-10-19T17:00-05:00",
+              "display": "Oct 19 by 5:00 p.m. CDT"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "deadline": "2026-11-02T17:00-06:00",
+              "display": "Nov 2 by 5:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "date": "2026-09-18",
+              "endDate": "2026-11-02",
+              "display": "Sep 18 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TN",
+      "name": "Tennessee",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/tn/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-24",
+              "display": "Oct 24"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3 close of polls"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-14",
+              "endDate": "2026-10-29",
+              "display": "Oct 14 - Oct 29"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TX",
+      "name": "Texas",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/tx/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-05",
+              "display": "Oct 5"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-23",
+              "display": "Oct 23"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-06:00",
+              "display": "Nov 3 by 7:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-06:00",
+              "display": "Nov 3 by 7:00 p.m. CST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-19",
+              "endDate": "2026-10-30",
+              "display": "Oct 19 - Oct 30"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "UT",
+      "name": "Utah",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/ut/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-20",
+              "endDate": "2026-10-30",
+              "display": "Oct 20 - Oct 30"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-23",
+              "deadline": "2026-10-23T17:00-06:00",
+              "display": "Oct 23 by 5:00 p.m. MDT"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-23",
+              "deadline": "2026-10-23T17:00-06:00",
+              "display": "Oct 23 by 5:00 p.m. MDT"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-07:00",
+              "display": "Nov 3 by 8:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-07:00",
+              "display": "Nov 3 by 8:00 p.m. MST"
+            },
+            {
+              "label": "Utah sends ballots to actively registered voters",
+              "date": "2026-10-13",
+              "endDate": "2026-10-27",
+              "display": "Oct 13 - Oct 27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VT",
+      "name": "Vermont",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/vt/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-09-19",
+              "endDate": "2026-11-02",
+              "display": "Sep 19 - Nov 2"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-05:00",
+              "display": "Nov 3 by 7:00 p.m. EST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-05:00",
+              "display": "Nov 3 by 7:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VA",
+      "name": "Virginia",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/va/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-09-18",
+              "endDate": "2026-10-31",
+              "display": "Sep 18 - Oct 31"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-23",
+              "deadline": "2026-10-23T23:59-04:00",
+              "display": "Oct 23 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-23",
+              "display": "Oct 23"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-23",
+              "deadline": "2026-10-23T17:00-04:00",
+              "display": "Oct 23 by 5:00 p.m. EDT"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-05:00",
+              "display": "Nov 3 by 7:00 p.m. EST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-09-18",
+              "endDate": "2026-10-31",
+              "display": "Sep 18 - Oct 31"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WA",
+      "name": "Washington",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/wa/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-16",
+              "endDate": "2026-11-03",
+              "display": "Oct 16 - Nov 3"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-26",
+              "deadline": "2026-10-26T23:59-07:00",
+              "display": "Oct 26 by 11:59 p.m. PDT"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-26",
+              "display": "Oct 26 close of business"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "display": "varies by location"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-08:00",
+              "display": "Nov 3 by 8:00 p.m. PST"
+            },
+            {
+              "label": "Washington finishes sending ballots to all active registered voters",
+              "date": "2026-10-16",
+              "display": "Oct 16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WV",
+      "name": "West Virginia",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/wv/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at local election office",
+              "date": "2026-10-13",
+              "display": "Oct 13 close of business"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-13",
+              "deadline": "2026-10-13T23:59-04:00",
+              "display": "Oct 13 by 11:59 p.m. EDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-13",
+              "display": "Oct 13"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-28",
+              "display": "Oct 28"
+            },
+            {
+              "label": "Return ballot by mail (postmarked by)",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-02",
+              "display": "Nov 2"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting",
+              "date": "2026-10-21",
+              "endDate": "2026-10-31",
+              "display": "Oct 21 - Oct 31"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WI",
+      "name": "Wisconsin",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/wi/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "Online",
+              "date": "2026-10-14",
+              "deadline": "2026-10-14T23:59-05:00",
+              "display": "Oct 14 by 11:59 p.m. CDT"
+            },
+            {
+              "label": "By mail (postmarked by)",
+              "date": "2026-10-14",
+              "display": "Oct 14"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-10-29",
+              "deadline": "2026-10-29T17:00-05:00",
+              "display": "Oct 29 by 5:00 p.m. CDT"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-06:00",
+              "display": "Nov 3 by 8:00 p.m. CST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T20:00-06:00",
+              "display": "Nov 3 by 8:00 p.m. CST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "display": "varies by location"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WY",
+      "name": "Wyoming",
+      "turboVoteUrl": "https://voteriders.turbovote.org/elections/wy/2026-11-03",
+      "deadlines": [
+        {
+          "title": "Registration deadlines",
+          "items": [
+            {
+              "label": "In person during early voting",
+              "date": "2026-10-06",
+              "endDate": "2026-11-02",
+              "display": "Oct 6 - Nov 2"
+            },
+            {
+              "label": "In-person at voting location on Election Day",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            },
+            {
+              "label": "By mail (received by)",
+              "date": "2026-10-19",
+              "display": "Oct 19"
+            }
+          ]
+        },
+        {
+          "title": "Absentee ballot deadlines",
+          "items": [
+            {
+              "label": "Request ballot (received by)",
+              "date": "2026-11-02",
+              "display": "Nov 2"
+            },
+            {
+              "label": "Return ballot by mail (received by)",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            },
+            {
+              "label": "Return ballot in person",
+              "date": "2026-11-03",
+              "deadline": "2026-11-03T19:00-07:00",
+              "display": "Nov 3 by 7:00 p.m. MST"
+            }
+          ]
+        },
+        {
+          "title": "Voting deadlines",
+          "items": [
+            {
+              "label": "Early voting (in-person absentee voting)",
+              "date": "2026-10-06",
+              "endDate": "2026-11-02",
+              "display": "Oct 6 - Nov 2"
+            },
+            {
+              "label": "In-person",
+              "date": "2026-11-03",
+              "display": "Nov 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
