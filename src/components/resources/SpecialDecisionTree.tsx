@@ -145,7 +145,7 @@ More questions to come.  Thanks!`;
       // NEW (2026 protocol): registration guidance shown when the voter is not registered
       REG_NO: {
         question:
-          "Help the voter register to vote, then move on to Question 4.",
+          "Provide the voter with registration information.",
         script: [
           {
             guide: "Send the voter the registration link",
@@ -161,7 +161,7 @@ More questions to come.  Thanks!`;
           }
         ],
         answers: [
-          { text: "Voter has been provided with registration information — Continue to Question 5", next: "Q4" },
+          { text: "Voter has been provided with registration information — Continue", next: "Q4" },
         ],
       },
       // NEW (2026 protocol): Question 4 — do they have an ID they can use to vote?
@@ -275,7 +275,7 @@ More questions to come.  Thanks!`;
       },
       BC_REG_NO: {
         question:
-          "Help the voter register to vote, then continue.",
+          "Provide the voter with registration information.",
         script: [
           {
             guide: "Send the voter the registration link",
